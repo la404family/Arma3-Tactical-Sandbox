@@ -36,9 +36,12 @@ if (_mode == "OPEN") exitWith {
     for "_i" from 1 to 20 do {
         private _taskName = "";
         if (_i == 1) then {
-            _taskName = format ["%1 - %2", localize "STR_MISSIONS_LIST_LABEL" select [0, 5], localize "STR_TASK_1_TITLE"];
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_1_TITLE"];
-        } else {
+        };
+        if (_i == 2) then {
+            _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_2_TITLE"];
+        };
+        if (_i > 2) then {
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_X_TITLE"];
         };
         
@@ -68,10 +71,16 @@ if (_mode == "SELECT") exitWith {
     private _checkCtrl = (findDisplay 7777) displayCtrl 2201;
     
     // Afficher titre et description
+    // Afficher titre et description
     if (_taskNum == 1) then {
         _titleCtrl ctrlSetText (localize "STR_TASK_1_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_1_DESC");
-    } else {
+    };
+    if (_taskNum == 2) then {
+        _titleCtrl ctrlSetText (localize "STR_TASK_2_TITLE");
+        _descCtrl ctrlSetText (localize "STR_TASK_2_DESC");
+    };
+    if (_taskNum > 2) then {
         _titleCtrl ctrlSetText (localize "STR_TASK_X_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_X_DESC");
     };
@@ -126,7 +135,11 @@ if (_mode == "LAUNCH") exitWith {
                 // Tâche 1 - Défense du QG
                 [] call MISSION_fnc_task_1_launch;
             };
-            // Tâches 2-20 : à implémenter plus tard
+            case 2: {
+                // Tâche 2 - Assassinat et récupération
+                [] call MISSION_fnc_task_2_launch;
+            };
+            // Tâches 3-20 : à implémenter plus tard
             default {};
         };
     } forEach MISSION_var_selected_tasks;

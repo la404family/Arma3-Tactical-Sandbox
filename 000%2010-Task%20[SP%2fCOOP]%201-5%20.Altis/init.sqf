@@ -73,5 +73,7 @@
 ["SAVE"] call MISSION_fnc_task_x_enemies_memory;
 // application de la tache 1 (attaque du QG allié) - Lancé via le menu missions
 // [] call MISSION_fnc_task_1_launch;
+// application de la tache 2 (assassinat et récupération) - Lancé via le menu missions
+// [] call MISSION_fnc_task_2_launch;
 
 

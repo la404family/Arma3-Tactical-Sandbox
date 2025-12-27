@@ -63,6 +63,7 @@ class CfgFunctions
             class spawn_weather_and_time {};
             class task_x_enemies_memory {};
             class task_1_launch {};
+            class task_2_launch {};
             class spawn_missions {};
             class spawn_arsenal {};
         };

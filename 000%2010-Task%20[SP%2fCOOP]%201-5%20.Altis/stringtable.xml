@@ -443,6 +443,45 @@
             <Chinese>保衛盟軍總部免受10-15名敵軍攻擊。敵人將試圖摧毀指揮所並消滅負責的軍官。成功：消滅所有敵人威脅。失敗：盟軍軍官或玩家死亡。</Chinese>
             <Chinesesimp>保卫盟军总部免受10-15名敌军攻击。敌人将试图摧毁指挥所并消灭负责的军官。成功：消灭所有敌人威胁。失败：盟军军官或玩家死亡。</Chinesesimp>
         </Key>
+        <Key ID="STR_TASK_2_TITLE">
+            <English>Assassination and Recovery</English>
+            <French>Assassinat et récupération</French>
+            <German>Mord und Bergung</German>
+            <Spanish>Asesinato y Recuperación</Spanish>
+            <Italian>Assassinio e Recupero</Italian>
+            <Russian>Убийство и восстановление</Russian>
+            <Polish>Zabójstwo i odzyskiwanie</Polish>
+            <Czech>Vražda a zotavení</Czech>
+            <Turkish>Suikast ve Kurtarma</Turkish>
+            <Chinese>暗殺與恢復</Chinese>
+            <Chinesesimp>暗杀与恢复</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_2_DESC">
+            <English>A high-ranking enemy officer coordinates operations in the area. His elimination will disrupt opposing forces. He is carrying essential confidential documents. Infiltrate the area, neutralize the target and recover the information.</English>
+            <French>Un officier ennemi de haut rang coordonne les opérations dans la zone. Son élimination désorganisera les forces adverses. Il transporte des documents confidentiels essentiels. Infiltrez la zone, neutralisez la cible et récupérez les informations.</French>
+            <German>Ein hochrangiger feindlicher Offizier koordiniert Operationen in der Region. Seine Beseitigung wird gegnerische Kräfte stören. Er trägt wesentliche vertrauliche Dokumente. Infiltrieren Sie den Bereich, neutralisieren Sie das Ziel und stellen Sie die Informationen wieder her.</German>
+            <Spanish>Un oficial enemigo de alto rango coordina las operaciones en el área. Su eliminación interrumpirá fuerzas opuestas. Lleva documentos confidenciales esenciales. Infiltrarse en el área, neutralizar el objetivo y recuperar la información.</Spanish>
+            <Italian>Un ufficiale nemico di alto livello coordina le operazioni nell&apos;area. La sua eliminazione interromperà le forze opposte. Trasporta documenti riservati essenziali. Infiltra l&apos;area, neutralizza l&apos;obiettivo e recupera le informazioni.</Italian>
+            <Russian>Высокопоставленный вражеский офицер координирует операции в этом районе. Его устранение нарушит противостоящие силы. Он несет основные конфиденциальные документы. Проникнуть в область, нейтрализовать цель и восстановить информацию.</Russian>
+            <Polish>Wysoki stopień oficer wroga koordynuje działania w tym obszarze. Jego eliminacja zakłóci przeciwne siły. Posiada niezbędne poufne dokumenty. Infiltruj obszar, zneutralizuj cel i odzyskaj informacje.</Polish>
+            <Czech>Vysoce postavený nepřátelský důstojník koordinuje operace v této oblasti. Jeho eliminace naruší protichůdné síly. Nosí základní důvěrné dokumenty. Infiltrujte oblast, neutralizujte cíl a obnovte informace.</Czech>
+            <Turkish>Üst düzey bir düşman subayı bölgedeki operasyonları koordine eder. Ortadan kaldırılması karşıt güçleri bozacaktır. Temel gizli belgeler taşıyor. Bölgeye sızın, hedefi etkisiz hale getirin ve bilgileri kurtarın.</Turkish>
+            <Chinese>一名高級敵方軍官協調該地區的行動。 他的淘汰將破壞反對部隊。 他攜帶必要的機密文件。 滲透該區域，中和目標並恢復信息。</Chinese>
+            <Chinesesimp>一名高级敌方军官协调该地区的行动。 他的淘汰将破坏反对部队。 他携带必要的机密文件。 渗透该区域，中和目标并恢复信息。</Chinesesimp>
+        </Key>
+        <Key ID="STR_MARKER_DOCUMENT">
+            <English>Document</English>
+            <French>Document</French>
+            <German>Dokument</German>
+            <Spanish>Documento</Spanish>
+            <Italian>Documento</Italian>
+            <Russian>Документ</Russian>
+            <Polish>Dokument</Polish>
+            <Czech>Dokument</Czech>
+            <Turkish>Belge</Turkish>
+            <Chinese>文檔</Chinese>
+            <Chinesesimp>文档</Chinesesimp>
+        </Key>
         <Key ID="STR_TASK_X_TITLE">
             <English>XXX</English>
             <French>XXX</French>
