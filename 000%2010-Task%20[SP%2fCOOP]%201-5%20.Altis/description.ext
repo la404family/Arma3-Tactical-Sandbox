@@ -2,6 +2,7 @@
 #include "dialogs\recruit_menu.hpp"
 #include "dialogs\vehicle_menu.hpp"
 #include "dialogs\weather_time_menu.hpp"
+#include "dialogs\missions_menu.hpp"
 
 class CfgMusic
 {
@@ -60,6 +61,9 @@ class CfgFunctions
             class spawn_brothers_in_arms {};
             class spawn_vehicles {};
             class spawn_weather_and_time {};
+            class task_x_enemies_memory {};
+            class task_1_launch {};
+            class spawn_missions {};
             class spawn_arsenal {};
         };
     };

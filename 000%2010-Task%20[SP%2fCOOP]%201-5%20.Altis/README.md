@@ -1,85 +1,143 @@
-# 🛠️ Guide de Conception de Mission Arma 3 : Randomisation & Standards
+# 🎮 Mission Arma 3 - Multi-Tâches SP/COOP
 
-Ce document détaille les instructions pour créer une mission immersive, rejouable et compatible à la fois en Singleplayer (SP) et en Coopératif (COOP).
+![SQF Wallpaper](SQFWallpaper.jpg)
+
+> Mission dynamique avec système de sélection de tâches, recrutement d'alliés, spawn de véhicules et contrôle météo.
 
 ---
 
-### Types d’objectifs de mission
+## 📋 Fonctionnalités Implémentées
 
-- Extraction de VIP : Escorter un officier, scientifique ou informateur jusqu’à la base alliée.
+| Fonction | Description | Zone Trigger |
+|----------|-------------|--------------|
+| `fn_spawn_missions` | Menu de sélection des missions avec 20 tâches | `missions_request` |
+| `fn_spawn_brothers_in_arms` | Recrutement d'unités IA alliées | `brothers_in_arms_request` |
+| `fn_spawn_vehicles` | Spawn de véhicules (pas de bateaux/avions) | `vehicles_spawner` |
+| `fn_spawn_weather_and_time` | Contrôle du temps et de la météo | `weather_and_time_request` |
+| `fn_spawn_arsenal` | Accès à l'arsenal virtuel | `arsenal_request` |
 
-- Récupération de personnel isolé : Secourir un prisonnier de guerre derrière les lignes ennemies.
-- Assassinat et récupération de documents : Éliminer un officier ennemi de haut rang. + récuperation de documents dans son inventaire.
-- Chasse à l’homme (HVT) : Traquer un commandant ennemi mobile entre plusieurs bases ou convois.
-- Suppression de défenses : Neutraliser un radar anti-aérien pour permettre un soutien aérien allié.
-- Destruction de convoi : Détruire un convoi de ravitaillement ou des véhicules ennemis lourds.
-- Reconquête : Reprendre une base alliée (QG ennemie) tombée aux mains de l’ennemi.
-- Récupération de renseignements : Infiltrer un QG ennemi pour pirater un ordinateur.
-- Enquête mystérieuse : Explorer un laboratoire secret pour comprendre une anomalie.
-- defendre le QG allié : Si l'officier meurt, la partie est perdue.
 
-**Options de mission**
+---
 
-- drone de reconnaissance (affiche les positions des unités ennemies)
-- présence de tank ennemi 
-- soutien aérien allié
-- présence civile
+## 🔧 Comment Ajouter une Nouvelle Tâche
 
-**Besoins :** 
- - Officier allié
- - Officier ennemi avec documents
- - Officier ennemi mobile
- - QG ennemi (avec ordinateur à pirater)
- - QG allié
- - Radar anti-aérien
- - Convoie ennemie
- - laboratoire secret
+### Étape 1 : Ajouter les textes localisés
 
-## 2. Bonnes Pratiques de Codage (SP/COOP)
+Dans `stringtable.xml`, ajoutez :
 
-> **La Règle d'Or** : Codez toujours pour le **COOP**. Si cela fonctionne en multijoueur, cela fonctionnera automatiquement en solo.
+```xml
+<Key ID="STR_TASK_2_TITLE">
+    <English>Your Task Title</English>
+    <French>Titre de votre tâche</French>
+    ...
+</Key>
+<Key ID="STR_TASK_2_DESC">
+    <English>Task description...</English>
+    <French>Description de la tâche...</French>
+    ...
+</Key>
+```
 
-### Gestion Serveur vs Client
-En SP, votre machine est à la fois serveur et client. En COOP, ces rôles sont séparés.
-*   `isServer` : Vrai sur la machine locale en SP, vrai uniquement sur le serveur dédié/hôte en MP.
+### Étape 2 : Créer la fonction de tâche
 
-### 🚫 Attention particulière
-*   **NE JAMAIS UTILISER** : `player` dans des scripts globaux (car `player` est différent sur chaque machine ou inexistant sur un serveur dédié).
-*   **UTILISER PLUTÔT** : 
-    *   `playableUnits` : Retourne toutes les unités jouables (y compris IA si slots non utilisés).
-
-### Création de Tâches (Task Framework)
-Utilisez toujours les fonctions BIS pour créer des tâches côté serveur. Elles gèrent automatiquement la synchronisation.
+Créez `functions/fn_task_2_launch.sqf` :
 
 ```sqf
+if (!isServer) exitWith {};
+
+// Créer la tâche Arma 3
 [
-    west,                   // Équipe concernée
-    "task_obj1",            // ID de la tâche
-    ["STR_TASK_DESC", "STR_TASK_TITLE", ""], // Textes (clés stringtable)
-    getMarkerPos "obj_1",   // Position
-    "ASSIGNED",             // État initial
-    1,                      // Priorité
-    true                    // Notification à l'écran
+    true,
+    ["task_2_your_id"],
+    [localize "STR_TASK_2_DESC", localize "STR_TASK_2_TITLE", ""],
+    objNull,      // Position ou objet cible
+    "CREATED",
+    1,
+    true,
+    "attack"      // Type: attack, defend, scout, etc.
 ] call BIS_fnc_taskCreate;
+
+// Votre logique de mission ici...
+```
+
+### Étape 3 : Enregistrer dans description.ext
+
+```cpp
+class CfgFunctions {
+    class MISSION {
+        class Localization {
+            file = "functions";
+            class task_2_launch {};  // Ajouter cette ligne
+        };
+    };
+};
+```
+
+### Étape 4 : Connecter au menu de missions
+
+Dans `fn_spawn_missions.sqf`, modifiez :
+
+```sqf
+// Section SELECT (lignes ~70-77)
+if (_taskNum == 2) then {
+    _titleCtrl ctrlSetText (localize "STR_TASK_2_TITLE");
+    _descCtrl ctrlSetText (localize "STR_TASK_2_DESC");
+};
+
+// Section LAUNCH (lignes ~120-127)
+case 2: {
+    [] call MISSION_fnc_task_2_launch;
+};
 ```
 
 ---
 
+## 📁 Structure des Fichiers
 
+```
+mission.sqm           # Fichier mission (éditeur)
+init.sqf              # Initialisation
+description.ext       # Configuration
+stringtable.xml       # Localisation
+
+functions/
+├── fn_spawn_missions.sqf
+├── fn_spawn_brothers_in_arms.sqf
+├── fn_spawn_vehicles.sqf
+├── fn_spawn_weather_and_time.sqf
+├── fn_spawn_arsenal.sqf
+├── fn_task_1_launch.sqf
+├── fn_task_x_enemies_memory.sqf
+└── fn_lang_marker_name.sqf
+
+dialogs/
+├── defines.hpp
+├── missions_menu.hpp
+├── recruit_menu.hpp
+├── vehicle_menu.hpp
+└── weather_time_menu.hpp
+```
 
 ---
 
+## 🌍 Langues Supportées
 
+- 🇬🇧 English
+- 🇫🇷 Français
+- 🇬🇪 Deutsch
+- 🇪🇸 Spanish
+- 🇮🇹 Italiano
+- 🇷🇺 Русский
+- 🇵🇱 Polski
+- 🇨🇿 Česky
+- 🇹🇷 Türkçe
+- 🇨🇳 中文
+- 🇨🇳 简体中文
 
 ---
 
-## 5. Checklist de Compatibilité SP/COOP
+## 📝 Notes Techniques
 
-Avant de publier, vérifiez que votre code respecte ces points :
-
-- [ ] J'utilise `isServer` pour toute logique critique (Spawn, Création Tâches, Score).
-- [ ] J'utilise `hasInterface` pour tout ce qui est visuel/sonore local.
-- [ ] J'utilise `remoteExec` pour exécuter du code sur une autre machine si nécessaire.
-- [ ] J'utilise `publicVariable` pour synchroniser des variables importantes entre serveur et clients.
-- [ ] J'utilise `addEventHandler` pour les événements liés aux unités (compatible MP).
-- [ ] Je privilégie les fonctions `BIS_fnc_*` qui sont généralement optimisées pour le réseau.
+- Toute la logique serveur utilise `isServer`
+- Les textes UI sont dynamiques via `stringtable.xml`
+- Compatible SP et COOP (1-5 joueurs)

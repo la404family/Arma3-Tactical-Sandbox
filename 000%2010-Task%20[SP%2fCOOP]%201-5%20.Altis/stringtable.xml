@@ -313,5 +313,148 @@
             <Chinese>修改</Chinese>
             <Chinesesimp>修改</Chinesesimp>
         </Key>
+        <Key ID="STR_BTN_SELECT">
+            <English>Select</English>
+            <French>Sélectionner</French>
+            <German>Auswählen</German>
+            <Spanish>Seleccionar</Spanish>
+            <Italian>Seleziona</Italian>
+            <Russian>Выбрать</Russian>
+            <Polish>Wybierz</Polish>
+            <Czech>Vybrat</Czech>
+            <Turkish>Seç</Turkish>
+            <Chinese>選擇</Chinese>
+            <Chinesesimp>选择</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSIONS_MENU_TITLE">
+            <English>Mission Command Center</English>
+            <French>Centre de Commandement des Missions</French>
+            <German>Missions-Kommandozentrale</German>
+            <Spanish>Centro de Mando de Misiones</Spanish>
+            <Italian>Centro Comando Missioni</Italian>
+            <Russian>Командный центр миссий</Russian>
+            <Polish>Centrum Dowodzenia Misjami</Polish>
+            <Czech>Velitelské centrum misí</Czech>
+            <Turkish>Görev Komuta Merkezi</Turkish>
+            <Chinese>任務指揮中心</Chinese>
+            <Chinesesimp>任务指挥中心</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSIONS_LIST_LABEL">
+            <English>Available Missions</English>
+            <French>Missions Disponibles</French>
+            <German>Verfügbare Missionen</German>
+            <Spanish>Misiones Disponibles</Spanish>
+            <Italian>Missioni Disponibili</Italian>
+            <Russian>Доступные миссии</Russian>
+            <Polish>Dostępne Misje</Polish>
+            <Czech>Dostupné mise</Czech>
+            <Turkish>Mevcut Görevler</Turkish>
+            <Chinese>可用任務</Chinese>
+            <Chinesesimp>可用任务</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSIONS_SELECT">
+            <English>Select for deployment:</English>
+            <French>Sélectionner pour déploiement :</French>
+            <German>Für Einsatz auswählen:</German>
+            <Spanish>Seleccionar para despliegue:</Spanish>
+            <Italian>Seleziona per dispiegamento:</Italian>
+            <Russian>Выбрать для развертывания:</Russian>
+            <Polish>Wybierz do wdrożenia:</Polish>
+            <Czech>Vybrat k nasazení:</Czech>
+            <Turkish>Dağıtım için seç:</Turkish>
+            <Chinese>選擇部署：</Chinese>
+            <Chinesesimp>选择部署：</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSIONS_LAUNCH">
+            <English>LAUNCH</English>
+            <French>LANCER</French>
+            <German>STARTEN</German>
+            <Spanish>LANZAR</Spanish>
+            <Italian>AVVIA</Italian>
+            <Russian>ЗАПУСК</Russian>
+            <Polish>URUCHOM</Polish>
+            <Czech>SPUSTIT</Czech>
+            <Turkish>BAŞLAT</Turkish>
+            <Chinese>啟動</Chinese>
+            <Chinesesimp>启动</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSIONS_QUIT">
+            <English>QUIT</English>
+            <French>QUITTER</French>
+            <German>BEENDEN</German>
+            <Spanish>SALIR</Spanish>
+            <Italian>ESCI</Italian>
+            <Russian>ВЫХОД</Russian>
+            <Polish>WYJDŹ</Polish>
+            <Czech>UKONČIT</Czech>
+            <Turkish>ÇIK</Turkish>
+            <Chinese>退出</Chinese>
+            <Chinesesimp>退出</Chinesesimp>
+        </Key>
+        <Key ID="STR_ACTION_MISSIONS">
+            <English>Access Mission Command</English>
+            <French>Accéder au Commandement des Missions</French>
+            <German>Missionskommando aufrufen</German>
+            <Spanish>Acceder al Mando de Misiones</Spanish>
+            <Italian>Accedi al Comando Missioni</Italian>
+            <Russian>Доступ к командованию миссий</Russian>
+            <Polish>Dostęp do Dowództwa Misji</Polish>
+            <Czech>Přístup k velení misí</Czech>
+            <Turkish>Görev Komutasına Eriş</Turkish>
+            <Chinese>進入任務指揮</Chinese>
+            <Chinesesimp>进入任务指挥</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_1_TITLE">
+            <English>HQ Defense</English>
+            <French>Défense du Quartier Général</French>
+            <German>Hauptquartier-Verteidigung</German>
+            <Spanish>Defensa del Cuartel General</Spanish>
+            <Italian>Difesa del Quartier Generale</Italian>
+            <Russian>Защита штаба</Russian>
+            <Polish>Obrona Kwatery Głównej</Polish>
+            <Czech>Obrana velitelství</Czech>
+            <Turkish>Karargah Savunması</Turkish>
+            <Chinese>總部防禦</Chinese>
+            <Chinesesimp>总部防御</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_1_DESC">
+            <English>Defend the allied HQ against an enemy attack of 10-15 hostiles. Enemies will attempt to neutralize the command post and eliminate the officer in charge. Success: Eliminate all enemy threats. Failure: Death of the allied officer or player death.</English>
+            <French>Assurer la défense du Quartier Général allié face à une attaque ennemie estimée entre 10 et 15 combattants hostiles. Les forces ennemies tenteront de neutraliser le poste de commandement et d&apos;éliminer l&apos;officier en charge. Réussite : Éliminer l&apos;ensemble des menaces ennemies. Échec : Mort de l&apos;officier allié ou de vous-même.</French>
+            <German>Verteidigen Sie das alliierte HQ gegen einen Angriff von 10-15 Feinden. Die Feinde werden versuchen, den Kommandoposten zu neutralisieren und den verantwortlichen Offizier zu eliminieren. Erfolg: Alle feindlichen Bedrohungen eliminieren. Misserfolg: Tod des alliierten Offiziers oder des Spielers.</German>
+            <Spanish>Defender el cuartel general aliado contra un ataque enemigo de 10-15 hostiles. Los enemigos intentarán neutralizar el puesto de mando y eliminar al oficial a cargo. Éxito: Eliminar todas las amenazas enemigas. Fracaso: Muerte del oficial aliado o del jugador.</Spanish>
+            <Italian>Difendere il QG alleato da un attacco nemico di 10-15 ostili. I nemici tenteranno di neutralizzare il posto di comando ed eliminare l&apos;ufficiale responsabile. Successo: Eliminare tutte le minacce nemiche. Fallimento: Morte dell&apos;ufficiale alleato o del giocatore.</Italian>
+            <Russian>Защитите союзный штаб от атаки 10-15 врагов. Противник попытается нейтрализовать командный пункт и устранить ответственного офицера. Успех: Уничтожить все вражеские угрозы. Провал: Смерть союзного офицера или игрока.</Russian>
+            <Polish>Broń aliancką kwaterę główną przed atakiem 10-15 wrogów. Wrogowie będą próbowali zneutralizować stanowisko dowodzenia i wyeliminować oficera. Sukces: Wyeliminuj wszystkie zagrożenia. Porażka: Śmierć aliancego oficera lub gracza.</Polish>
+            <Czech>Braňte spojenecké velitelství před útokem 10-15 nepřátel. Nepřátelé se pokusí neutralizovat velitelské stanoviště a eliminovat odpovědného důstojníka. Úspěch: Eliminovat všechny nepřátelské hrozby. Neúspěch: Smrt spojeneckého důstojníka nebo hráče.</Czech>
+            <Turkish>Müttefik karargahı 10-15 düşman saldırısına karşı savunun. Düşmanlar komuta merkezini etkisiz hale getirmeye ve sorumlu subayı öldürmeye çalışacak. Başarı: Tüm düşman tehditleri ortadan kaldırın. Başarısızlık: Müttefik subayın veya oyuncunun ölümü.</Turkish>
+            <Chinese>保衛盟軍總部免受10-15名敵軍攻擊。敵人將試圖摧毀指揮所並消滅負責的軍官。成功：消滅所有敵人威脅。失敗：盟軍軍官或玩家死亡。</Chinese>
+            <Chinesesimp>保卫盟军总部免受10-15名敌军攻击。敌人将试图摧毁指挥所并消灭负责的军官。成功：消灭所有敌人威胁。失败：盟军军官或玩家死亡。</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_X_TITLE">
+            <English>XXX</English>
+            <French>XXX</French>
+            <German>XXX</German>
+            <Spanish>XXX</Spanish>
+            <Italian>XXX</Italian>
+            <Russian>XXX</Russian>
+            <Polish>XXX</Polish>
+            <Czech>XXX</Czech>
+            <Turkish>XXX</Turkish>
+            <Chinese>XXX</Chinese>
+            <Chinesesimp>XXX</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_X_DESC">
+            <English>XXX</English>
+            <French>XXX</French>
+            <German>XXX</German>
+            <Spanish>XXX</Spanish>
+            <Italian>XXX</Italian>
+            <Russian>XXX</Russian>
+            <Polish>XXX</Polish>
+            <Czech>XXX</Czech>
+            <Turkish>XXX</Turkish>
+            <Chinese>XXX</Chinese>
+            <Chinesesimp>XXX</Chinesesimp>
+        </Key>
     </Package>
 </Project>
