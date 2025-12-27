@@ -141,3 +141,34 @@ dialogs/
 - Toute la logique serveur utilise `isServer`
 - Les textes UI sont dynamiques via `stringtable.xml`
 - Compatible SP et COOP (1-5 joueurs)
+
+### Types d’objectifs de mission à ajouter
+
+- Extraction de VIP : Escorter un officier, scientifique ou informateur jusqu’à la base alliée.
+
+- Récupération de personnel isolé : Secourir un prisonnier de guerre derrière les lignes ennemies.
+- Assassinat et récupération de documents : Éliminer un officier ennemi de haut rang. + récuperation de documents dans son inventaire.
+- Chasse à l’homme (HVT) : Traquer un commandant ennemi mobile entre plusieurs bases ou convois.
+- Suppression de défenses : Neutraliser un radar anti-aérien pour permettre un soutien aérien allié.
+- Destruction de convoi : Détruire un convoi de ravitaillement ou des véhicules ennemis lourds.
+- Reconquête : Reprendre une base alliée (QG ennemie) tombée aux mains de l’ennemi.
+- Récupération de renseignements : Infiltrer un QG ennemi pour pirater un ordinateur.
+- Enquête mystérieuse : Explorer un laboratoire secret pour comprendre une anomalie.
+- defendre le QG allié : Si l'officier meurt, la partie est perdue.
+
+**Options de mission**
+
+- drone de reconnaissance (affiche les positions des unités ennemies)
+- présence de tank ennemi 
+- soutien aérien allié
+- présence civile
+
+**Besoins :** 
+ - Officier allié (fait)
+ - Officier ennemi avec documents (fait)
+ - Officier ennemi mobile
+ - QG ennemi (avec ordinateur à pirater)
+ - QG allié
+ - Radar anti-aérien
+ - Convoie ennemie
+ - laboratoire secret

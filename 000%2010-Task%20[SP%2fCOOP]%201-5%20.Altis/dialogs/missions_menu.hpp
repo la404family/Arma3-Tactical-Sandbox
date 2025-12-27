@@ -94,6 +94,13 @@ class Refour_Missions_Dialog
             y = 0.22 * safezoneH + safezoneY;
             w = 0.10 * safezoneW;
             h = 0.03 * safezoneH;
+            // Couleurs - Gris foncé par défaut (devient vert via script quand sélectionné)
+            colorText[] = {1,1,1,1};              // Texte blanc
+            colorBackground[] = {0.3,0.3,0.3,1};  // Fond gris foncé
+            colorBackgroundActive[] = {0.25,0.25,0.25,1}; // Fond quand cliqué
+            colorFocused[] = {0.3,0.3,0.3,1};     // Fond quand focus
+            colorBackgroundDisabled[] = {0.3,0.3,0.3,1};
+            colorDisabled[] = {0.5,0.5,0.5,1};
             action = "['TOGGLE'] call MISSION_fnc_spawn_missions;";
         };
 

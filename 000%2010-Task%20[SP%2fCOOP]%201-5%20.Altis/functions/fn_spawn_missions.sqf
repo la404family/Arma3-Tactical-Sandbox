@@ -76,11 +76,13 @@ if (_mode == "SELECT") exitWith {
         _descCtrl ctrlSetText (localize "STR_TASK_X_DESC");
     };
     
-    // Mettre à jour le bouton (couleur selon sélection)
+    // Mettre à jour le bouton (couleur et texte selon sélection)
     if (_taskNum in MISSION_var_selected_tasks) then {
         _checkCtrl ctrlSetBackgroundColor [0.2, 0.6, 0.2, 1];
+        _checkCtrl ctrlSetText (localize "STR_BTN_DESELECT");
     } else {
         _checkCtrl ctrlSetBackgroundColor [0.3, 0.3, 0.3, 1];
+        _checkCtrl ctrlSetText (localize "STR_BTN_SELECT");
     };
 };
 
@@ -98,11 +100,13 @@ if (_mode == "TOGGLE") exitWith {
         // Désélectionner
         MISSION_var_selected_tasks = MISSION_var_selected_tasks - [_taskNum];
         _checkCtrl ctrlSetBackgroundColor [0.3, 0.3, 0.3, 1];
+        _checkCtrl ctrlSetText (localize "STR_BTN_SELECT");
         _listCtrl lbSetColor [_taskNum - 1, [1, 1, 1, 1]];
     } else {
         // Sélectionner
         MISSION_var_selected_tasks pushBack _taskNum;
         _checkCtrl ctrlSetBackgroundColor [0.2, 0.6, 0.2, 1];
+        _checkCtrl ctrlSetText (localize "STR_BTN_DESELECT");
         _listCtrl lbSetColor [_taskNum - 1, [0.2, 0.8, 0.2, 1]];
     };
 };

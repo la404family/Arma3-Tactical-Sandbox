@@ -34,6 +34,7 @@
 ["INIT"] call MISSION_fnc_spawn_arsenal;
 // fonction qui spawn les taches séléctionnées
 ["INIT"] call MISSION_fnc_spawn_missions;
+
 //-------------------------------------------
 // Les éléments du QG allié :
 //-------------------------------------------
@@ -42,14 +43,27 @@
 // batiment_officer est le batiment où se trouve officier_task_giver
 
 //-------------------------------------------
-// Les éléments de la tache 1 :
+// Les éléments des communs aux taches :
 //-------------------------------------------
 
+// éléménts en mémoire (supprimés en début de mission) voir fn_task_x_enemies_memory
 // task_x_officer_1 à task_x_officer_3 sont les officiers ennemis
 // task_x_enemy_00 à task_x_enemy_15 sont des unités ennemies
 // task_x_vehicle_1 et task_x_vehicle_2 sont les véhicules ennemis
 // task_x_tank_1 est le tank ennemi
+
+//-------------------------------------------
+// Les éléments de la tache 1 :
+//-------------------------------------------
+
 // task_1_spawn_01 à task_1_spawn_06 sont des héliports qui servent de lieux de spawn ennemi pour la tache 1
+
+//-------------------------------------------
+// Les éléments de la tache 2 :
+//-------------------------------------------
+
+// task_2_spawn_01 à task_2_spawn_06 sont des héliports qui servent de lieux de spawn ennemi pour la tache 2
+// task_2_document est un document à récupérer dans l'inventaire de l'officier ennemis
 
 //-------------------------------------------
 // Les fonctions de tache :

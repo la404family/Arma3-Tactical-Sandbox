@@ -326,6 +326,19 @@
             <Chinese>選擇</Chinese>
             <Chinesesimp>选择</Chinesesimp>
         </Key>
+        <Key ID="STR_BTN_DESELECT">
+            <English>Deselect</English>
+            <French>Désélectionner</French>
+            <German>Abwählen</German>
+            <Spanish>Deseleccionar</Spanish>
+            <Italian>Deseleziona</Italian>
+            <Russian>Отменить выбор</Russian>
+            <Polish>Odznacz</Polish>
+            <Czech>Odznačit</Czech>
+            <Turkish>Seçimi Kaldır</Turkish>
+            <Chinese>取消選擇</Chinese>
+            <Chinesesimp>取消选择</Chinesesimp>
+        </Key>
         <Key ID="STR_MISSIONS_MENU_TITLE">
             <English>Mission Command Center</English>
             <French>Centre de Commandement des Missions</French>
