@@ -125,5 +125,9 @@
 // [] call MISSION_fnc_task_5_launch;
 
 
+// Lancement de l'intro
+// [] spawn MISSION_fnc_task_0_intro;
+
+
 
 

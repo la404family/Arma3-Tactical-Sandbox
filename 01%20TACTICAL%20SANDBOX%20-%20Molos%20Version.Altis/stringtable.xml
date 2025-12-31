@@ -14,6 +14,58 @@
             <Chinese>武器</Chinese>
             <Chinesesimp>武器</Chinesesimp>
         </Key>
+        <Key ID="STR_INTRO_PRESENTS">
+            <Original>presents</Original>
+            <French>présente</French>
+            <German>vorstellt</German>
+            <Spanish>presenta</Spanish>
+            <Italian>presenta</Italian>
+            <Russian>представляет</Russian>
+            <Polish>prezentuje</Polish>
+            <Czech>prezentuje</Czech>
+            <Turkish>sunuyor</Turkish>
+            <Chinese>展示</Chinese>
+            <Chinesesimp>展示</Chinesesimp>
+        </Key>
+        <Key ID="STR_INTRO_TITLE">
+            <Original>Tactical Sandbox</Original>
+            <French>Tactical Sandbox</French>
+            <German>Tactical Sandbox</German>
+            <Spanish>Tactical Sandbox</Spanish>
+            <Italian>Tactical Sandbox</Italian>
+            <Russian>Tactical Sandbox</Russian>
+            <Polish>Tactical Sandbox</Polish>
+            <Czech>Tactical Sandbox</Czech>
+            <Turkish>Tactical Sandbox</Turkish>
+            <Chinese>战术沙盒</Chinese>
+            <Chinesesimp>战术沙盒</Chinesesimp>
+        </Key>
+        <Key ID="STR_INTRO_SUBTITLE">
+            <Original>Your missions, your weapons, your conditions...</Original>
+            <French>Nos missions, nos armes, nos conditions...</French>
+            <German>Deine Missions, deine Waffen, deine Bedingungen...</German>
+            <Spanish>Tus misiones, tus armas, tus condiciones...</Spanish>
+            <Italian>Tue missioni, tue armi, tue condizioni...</Italian>
+            <Russian>Ваши миссии, ваши оружия, ваши условия...</Russian>
+            <Polish>Twoje misje, twoje broń, twoje warunki...</Polish>
+            <Czech>Twoje misi, twoje zbraně, twoje podmínky...</Czech>
+            <Turkish>Senin misyonların, senin silahların, senin koşulların...</Turkish>
+            <Chinese>你的任務，你的武器，你的條件...</Chinese>
+            <Chinesesimp>你的任务，你的武器，你的条件...</Chinesesimp>
+        </Key>
+        <Key ID="STR_INTRO_AUTHOR">
+            <Original>@la404family</Original>
+            <French>@la404family</French>
+            <German>@la404family</German>
+            <Spanish>@la404family</Spanish>
+            <Italian>@la404family</Italian>
+            <Russian>@la404family</Russian>
+            <Polish>@la404family</Polish>
+            <Czech>@la404family</Czech>
+            <Turkish>@la404family</Turkish>
+            <Chinese>@la404family</Chinese>
+            <Chinesesimp>@la404family</Chinesesimp>
+        </Key>
         <Key ID="STR_MARKER_ZONE_2">
             <English>Missions</English>
             <French>Missions</French>
@@ -91,6 +143,19 @@
             <Turkish>Silah arkadaşı ekle</Turkish>
             <Chinese>添加戰友</Chinese>
             <Chinesesimp>添加战友</Chinesesimp>
+        </Key>
+        <Key ID="STR_BROTHERS_LIKE_ME">
+            <English>A soldier like me!</English>
+            <French>Un soldat comme moi !</French>
+            <German>Ein Soldat wie ich!</German>
+            <Spanish>¡Un soldado como yo!</Spanish>
+            <Italian>Un soldato come me!</Italian>
+            <Russian>Солдат, как я!</Russian>
+            <Polish>Żołnierz taki jak ja!</Polish>
+            <Czech>Voják jako já!</Czech>
+            <Turkish>Benim gibi bir asker!</Turkish>
+            <Chinese>像我这样的士兵！</Chinese>
+            <Chinesesimp>像我这样的士兵！</Chinesesimp>
         </Key>
         <Key ID="STR_RECRUIT_TITLE">
             <English>Recruit Unit</English>

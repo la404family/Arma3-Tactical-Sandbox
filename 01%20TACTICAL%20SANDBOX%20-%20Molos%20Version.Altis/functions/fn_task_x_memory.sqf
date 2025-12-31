@@ -17,6 +17,7 @@ if (isNil "MISSION_var_airtargets") then { MISSION_var_airtargets = []; };
 if (isNil "MISSION_var_civilians") then { MISSION_var_civilians = []; };
 if (isNil "MISSION_var_helicopters") then { MISSION_var_helicopters = []; };
 if (isNil "MISSION_var_explosives") then { MISSION_var_explosives = []; };
+if (isNil "MISSION_var_model_player") then { MISSION_var_model_player = []; };
 
 if (_mode == "SAVE") exitWith {
     
@@ -117,6 +118,14 @@ if (_mode == "SAVE") exitWith {
             deleteVehicle _obj;
         };
     } forEach _explosiveNames;
+
+    // ---- Sauvegarde du Modèle Joueur (pour l'intro) ----
+    private _modelPlayerName = "model_player";
+    private _modelP = missionNamespace getVariable [_modelPlayerName, objNull];
+    if (!isNull _modelP) then {
+        MISSION_var_model_player pushBack [_modelPlayerName, typeOf _modelP, getPosWorld _modelP, getDir _modelP, side group _modelP, getUnitLoadout _modelP];
+        deleteVehicle _modelP;
+    };
 
     // Debug (désactivé) - Affiche le nombre d'éléments sauvegardés
     // systemChat format ["Memory: Officers=%1, Enemies=%2, Vehicles=%3, Tanks=%4", 

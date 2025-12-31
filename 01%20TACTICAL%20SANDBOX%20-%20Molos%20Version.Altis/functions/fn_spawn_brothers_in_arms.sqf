@@ -88,14 +88,27 @@ switch (_mode) do {
         // Tri alphabétique du tableau
         _sortableUnits sort true;
 
-        // Ajoute les éléments triés dans la ListBox
+        // --- AJOUT OPTION SPECIALE "COMME MOI" EN PREMIER ---
+        // On l'ajoute manuellement en haut de la liste
+        private _textLikeMe = localize "STR_BROTHERS_LIKE_ME";
+        if (_textLikeMe == "" || _textLikeMe == "STR_BROTHERS_LIKE_ME") then { _textLikeMe = "Comme moi !"; };
+        
+        //systemChat "DEBUG: Adding 'Like Me' option..."; // DEBUG
+        
+        private _likeMeIndex = _ctrlList lbAdd _textLikeMe;
+        _ctrlList lbSetData [_likeMeIndex, "LIKE_ME"];
+        _ctrlList lbSetColor [_likeMeIndex, [0.85, 0.85, 0, 1]]; // Jaune/Doré pour le distinguer
+        
+        //systemChat format ["DEBUG: Added at index %1", _likeMeIndex]; // DEBUG
+
+        // Ajoute les éléments triés dans la ListBox à la suite
         {
             _x params ["_text", "_data"];
             private _index = _ctrlList lbAdd _text;
             _ctrlList lbSetData [_index, _data]; // Stocke la classe (ex: "B_Soldier_F") comme donnée cachée
         } forEach _sortableUnits;
 
-        // Sélectionne le premier élément par défaut s'il y en a
+        // Sélectionne le premier élément par default s'il y en a
         if (lbSize _ctrlList > 0) then {
             _ctrlList lbSetCurSel 0;
         };
@@ -109,7 +122,7 @@ switch (_mode) do {
         // Validation : Vérifie qu'une unité est sélectionnée
         private _indexSelection = lbCurSel _listBox;
         if (_indexSelection == -1) exitWith {
-            systemChat (localize "STR_ERR_NO_UNIT_SELECTED");
+            //systemChat (localize "STR_ERR_NO_UNIT_SELECTED");
         };
 
         // Récupération des données (classe et nom)
@@ -131,13 +144,49 @@ switch (_mode) do {
 
         // Processus d'apparition (spawn) dans un nouveau thread
         [_classname, _spawnPos, _displayName] spawn {
-            params ["_class", "_pos", "_name"];
+            params ["_classOrType", "_pos", "_name"];
             
             // Crée un groupe temporaire pour éviter les problèmes de "join" immédiat
             private _tempGroup = createGroup [side player, true];
-            
-            // Crée l'unité
-            private _newUnit = _tempGroup createUnit [_class, _pos, [], 0, "CAN_COLLIDE"];
+            private _newUnit = objNull; // Initialisation
+
+            if (_classOrType == "LIKE_ME") then {
+                // CAS SPECIAL : CLONE DU JOUEUR
+                // Tentative avec la classe du joueur
+                _newUnit = _tempGroup createUnit [typeOf player, _pos, [], 0, "CAN_COLLIDE"];
+                
+                // Si échec (ex: classe joueur invalide pour spawn), on utilise une classe de base standard
+                if (isNull _newUnit) then {
+                    _newUnit = _tempGroup createUnit ["B_Soldier_F", _pos, [], 0, "CAN_COLLIDE"];
+                };
+
+                // On copie l'équipement exact
+                if (!isNull _newUnit) then {
+                    _newUnit setUnitLoadout (getUnitLoadout player);
+                    
+                    // On change le visage avec une liste prédéfinie de visages communs
+                    private _faces = [
+                        "WhiteHead_01", "WhiteHead_02", "WhiteHead_03", "WhiteHead_04", "WhiteHead_05",
+                        "WhiteHead_06", "WhiteHead_07", "WhiteHead_08", "WhiteHead_09", "WhiteHead_10",
+                        "WhiteHead_11", "WhiteHead_12", "WhiteHead_13", "WhiteHead_14", "WhiteHead_15",
+                        "WhiteHead_16", "WhiteHead_17", "WhiteHead_18", "WhiteHead_19", "WhiteHead_20",
+                        "AfricanHead_01", "AfricanHead_02", "AfricanHead_03",
+                        "AsianHead_A3_01", "AsianHead_A3_02", "AsianHead_A3_03",
+                        "GreekHead_A3_01", "GreekHead_A3_02", "GreekHead_A3_03", "GreekHead_A3_04",
+                        "PersianHead_A3_01", "PersianHead_A3_02", "PersianHead_A3_03"
+                    ];
+                    _newUnit setFace (selectRandom _faces);
+                };
+            } else {
+                // CAS STANDARD
+                _newUnit = _tempGroup createUnit [_classOrType, _pos, [], 0, "CAN_COLLIDE"];
+            };
+
+            // Vérification finale
+            if (isNull _newUnit) exitWith {
+                //systemChat (localize "STR_ERR_NO_UNIT_SELECTED"); // Réutilisation message erreur générique
+                deleteGroup _tempGroup; // Nettoyage du groupe temporaire
+            };
             
             // Oriente l'unité comme le spawner
             if (!isNil "brothers_in_arms_spawner" && {!isNull brothers_in_arms_spawner}) then {
@@ -145,7 +194,7 @@ switch (_mode) do {
             };
             
             // Notification de départ
-            systemChat format [localize "STR_UNIT_ARRIVING", _name];
+            //systemChat format [localize "STR_UNIT_ARRIVING", _name];
             
             // Pause critique pour laisser le temps au moteur d'initialiser l'unité avant de changer de groupe
             sleep 0.7;

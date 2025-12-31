@@ -16,6 +16,8 @@ Ce scénario est conçu pour être joué en Solo ou en Coopération (1-15 joueur
 
 ---
 
+##
+
 ## 🌍 Langues Supportées
 
 - 🇬🇧 English
@@ -34,3 +36,8 @@ Ce scénario est conçu pour être joué en Solo ou en Coopération (1-15 joueur
 
 
 
+fonction pour modifier les capacités des IA et constence ! 
+modifier IA ennemi et allié pour qu'ils soient plus intelligents !
+fonction pour quitter la mission !
+modiifier le menu des missions pour ne pas pouvoir cumuler.
+un "comme moi" dans les options de "frères d'armes"

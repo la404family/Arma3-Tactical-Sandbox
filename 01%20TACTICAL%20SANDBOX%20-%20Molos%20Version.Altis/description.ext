@@ -28,6 +28,7 @@ class CfgFunctions
             class spawn_vehicles {};
             class spawn_weather_and_time {};
             class task_x_memory {};
+            class task_0_intro {};
             class task_1_launch {};
             class task_2_launch {};
             class task_3_launch {};
