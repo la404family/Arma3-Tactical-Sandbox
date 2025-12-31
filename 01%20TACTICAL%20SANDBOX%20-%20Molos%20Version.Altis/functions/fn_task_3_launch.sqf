@@ -2,6 +2,7 @@
     Description :
     Lance la Tâche 3 : "Guerre totale !"
     Enclenche un affrontement majeur avec support aérien allié contre des défenses blindées.
+    Objectif : détruire tous les chars ennemis
 */
 
 params [["_mode", "INIT"], ["_params", []]];
