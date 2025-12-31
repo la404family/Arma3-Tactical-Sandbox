@@ -7,10 +7,9 @@
 Bienvenue dans "Tactical Sandbox" de jeu unique où la liberté tactique est totale. Dès leur arrivée au QG, les joueurs prennent le contrôle complet de leur opération via un ensemble de zones interactives : Armes, véhicules, temps, mission... 
 
 **Le déroulement est simple et intuitif :**
-1.  **Préparation :** Équipez-vous à l'arsenal, choisissez vos véhicules (terrestres ou aériens) et recrutez des alliés IA ("Frères d'armes") pour renforcer votre escouade.
+1.  **Préparation :** Équipez-vous à l'arsenal, choisissez vos véhicules et recrutez vos alliés IA ("Frères d'armes") pour renforcer votre escouade.
 2.  **Planification :** Configurez l'environnement en modifiant l'heure et la météo selon vos préférences tactiques.
 3.  **Mission :** Sélectionnez votre objectif parmi une liste variée de tâches dynamiques (assassinat, extraction, destruction, etc.) via le tableau de commandement.
-4.  **Action :** Déployez-vous sur le terrain, accomplissez l'objectif et revenez...
 
 Ce scénario est conçu pour être joué en Solo ou en Coopération (1-15 joueurs), offrant une rejouabilité infinie grâce à la modularité des missions et des conditions d'engagement.
 
@@ -34,10 +33,8 @@ Ce scénario est conçu pour être joué en Solo ou en Coopération (1-15 joueur
 
 ---
 
-
-
 fonction pour modifier les capacités des IA et constence ! 
 modifier IA ennemi et allié pour qu'ils soient plus intelligents !
 fonction pour quitter la mission !
 modiifier le menu des missions pour ne pas pouvoir cumuler.
-un "comme moi" dans les options de "frères d'armes"
+corriger la cinématique d'introduction !

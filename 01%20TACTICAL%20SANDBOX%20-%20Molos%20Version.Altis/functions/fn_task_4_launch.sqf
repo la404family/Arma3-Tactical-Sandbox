@@ -1,10 +1,10 @@
 /*
     Fonction: MISSION_fnc_task_4_launch
     Description: Lance la Tâche 4 - Exfiltration d'otages.
-    - 2 Otages civils sur 2 spawns aléatoires (01-07).
-    - Gardes ennemis sur les autres points (01-07).
+    - 2 Otages civils sur 2 spawns aléatoires (01-12).
+    - Gardes ennemis sur les autres points (01-12).
     - Phase 1: Libération.
-    - Phase 2: Suivre joueur + Extraction Hélico (08-12).
+    - Phase 2: Suivre joueur + Extraction Hélico (13-18).
       - Sélection du point d'extraction le plus proche des otages.
       - Création d'un héliport invisible pour forcer l'atterrissage.
     - Phase 3: Départ et validation.
@@ -20,9 +20,9 @@ MISSION_var_task4_heli = objNull;
 MISSION_var_task4_crew = [];
 
 // 1. Définition des Spawns
-// Spawns Otages/Gardes: 01 à 07
+// Spawns Otages/Gardes: 01 à 12
 private _unitSpawns = [];
-for "_i" from 1 to 7 do {
+for "_i" from 1 to 12 do {
     private _markerName = format ["task_4_spawn_0%1", _i];
     private _spawnObj = missionNamespace getVariable [_markerName, objNull];
     if (!isNull _spawnObj) then {
@@ -30,9 +30,9 @@ for "_i" from 1 to 7 do {
     };
 };
 
-// Spawns LZ Hélico: 08 à 12
+// Spawns LZ Hélico: 13 à 18
 private _lzSpawns = [];
-for "_i" from 8 to 12 do {
+for "_i" from 13 to 18 do {
     private _numStr = if (_i < 10) then { format ["0%1", _i] } else { str _i };
     private _markerName = format ["task_4_spawn_%1", _numStr];
     private _spawnObj = missionNamespace getVariable [_markerName, objNull];

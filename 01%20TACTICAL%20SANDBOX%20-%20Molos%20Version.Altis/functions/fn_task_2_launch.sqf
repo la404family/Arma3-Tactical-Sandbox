@@ -28,7 +28,11 @@ _document enableSimulationGlobal false;
 // 2. Sélection du point de spawn
 private _spawnMarkers = [
     "task_2_spawn_01", "task_2_spawn_02", "task_2_spawn_03", 
-    "task_2_spawn_04", "task_2_spawn_05", "task_2_spawn_06"
+    "task_2_spawn_04", "task_2_spawn_05", "task_2_spawn_06",
+    "task_2_spawn_07", "task_2_spawn_08", "task_2_spawn_09",
+    "task_2_spawn_10", "task_2_spawn_11", "task_2_spawn_12",
+    "task_2_spawn_13", "task_2_spawn_14", "task_2_spawn_15",
+    "task_2_spawn_16", "task_2_spawn_17", "task_2_spawn_18"
 ];
 
 private _selectedMarker = selectRandom _spawnMarkers;

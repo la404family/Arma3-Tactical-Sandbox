@@ -220,7 +220,7 @@ switch (_mode) do {
         // 3. Logique de Spawn des Ennemis
         private _allSpawns = [];
         // Recherche des marqueurs "task_3_spawn_02" à "task_3_spawn_12"
-        for "_i" from 2 to 12 do {
+        for "_i" from 2 to 18 do {
             private _markerName = format ["task_3_spawn_%1", if (_i < 10) then {"0" + str _i} else {str _i}];
             private _spawnObj = missionNamespace getVariable [_markerName, objNull];
             

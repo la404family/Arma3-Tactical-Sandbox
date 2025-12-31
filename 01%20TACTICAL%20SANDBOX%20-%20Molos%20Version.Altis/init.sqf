@@ -71,16 +71,16 @@
 // Les éléments de la tache 2 : (spawn a positionner autours de bâtiments)
 //-------------------------------------------
 
-// task_2_spawn_01 à task_2_spawn_06 sont des héliports qui servent de lieux de spawn ennemi pour la tache 2
+// task_2_spawn_01 à task_2_spawn_18 sont des héliports qui servent de lieux de spawn ennemi pour la tache 2
 // task_2_document est un document à récupérer dans l'inventaire de l'officier ennemis
 
 //-------------------------------------------
 // Les éléments de la tache 3 : (spawn a positionner dans des zones couvertes)
 //-------------------------------------------
 
-// task_3_spawn_01 à task_3_spawn_12 sont des héliports qui servent de lieux de spawn pour la tache 3
+// task_3_spawn_01 à task_3_spawn_18 sont des héliports qui servent de lieux de spawn pour la tache 3
 // task_3_spawn_01 fait apparaitre un avion allié : A149 Gryphon (EMP_A149_Gryphon)
-// task_3_spawn_02 à task_  3_spawn_12 fait apparaître des ennemis aléatoirement :
+// task_3_spawn_02 à task_  3_spawn_18 fait apparaître des ennemis aléatoirement :
 //          task_x_officer_1 à task_x_officer_3 sont les officiers ennemis
 //          task_x_enemy_00 à task_x_enemy_15 sont des unités ennemies
 //          task_x_vehicle_1 et task_x_vehicle_2 sont les véhicules ennemis
@@ -90,10 +90,10 @@
 // Les éléments de la tache 4 : spawn a positionner dans des batiments
 //-------------------------------------------
 
-// task_4_spawn_01 et task_4_spawn_07 fait apparaître deux civils  (task_x_civil_01 et task_x_civil_02 sont les civils dans fn_task_x_memory)
-// task_4_spawn_01 à task_4_spawn_07 sont des héliports qui servent de lieux de spawn ennemi pour la tache 4
+// task_4_spawn_01 et task_4_spawn_12 fait apparaître deux civils  (task_x_civil_01 et task_x_civil_02 sont les civils dans fn_task_x_memory)
+// task_4_spawn_01 à task_4_spawn_12 sont des héliports qui servent de lieux de spawn ennemi pour la tache 4
 // task_x_helicoptere est un hélicoptère  qui vient chercher les civils 
-// task_4_spawn_08 à task_4_spawn_12 sont des héliports qui servent de lieux de pose de l'hélicoptère
+// task_4_spawn_13 à task_4_spawn_18 sont des héliports qui servent de lieux de pose de l'hélicoptère
 
 //-------------------------------------------
 // Les éléments de la tache 5 : spawn a positionner dans des batiments
