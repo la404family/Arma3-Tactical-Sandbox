@@ -42,6 +42,7 @@ supprimer (desmorçage de bombe)
 revoir les objectif de mission !
 fonction si le QG est detruit ! 
 Tache 1 à refaire, 
+TAche 5 a corriger ! 
 Modifier les équipements des ennemis !
 
 idée : 

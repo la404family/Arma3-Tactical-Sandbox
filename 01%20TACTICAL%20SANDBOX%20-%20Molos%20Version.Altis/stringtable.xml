@@ -613,30 +613,30 @@
             <Chinesesimp>进入任务指挥</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_1_TITLE">
-            <English>HQ Defense</English>
-            <French>Défense du Quartier Général</French>
-            <German>Hauptquartier-Verteidigung</German>
-            <Spanish>Defensa del Cuartel General</Spanish>
-            <Italian>Difesa del Quartier Generale</Italian>
-            <Russian>Защита штаба</Russian>
-            <Polish>Obrona Kwatery Głównej</Polish>
-            <Czech>Obrana velitelství</Czech>
-            <Turkish>Karargah Savunması</Turkish>
-            <Chinese>總部防禦</Chinese>
-            <Chinesesimp>总部防御</Chinesesimp>
+            <English>Manhunt</English>
+            <French>Chasse à l&apos;homme</French>
+            <German>Menschenjagd</German>
+            <Spanish>Cacería Humana</Spanish>
+            <Italian>Caccia all&apos;uomo</Italian>
+            <Russian>Охота на человека</Russian>
+            <Polish>Polowanie na człowieka</Polish>
+            <Czech>Hon na člověka</Czech>
+            <Turkish>İnsan Avı</Turkish>
+            <Chinese>追捕</Chinese>
+            <Chinesesimp>追捕</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_1_DESC">
-            <English>Defend the allied HQ against an enemy attack. Enemies will attempt to neutralize the command post and eliminate the officer in charge. Success: Eliminate all enemy threats. Failure: Death of the allied officer or player death. (Enemy forces: ~10 Infantry, 1-2 Light Vehicles)</English>
-            <French>Assurer la défense du Quartier Général allié face à une attaque ennemie. Les forces ennemies tenteront de neutraliser le poste de commandement et d&apos;éliminer l&apos;officier en charge. Réussite : Éliminer l&apos;ensemble des menaces ennemies. Échec : Mort de l&apos;officier allié ou de vous-même. (Forces ennemies : ~10 Infanterie, 1-2 Véhicules légers)</French>
-            <German>Verteidigen Sie das alliierte HQ gegen einen Angriff. Die Feinde werden versuchen, den Kommandoposten zu neutralisieren und den verantwortlichen Offizier zu eliminieren. Erfolg: Alle feindlichen Bedrohungen eliminieren. Misserfolg: Tod des alliierten Offiziers oder des Spielers. (Feindliche Kräfte: ~10 Infanterie, 1-2 leichte Fahrzeuge)</German>
-            <Spanish>Defender el cuartel general aliado contra un ataque enemigo. Los enemigos intentarán neutralizar el puesto de mando y eliminar al oficial a cargo. Éxito: Eliminar todas las amenazas enemigas. Fracaso: Muerte del oficial aliado o del jugador. (Fuerzas enemigas: ~10 Infantería, 1-2 Vehículos ligeros)</Spanish>
-            <Italian>Difendere il QG alleato da un attacco nemico. I nemici tenteranno di neutralizzare il posto di comando ed eliminare l&apos;ufficiale responsabile. Successo: Eliminare tutte le minacce nemiche. Fallimento: Morte dell&apos;ufficiale alleato o del giocatore. (Forze nemiche: ~10 Fanteria, 1-2 Veicoli leggeri)</Italian>
-            <Russian>Защитите союзный штаб от атаки. Противник попытается нейтрализовать командный пункт и устранить ответственного офицера. Успех: Уничтожить все вражеские угрозы. Провал: Смерть союзного офицера или игрока. (Вражеские силы: ~10 Пехота, 1-2 Легкая техника)</Russian>
-            <Polish>Broń aliancką kwaterę główną przed atakiem. Wrogowie będą próbowali zneutralizować stanowisko dowodzenia i wyeliminować oficera. Sukces: Wyeliminuj wszystkie zagrożenia. Porażka: Śmierć aliancego oficera lub gracza. (Siły wroga: ~10 Piechota, 1-2 Lekkie pojazdy)</Polish>
-            <Czech>Braňte spojenecké velitelství před útokem. Nepřátelé se pokusí neutralizovat velitelské stanoviště a eliminovat odpovědného důstojníka. Úspěch: Eliminovat všechny nepřátelské hrozby. Neúspěch: Smrt spojeneckého důstojníka nebo hráče. (Nepřátelské síly: ~10 Pěchota, 1-2 Lehká vozidla)</Czech>
-            <Turkish>Müttefik karargahı saldırıya karşı savunun. Düşmanlar komuta merkezini etkisiz hale getirmeye ve sorumlu subayı öldürmeye çalışacak. Başarı: Tüm düşman tehditleri ortadan kaldırın. Başarısızlık: Müttefik subayın veya oyuncunun ölümü. (Düşman güçleri: ~10 Piyade, 1-2 Hafif Araç)</Turkish>
-            <Chinese>保衛盟軍總部免受攻擊。敵人將試圖摧毀指揮所並消滅負責的軍官。成功：消滅所有敵人威脅。失敗：盟軍軍官或玩家死亡。（敵軍：~10 步兵，1-2 輕型載具）</Chinese>
-            <Chinesesimp>保卫盟军总部免受攻击。敌人将试图摧毁指挥所并消灭负责的军官。成功：消灭所有敌人威胁。失败：盟军军官或玩家死亡。（敌军：~10 步兵，1-2 轻型载具）</Chinesesimp>
+            <English>Two fugitives are attempting to escape by boat. Your mission: 1) Wait for intelligence on their location (5 min delay) 2) Intercept the fugitives before they reach their boats 3) Capture them (approach within 15m before they arm themselves) OR eliminate them. The fugitives will arm themselves at their final checkpoint. Mission fails if a fugitive escapes by boat. (Threats: 2 Fugitives, 7 Escape Boats)</English>
+            <French>Deux fugitifs tentent de s&apos;échapper en bateau. Votre mission : 1) Attendre les renseignements sur leur position (5 min de délai) 2) Intercepter les fugitifs avant qu&apos;ils n&apos;atteignent leurs bateaux 3) Les capturer (approcher à moins de 15m avant qu&apos;ils ne s&apos;arment) OU les éliminer. Les fugitifs s&apos;armeront à leur dernier point de contrôle. La mission échoue si un fugitif s&apos;échappe en bateau. (Menaces : 2 Fugitifs, 7 Bateaux d&apos;évasion)</French>
+            <German>Zwei Flüchtlinge versuchen, mit dem Boot zu entkommen. Ihre Mission: 1) Warten Sie auf Informationen über ihren Standort (5 Min. Verzögerung) 2) Fangen Sie die Flüchtlinge ab, bevor sie ihre Boote erreichen 3) Nehmen Sie sie gefangen (nähern Sie sich auf 15m, bevor sie sich bewaffnen) ODER eliminieren Sie sie. Die Flüchtlinge bewaffnen sich am letzten Kontrollpunkt. Mission scheitert, wenn ein Flüchtling mit dem Boot entkommt. (Bedrohungen: 2 Flüchtlinge, 7 Fluchtboote)</German>
+            <Spanish>Dos fugitivos intentan escapar en bote. Tu misión: 1) Esperar inteligencia sobre su ubicación (5 min de retraso) 2) Interceptar a los fugitivos antes de que lleguen a sus botes 3) Capturarlos (acercarse a menos de 15m antes de que se armen) O eliminarlos. Los fugitivos se armarán en su último punto de control. La misión falla si un fugitivo escapa en bote. (Amenazas: 2 Fugitivos, 7 Botes de escape)</Spanish>
+            <Italian>Due fuggitivi stanno tentando di fuggire in barca. La tua missione: 1) Attendi informazioni sulla loro posizione (5 min di ritardo) 2) Intercetta i fuggitivi prima che raggiungano le loro barche 3) Catturali (avvicinati entro 15m prima che si armino) O eliminali. I fuggitivi si armeranno all&apos;ultimo checkpoint. Missione fallita se un fuggitivo scappa in barca. (Minacce: 2 Fuggitivi, 7 Barche di fuga)</Italian>
+            <Russian>Двое беглецов пытаются сбежать на лодке. Ваша миссия: 1) Ждите разведданных об их местоположении (задержка 5 мин) 2) Перехватите беглецов до того, как они доберутся до лодок 3) Захватите их (подойдите на 15м до того, как они вооружатся) ИЛИ устраните их. Беглецы вооружатся на последнем контрольном пункте. Миссия провалена, если беглец сбежит на лодке. (Угрозы: 2 Беглеца, 7 Лодок для побега)</Russian>
+            <Polish>Dwóch zbiegów próbuje uciec łodzią. Twoja misja: 1) Poczekaj na informacje o ich lokalizacji (5 min opóźnienia) 2) Przechwycaj zbiegów zanim dotrą do łodzi 3) Schwytaj ich (zbliż się na 15m zanim się uzbroją) LUB wyeliminuj ich. Zbiegi uzbroją się na ostatnim punkcie kontrolnym. Misja nieudana, jeśli zbieg ucieknie łodzią. (Zagrożenia: 2 Zbiegi, 7 Łodzi ucieczki)</Polish>
+            <Czech>Dva uprchlíci se pokoušejí uniknout na lodi. Vaše mise: 1) Počkejte na informace o jejich poloze (5 min zpoždění) 2) Zachyťte uprchlíky, než dorazí k lodím 3) Zajměte je (přibližte se na 15m, než se vyzbrojí) NEBO je eliminujte. Uprchlíci se vyzbrojí na posledním kontrolním bodě. Mise selhává, pokud uprchlík unikne na lodi. (Hrozby: 2 Uprchlíci, 7 Únikových lodí)</Czech>
+            <Turkish>İki kaçak tekneyle kaçmaya çalışıyor. Göreviniz: 1) Konumları hakkında istihbarat bekleyin (5 dk gecikme) 2) Kaçakları teknelerine ulaşmadan yakalayın 3) Onları yakalayın (silahlanmadan önce 15m&apos;ye yaklaşın) VEYA etkisiz hale getirin. Kaçaklar son kontrol noktasında silahlanacak. Bir kaçak tekneyle kaçarsa görev başarısız. (Tehditler: 2 Kaçak, 7 Kaçış Teknesi)</Turkish>
+            <Chinese>兩名逃犯正試圖乘船逃脫。你的任務：1) 等待他們位置的情報（5分鐘延遲）2) 在逃犯到達船隻前攔截他們 3) 俘獲他們（在他們武裝前接近15米）或消滅他們。逃犯將在最後檢查點武裝自己。如果逃犯乘船逃脫，任務失敗。（威脅：2名逃犯，7艘逃生船）</Chinese>
+            <Chinesesimp>两名逃犯正试图乘船逃脱。你的任务：1) 等待他们位置的情报（5分钟延迟）2) 在逃犯到达船只前拦截他们 3) 俘获他们（在他们武装前接近15米）或消灭他们。逃犯将在最后检查点武装自己。如果逃犯乘船逃脱，任务失败。（威胁：2名逃犯，7艘逃生船）</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_2_TITLE">
             <English>Assassination and Recovery</English>
@@ -885,6 +885,19 @@
             <Chinese>解救人質</Chinese>
             <Chinesesimp>解救人质</Chinesesimp>
         </Key>
+        <Key ID="STR_NOTIF_CIVIL_KILLED">
+            <English>CIVILIAN CASUALTY: %1</English>
+            <French>PERTE CIVILE : %1</French>
+            <German>ZIVILOPFER: %1</German>
+            <Spanish>BAJA CIVIL: %1</Spanish>
+            <Italian>VITTIMA CIVILE: %1</Italian>
+            <Russian>ЖЕРТВА СРЕДИ ГРАЖДАНСКИХ: %1</Russian>
+            <Polish>OFIARA CYWILNA: %1</Polish>
+            <Czech>CIVILNÍ OBĚŤ: %1</Czech>
+            <Turkish>SİVİL KAYIP: %1</Turkish>
+            <Chinese>平民傷亡：%1</Chinese>
+            <Chinesesimp>平民伤亡：%1</Chinesesimp>
+        </Key>
         <Key ID="STR_MARKER_SEARCH_ZONE">
             <English>Search Zone</English>
             <French>Zone de Recherche</French>
@@ -964,17 +977,17 @@
             <Chinesesimp>已完成</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_5_DESC">
-            <English>Search for and defuse the two bombs hidden in the homes of Molos. Be advised, intelligence suggests 3 terrorists disguised as civilians are in the area. You have 35 minutes before detonation.</English>
-            <French>Cherchez et désamorcez les deux bombes cachées dans les habitations de Molos. Attention, des renseignements indiquent que 3 terroristes déguisés en civils sont présents sur zone. Vous avez 35 minutes avant la détonation.</French>
-            <German>Suchen und entschärfen Sie die zwei Bomben, die in den Häusern von Molos versteckt sind. Achtung, Geheimdienste deuten darauf hin, dass sich 3 als Zivilisten verkleidete Terroristen im Gebiet befinden. Sie haben 35 Minuten bis zur Detonation.</German>
-            <Spanish>Busque y desactive las dos bombas ocultas en las casas de Molos. Tenga en cuenta que la inteligencia sugiere que hay 3 terroristas disfrazados de civiles en la zona. Tiene 35 minutos antes de la detonación.</Spanish>
-            <Italian>Cerca e disinnesca le due bombe nascoste nelle case di Molos. Attenzione, l&apos;intelligence suggerisce che ci sono 3 terroristi travestiti da civili nell&apos;area. Hai 35 minuti prima della detonazione.</Italian>
-            <Russian>Найдите и обезвредьте две бомбы, спрятанные в домах в Молосе. Внимание, разведка сообщает, что в этом районе находятся 3 террориста, замаскированных под гражданских. У вас 35 минут до детонации.</Russian>
-            <Polish>Znajdź i rozbrój dwie bomby ukryte w domach w Molos. Uwaga, wywiad sugeruje, że w okolicy znajduje się 3 terrorystów przebranych za cywilów. Masz 35 minut do detonacji.</Polish>
-            <Czech>Najděte a zneškodněte dvě bomby ukryté v domech v Molosu. Pozor, zpravodajské informace naznačují, že v oblasti jsou 3 teroristé převlečení za civilisty. Máte 35 minut do detonace.</Czech>
-            <Turkish>Molos&apos;taki evlerde gizlenmiş iki bombayı bulun ve etkisiz hale getirin. Dikkat, istihbarat bölgede sivil kılığına girmiş 3 terörist olduğunu gösteriyor. Patlamaya kadar 35 dakikanız var.</Turkish>
-            <Chinese>搜尋並拆除隱藏在莫洛斯房屋中的兩枚炸彈。注意，情報顯示該地區有 3 名偽裝成平民的恐怖分子。距離引爆還有 35 分鐘。</Chinese>
-            <Chinesesimp>搜寻并拆除隐藏在莫洛斯房屋中的两枚炸弹。注意，情报显示该地区有 3 名伪装成平民的恐怖分子。距离引爆还有 35 分钟。</Chinesesimp>
+            <English>Two bombs have been planted in a civilian area indicated on the map. Your mission: 1) Locate the 2 bombs by listening for the beeping sound 2) Defuse both explosives before detonation 3) WARNING: Terrorists disguised as civilians are present - minimize collateral damage. At least 2 bombs must be defused. Mission fails if a bomb explodes OR 2 civilians are killed. (Threats: 2 Bombs, ~3 Terrorists among 50 civilians)</English>
+            <French>Deux bombes ont été placées dans une zone civile indiquée sur la carte. Votre mission : 1) Localiser les 2 bombes en vous repérant au son des bips 2) Désamorcer les deux explosifs avant la détonation 3) ATTENTION : Des terroristes déguisés en civils sont présents - minimisez les dommages collatéraux. Les 2 bombes doivent être désamorcées. La mission échoue si une bombe explose OU si 2 civils sont tués. (Menaces : 2 Bombes, ~3 Terroristes parmi 50 civils)</French>
+            <German>Zwei Bomben wurden in einem Zivilgebiet platziert, das auf der Karte markiert ist. Ihre Mission: 1) Lokalisieren Sie die 2 Bomben anhand des Pieptons 2) Entschärfen Sie beide Sprengkörper vor der Detonation 3) WARNUNG: Als Zivilisten getarnte Terroristen sind anwesend - minimieren Sie Kollateralschäden. Beide Bomben müssen entschärft werden. Mission scheitert bei Explosion ODER 2 toten Zivilisten. (Bedrohungen: 2 Bomben, ~3 Terroristen unter 50 Zivilisten)</German>
+            <Spanish>Dos bombas han sido colocadas en una zona civil indicada en el mapa. Tu misión: 1) Localiza las 2 bombas escuchando el pitido 2) Desactiva ambos explosivos antes de la detonación 3) ADVERTENCIA: Hay terroristas disfrazados de civiles - minimiza los daños colaterales. Las 2 bombas deben ser desactivadas. La misión fracasa si explota una bomba O mueren 2 civiles. (Amenazas: 2 Bombas, ~3 Terroristas entre 50 civiles)</Spanish>
+            <Italian>Due bombe sono state piazzate in un&apos;area civile indicata sulla mappa. La tua missione: 1) Localizza le 2 bombe ascoltando il segnale acustico 2) Disinnesca entrambi gli esplosivi prima della detonazione 3) ATTENZIONE: Sono presenti terroristi travestiti da civili - minimizza i danni collaterali. Entrambe le bombe devono essere disinnescate. Missione fallita se esplode una bomba O muoiono 2 civili. (Minacce: 2 Bombe, ~3 Terroristi tra 50 civili)</Italian>
+            <Russian>Две бомбы заложены в гражданской зоне, указанной на карте. Ваша миссия: 1) Найдите 2 бомбы по звуку писка 2) Обезвредьте оба взрывных устройства до детонации 3) ВНИМАНИЕ: Присутствуют террористы под видом гражданских - минимизируйте сопутствующий ущерб. Обе бомбы должны быть обезврежены. Миссия провалена при взрыве ИЛИ гибели 2 гражданских. (Угрозы: 2 Бомбы, ~3 Террориста среди 50 гражданских)</Russian>
+            <Polish>Dwie bomby zostały umieszczone w strefie cywilnej zaznaczonej na mapie. Twoja misja: 1) Zlokalizuj 2 bomby nasłuchując pikania 2) Rozbrój oba ładunki przed detonacją 3) OSTRZEŻENIE: Obecni są terroryści przebrani za cywilów - minimalizuj straty uboczne. Obie bomby muszą być rozbrojone. Misja nieudana przy wybuchu LUB śmierci 2 cywilów. (Zagrożenia: 2 Bomby, ~3 Terrorystów wśród 50 cywilów)</Polish>
+            <Czech>Dvě bomby byly umístěny v civilní oblasti označené na mapě. Vaše mise: 1) Najděte 2 bomby podle pípání 2) Zneškodněte oba výbušniny před detonací 3) VAROVÁNÍ: Jsou přítomni teroristé převlečení za civilisty - minimalizujte vedlejší škody. Obě bomby musí být zneškodněny. Mise selže při výbuchu NEBO smrti 2 civilistů. (Hrozby: 2 Bomby, ~3 Teroristé mezi 50 civilisty)</Czech>
+            <Turkish>Haritada işaretli sivil bölgeye iki bomba yerleştirildi. Göreviniz: 1) Bip sesini dinleyerek 2 bombayı bulun 2) Patlamadan önce her iki patlayıcıyı da etkisiz hale getirin 3) UYARI: Sivil kılığında teröristler mevcut - yan hasarı minimize edin. Her iki bomba etkisiz hale getirilmeli. Patlama VEYA 2 sivil ölümü durumunda görev başarısız. (Tehditler: 2 Bomba, 50 sivil arasında ~3 Terörist)</Turkish>
+            <Chinese>兩枚炸彈已被放置在地圖上標記的平民區域。你的任務：1) 通過聆聽嗶嗶聲定位2枚炸彈 2) 在引爆前拆除兩個爆炸物 3) 警告：有偽裝成平民的恐怖分子 - 盡量減少附帶損害。必須拆除2枚炸彈。炸彈爆炸或2名平民死亡則任務失敗。（威脅：2枚炸彈，50名平民中約3名恐怖分子）</Chinese>
+            <Chinesesimp>两枚炸弹已被放置在地图上标记的平民区域。你的任务：1) 通过聆听哔哔声定位2枚炸弹 2) 在引爆前拆除两个爆炸物 3) 警告：有伪装成平民的恐怖分子 - 尽量减少附带损害。必须拆除2枚炸弹。炸弹爆炸或2名平民死亡则任务失败。（威胁：2枚炸弹，50名平民中约3名恐怖分子）</Chinesesimp>
         </Key>
         <Key ID="STR_ACTION_DEFUSE_EXPLOSIVE">
             <English>Defuse the explosive</English>
@@ -1001,6 +1014,71 @@
             <Turkish>Patlayıcı etkisiz hale getirildi!</Turkish>
             <Chinese>爆裂物已拆除！</Chinese>
             <Chinesesimp>爆裂物已拆除！</Chinesesimp>
+        </Key>
+        <Key ID="STR_NOTIF_TASK1_START">
+            <English>MANHUNT INITIATED - Await intelligence on fugitive locations (5 min)</English>
+            <French>CHASSE À L&apos;HOMME LANCÉE - Attendez les renseignements sur les fugitifs (5 min)</French>
+            <German>MENSCHENJAGD GESTARTET - Warten Sie auf Informationen über die Flüchtlinge (5 min)</German>
+            <Spanish>CACERÍA INICIADA - Espera información sobre los fugitivos (5 min)</Spanish>
+            <Italian>CACCIA INIZIATA - Attendi informazioni sui fuggitivi (5 min)</Italian>
+            <Russian>ОХОТА НАЧАТА - Ждите разведданных о беглецах (5 мин)</Russian>
+            <Polish>POLOWANIE ROZPOCZĘTE - Czekaj na informacje o zbiegach (5 min)</Polish>
+            <Czech>HON ZAHÁJEN - Čekejte na informace o uprchlících (5 min)</Czech>
+            <Turkish>AV BAŞLATILDI - Kaçaklar hakkında istihbarat bekleyin (5 dk)</Turkish>
+            <Chinese>追捕開始 - 等待逃犯位置情報（5分鐘）</Chinese>
+            <Chinesesimp>追捕开始 - 等待逃犯位置情报（5分钟）</Chinesesimp>
+        </Key>
+        <Key ID="STR_HINT_FUGITIVES_SPOTTED">
+            <English>INTEL: Fugitives spotted! Intercept them before they escape!</English>
+            <French>RENSEIGNEMENT : Fugitifs repérés ! Interceptez-les avant qu&apos;ils ne s&apos;échappent !</French>
+            <German>INTEL: Flüchtlinge gesichtet! Fangen Sie sie ab, bevor sie entkommen!</German>
+            <Spanish>INTEL: ¡Fugitivos avistados! ¡Intercéptalos antes de que escapen!</Spanish>
+            <Italian>INTEL: Fuggitivi avvistati! Intercettali prima che scappino!</Italian>
+            <Russian>РАЗВЕДКА: Беглецы обнаружены! Перехватите их до побега!</Russian>
+            <Polish>WYWIAD: Zbiegi zauważeni! Przechwyć ich przed ucieczką!</Polish>
+            <Czech>INTEL: Uprchlíci spatřeni! Zachyťte je, než uniknou!</Czech>
+            <Turkish>İSTİHBARAT: Kaçaklar görüldü! Kaçmadan önce yakalayın!</Turkish>
+            <Chinese>情報：發現逃犯！在他們逃脫前攔截！</Chinese>
+            <Chinesesimp>情报：发现逃犯！在他们逃脱前拦截！</Chinesesimp>
+        </Key>
+        <Key ID="STR_HINT_FUGITIVE_ARMED">
+            <English>WARNING: A fugitive has armed himself!</English>
+            <French>ATTENTION : Un fugitif s&apos;est armé !</French>
+            <German>WARNUNG: Ein Flüchtling hat sich bewaffnet!</German>
+            <Spanish>ADVERTENCIA: ¡Un fugitivo se ha armado!</Spanish>
+            <Italian>ATTENZIONE: Un fuggitivo si è armato!</Italian>
+            <Russian>ВНИМАНИЕ: Беглец вооружился!</Russian>
+            <Polish>OSTRZEŻENIE: Zbieg się uzbaja!</Polish>
+            <Czech>VAROVÁNÍ: Uprchlík se vyzbrojil!</Czech>
+            <Turkish>UYARI: Bir kaçak silahlandı!</Turkish>
+            <Chinese>警告：一名逃犯已武裝！</Chinese>
+            <Chinesesimp>警告：一名逃犯已武装！</Chinesesimp>
+        </Key>
+        <Key ID="STR_HINT_FUGITIVE_SURRENDERED">
+            <English>A fugitive has surrendered!</English>
+            <French>Un fugitif s&apos;est rendu !</French>
+            <German>Ein Flüchtling hat sich ergeben!</German>
+            <Spanish>¡Un fugitivo se ha rendido!</Spanish>
+            <Italian>Un fuggitivo si è arreso!</Italian>
+            <Russian>Беглец сдался!</Russian>
+            <Polish>Zbieg się poddał!</Polish>
+            <Czech>Uprchlík se vzdal!</Czech>
+            <Turkish>Bir kaçak teslim oldu!</Turkish>
+            <Chinese>一名逃犯已投降！</Chinese>
+            <Chinesesimp>一名逃犯已投降！</Chinesesimp>
+        </Key>
+        <Key ID="STR_NOTIF_TASK1_FAILED">
+            <English>MISSION FAILED - A fugitive has escaped!</English>
+            <French>MISSION ÉCHOUÉE - Un fugitif s&apos;est échappé !</French>
+            <German>MISSION GESCHEITERT - Ein Flüchtling ist entkommen!</German>
+            <Spanish>MISIÓN FALLIDA - ¡Un fugitivo ha escapado!</Spanish>
+            <Italian>MISSIONE FALLITA - Un fuggitivo è scappato!</Italian>
+            <Russian>МИССИЯ ПРОВАЛЕНА - Беглец сбежал!</Russian>
+            <Polish>MISJA NIEUDANA - Zbieg uciekł!</Polish>
+            <Czech>MISE SELHALA - Uprchlík unikl!</Czech>
+            <Turkish>GÖREV BAŞARISIZ - Bir kaçak kaçtı!</Turkish>
+            <Chinese>任務失敗 - 一名逃犯逃脫了！</Chinese>
+            <Chinesesimp>任务失败 - 一名逃犯逃脱了！</Chinesesimp>
         </Key>
         <Key ID="STR_NOTIF_TASK5_START_TITLE">
             <English>TASK 5 ACTIVATED</English>

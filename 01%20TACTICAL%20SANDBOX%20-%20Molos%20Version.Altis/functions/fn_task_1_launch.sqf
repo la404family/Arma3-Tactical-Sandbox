@@ -1,272 +1,346 @@
 /*
-    Fonction: MISSION_fnc_task_1_launch
-    Description: Fait apparaître des ennemis attaquant l'officier.
-    - Toutes les 3 secondes : spawn 1 fantassin
-    - Après avoir atteint le max d'infanterie, spawn 1-2 véhicules (PAS de chars)
-    - S'arrête après 10 spawns au total
+    =========================================================================
+    fn_task_1_launch.sqf - Tâche 1 : Chasse à l'Homme
+    =========================================================================
+    
+    LOGIQUE:
+    - 2 fugitifs (random sur 3) tentent de s'échapper en bateau
+    - Les fugitifs suivent des chemins (7 chemins de 6 waypoints)
+    - Spawn après 5 minutes de délai
+    - REDDITION: Si joueur < 15m avant WP6 → mains levées, setCaptive
+    - ARMEMENT: Au WP6, le fugitif s'arme et devient OPFOR
+    - VICTOIRE: Tous les fugitifs capturés OU morts
+    - ÉCHEC: Un fugitif entre dans le trigger d'échappement
+    
+    =========================================================================
 */
 
 // Sécurité : Code exécuté uniquement sur le serveur
 if (!isServer) exitWith {};
 
-// Attend que la variable liste des ennemis soit initialisée
-waitUntil { !isNil "MISSION_var_enemies" };
-if (count MISSION_var_enemies == 0) exitWith {}; // Arrête si pas d'ennemis configurés
-
-// Vérification de QG_Center avec fallback
-if (isNil "QG_Center") then {
-    if (!isNil "batiment_officer") then {
-        QG_Center = batiment_officer;
-    } else {
-        if (!isNil "vehicles_spawner") then {
-            QG_Center = vehicles_spawner;
-        } else {
-            systemChat "ERREUR: QG_Center non défini!";
-        };
-    };
+// Attend que les templates soient initialisés
+waitUntil { !isNil "MISSION_var_fugitives" };
+if (count MISSION_var_fugitives == 0) exitWith {
+    systemChat "ERREUR: Aucun fugitif en mémoire!";
 };
 
-// Liste des marqueurs possibles pour l'apparition des ennemis
-private _spawnMarkers = [
-    "task_1_spawn_01", "task_1_spawn_02", "task_1_spawn_03", 
-    "task_1_spawn_04", "task_1_spawn_05", "task_1_spawn_06"
+// ============================================================================
+// SECTION 1: CONFIGURATION
+// ============================================================================
+
+// Définition des 7 chemins (chaque chemin : 6 waypoints)
+private _paths = [
+    ["task_1_spawn_01", "task_1_spawn_02", "task_1_spawn_03", "task_1_spawn_04", "task_1_spawn_05", "task_1_spawn_06"],
+    ["task_1_spawn_07", "task_1_spawn_08", "task_1_spawn_09", "task_1_spawn_10", "task_1_spawn_11", "task_1_spawn_12"],
+    ["task_1_spawn_13", "task_1_spawn_14", "task_1_spawn_15", "task_1_spawn_16", "task_1_spawn_17", "task_1_spawn_18"],
+    ["task_1_spawn_19", "task_1_spawn_20", "task_1_spawn_21", "task_1_spawn_22", "task_1_spawn_23", "task_1_spawn_24"],
+    ["task_1_spawn_25", "task_1_spawn_26", "task_1_spawn_27", "task_1_spawn_28", "task_1_spawn_29", "task_1_spawn_30"],
+    ["task_1_spawn_31", "task_1_spawn_32", "task_1_spawn_33", "task_1_spawn_34", "task_1_spawn_35", "task_1_spawn_36"],
+    ["task_1_spawn_37", "task_1_spawn_38", "task_1_spawn_39", "task_1_spawn_40", "task_1_spawn_41", "task_1_spawn_42"]
 ];
 
+// Variables globales pour le suivi
+MISSION_var_task1_running = true;
+MISSION_var_task1_fugitives = [];
+MISSION_var_task1_boats = [];
+MISSION_var_task1_escape_trigger = objNull;
+
 // ============================================================================
-// Créer la tâche Arma 3
+// SECTION 2: CRÉATION DE LA TÂCHE
 // ============================================================================
-private _taskID = "task_1_hq_defense";
+
+private _taskID = "task_1";
+
+// Position centrale pour la tâche (premier waypoint du premier chemin)
+private _firstSpawn = missionNamespace getVariable ["task_1_spawn_01", objNull];
+private _taskPos = if (!isNull _firstSpawn) then { getPos _firstSpawn } else { [0,0,0] };
 
 [
-    true,                                           // Exécuter globalement (tous les clients)
-    [_taskID],                                      // ID de la tâche
-    [
-        localize "STR_TASK_1_DESC",                 // Description
-        localize "STR_TASK_1_TITLE",                // Titre
-        ""                                          // Marqueur (optionnel)
-    ],
-    getPosWorld QG_Center,                          // Position de la tâche (sur QG_Center)
-    "CREATED",                                      // État initial
-    1,                                              // Priorité
-    true,                                           // Afficher notification
-    "defend"                                        // Type d'icône de tâche
+    true,
+    [_taskID],
+    [localize "STR_TASK_1_DESC", localize "STR_TASK_1_TITLE", ""],
+    _taskPos,
+    "CREATED",
+    1,
+    true,
+    "search"
 ] call BIS_fnc_taskCreate;
 
-// Variable globale pour suivre les unités ennemies spawnées spécifiquement pour cette tâche
-MISSION_var_task1_spawned_enemies = [];
+// Notification de démarrage
+hint (localize "STR_NOTIF_TASK1_START");
 
-// Thread de gestion du spawn des vagues d'ennemis
-[_spawnMarkers] spawn {
-    params ["_spawnMarkers"];
+// ============================================================================
+// SECTION 3: SÉLECTION ALÉATOIRE DES FUGITIFS ET CHEMINS
+// ============================================================================
+
+// Sélectionner 2 fugitifs parmi 3
+private _fugitiveTemplates = MISSION_var_fugitives call BIS_fnc_arrayShuffle;
+_fugitiveTemplates = _fugitiveTemplates select [0, 2]; // Prendre les 2 premiers
+
+// Sélectionner 2 chemins différents parmi 7
+private _availablePaths = [0, 1, 2, 3, 4, 5, 6] call BIS_fnc_arrayShuffle;
+private _selectedPaths = _availablePaths select [0, 2];
+
+// ============================================================================
+// SECTION 4: SPAWN DIFFÉRÉ (5 MINUTES)
+// ============================================================================
+
+[_fugitiveTemplates, _selectedPaths, _paths, _taskID] spawn {
+    params ["_fugitiveTemplates", "_selectedPaths", "_paths", "_taskID"];
     
-    // Configuration de la vague
-    private _maxInfantry = 5 + floor (random 6);  // Entre 5 et 10 fantassins
-    private _spawnedInfantry = 0;                 // Compteur infanterie
-    private _vehiclesSpawned = false;             // Flag spawn véhicules
-    private _totalSpawns = 0;                     // Total unités
-    private _maxTotalSpawns = 10;                 // Limite absolue
+    // Attendre 5 minutes (300 secondes)
+    sleep 300;
     
-    // Création du groupe d'infanterie
-    private _grpInf = createGroup [east, true];
-    _grpInf setBehaviour "AWARE";  // Comportement : Conscient / Alerte
-    _grpInf setCombatMode "RED";   // Feu à volonté
-    _grpInf enableAttack true;     // Autoriser l'attaque
+    // Vérifier si la tâche est toujours active
+    if (!MISSION_var_task1_running) exitWith {};
     
-    // Boucle de spawn
-    while {_totalSpawns < _maxTotalSpawns} do {
-        sleep 3; // Délai entre chaque spawn
+    // Notification
+    hint (localize "STR_HINT_FUGITIVES_SPOTTED");
+    
+    // ========================================================================
+    // SPAWN DES BATEAUX
+    // ========================================================================
+    {
+        _x params ["_name", "_type", "_pos", "_dir", "_side", "_extra"];
         
-        // Sélection pseudo-aléatoire du point de spawn
-        private _spawnMarker = selectRandom _spawnMarkers;
-        private _spawnObj = missionNamespace getVariable [_spawnMarker, objNull];
-        // Calcul position (sécurité si objet null)
-        private _spawnPos = if (!isNull _spawnObj) then { getPos _spawnObj } else { [0,0,0] };
+        // Position du bateau (utiliser task_1_boat_place_X)
+        private _idx = _forEachIndex + 1;
+        private _placeMarker = format ["task_1_boat_place_%1", _idx];
+        private _placeObj = missionNamespace getVariable [_placeMarker, objNull];
         
-        if (_spawnPos isEqualTo [0,0,0]) then { continue; }; // Skip si position invalide
-        
-        // Spawn 1 Infanterie par itération
-        if (_spawnedInfantry < _maxInfantry && _totalSpawns < _maxTotalSpawns) then {
-            if (count MISSION_var_enemies > 0) then {
-                // Sélection d'un template d'ennemi aléatoire
-                private _template = selectRandom MISSION_var_enemies;
-                _template params ["_tVar", "_tType", "_tPos", "_tDir", "_tSide", "_tLoadout"];
-                
-                // Création unité
-                private _unit = _grpInf createUnit [_tType, _spawnPos, [], 5, "NONE"];
-                _unit setUnitLoadout _tLoadout;
-                
-                // Révéler la cible (QG_Center)
-                _unit reveal [QG_Center, 4];
-                _unit doMove (getPos QG_Center);
-                
-                _spawnedInfantry = _spawnedInfantry + 1;
-                _totalSpawns = _totalSpawns + 1;
-                
-                // Donner un nom unique à l'unité pour le suivi interne Arma
-                private _unitName = format ["task1_enemy_%1", _totalSpawns];
-                _unit setVehicleVarName _unitName;
-                missionNamespace setVariable [_unitName, _unit, true];
-                
-                // Ajouter à la liste de suivi du script
-                MISSION_var_task1_spawned_enemies pushBack _unit;
-                
-                // Configuration initiale du groupe au premier spawn
-                if (_spawnedInfantry == 1) then {
-                    _grpInf setBehaviour "AWARE";   // Important pour le pathfinding en bâtiment
-                    _grpInf setCombatMode "RED";
-                    _grpInf setSpeedMode "FULL";    // Courir
-                    
-                    // Création waypoint SAD (Search and Destroy) sur QG_Center
-                    private _wp = _grpInf addWaypoint [getPosWorld QG_Center, 5];
-                    _wp setWaypointType "SAD";
-                    _wp setWaypointBehaviour "AWARE";
-                    _wp setWaypointCombatMode "RED";
-                    _wp setWaypointCompletionRadius 3;
-                };
-                
-                // Thread individuel de patrouille autour du QG
-                [_unit] spawn {
-                    params ["_unit"];
-                    
-                    // Attendre que l'unité soit proche du QG (50m)
-                    waitUntil { sleep 1; (!alive _unit) || (_unit distance QG_Center < 50) };
-                    if (!alive _unit) exitWith {};
-                    
-                    _unit setUnitPos "AUTO";
-                    (group _unit) setBehaviour "AWARE";
-                    
-                    // Boucle de recherche aléatoire autour du QG
-                    while {alive _unit} do {
-                        // Position aléatoire entre 2 et 10 mètres du QG_Center
-                        private _dist = 2 + random 8;
-                        private _dir = random 360;
-                        private _searchPos = QG_Center getRelPos [_dist, _dir];
-                        
-                        _unit doMove _searchPos;
-                        
-                        // Change de lieu toutes les 35 secondes
-                        sleep 35;
-                    };
-                };
+        if (!isNull _placeObj) then {
+            private _boatPos = getPos _placeObj;
+            private _boat = createVehicle [_type, _boatPos, [], 0, "NONE"];
+            _boat setDir (getDir _placeObj);
+            _boat setFuel 1;
+            
+            // Direction marker pour la fuite
+            private _dirMarker = format ["task_1_boat_direction_%1", _idx];
+            private _dirObj = missionNamespace getVariable [_dirMarker, objNull];
+            if (!isNull _dirObj) then {
+                _boat setVariable ["escapeDirection", getPos _dirObj, true];
             };
+            
+            MISSION_var_task1_boats pushBack _boat;
         };
+    } forEach MISSION_var_boats;
+    
+    // ========================================================================
+    // RECRÉATION DU TRIGGER D'ÉCHAPPEMENT
+    // ========================================================================
+    if (count MISSION_var_escape_trigger > 0) then {
+        MISSION_var_escape_trigger params ["_trigPos", "_trigDir", "_trigArea"];
         
-        // Spawn Véhicules une fois l'infanterie au complet
-        if (_spawnedInfantry >= _maxInfantry && !_vehiclesSpawned && _totalSpawns < _maxTotalSpawns) then {
-            _vehiclesSpawned = true;
+        private _trigger = createTrigger ["EmptyDetector", _trigPos, false];
+        _trigger setTriggerArea _trigArea;
+        _trigger setDir _trigDir;
+        _trigger setTriggerActivation ["EAST", "PRESENT", false];
+        _trigger setTriggerStatements [
+            "this && {_x getVariable ['isFugitive', false]} count thisList > 0",
+            "MISSION_var_task1_escaped = true;",
+            ""
+        ];
+        
+        MISSION_var_task1_escape_trigger = _trigger;
+    };
+    
+    // ========================================================================
+    // SPAWN DES FUGITIFS
+    // ========================================================================
+    private _grpFugitives = createGroup [east, true];
+    
+    {
+        private _template = _x;
+        private _pathIndex = _selectedPaths select _forEachIndex;
+        private _path = _paths select _pathIndex;
+        private _boatIndex = _pathIndex; // Chemin X → Bateau X
+        
+        _template params ["_name", "_type", "_pos", "_dir", "_side", "_loadout"];
+        
+        // Position de départ (WP1 du chemin)
+        private _startMarker = _path select 0;
+        private _startObj = missionNamespace getVariable [_startMarker, objNull];
+        
+        if (!isNull _startObj) then {
+            private _spawnPos = getPos _startObj;
             
-            private _nbVeh = 1 + floor (random 2); // 1 ou 2 véhicules
+            // Créer le fugitif
+            private _fugitive = _grpFugitives createUnit [_type, _spawnPos, [], 0, "NONE"];
+            _fugitive setUnitLoadout _loadout;
+            _fugitive setDir (getDir _startObj);
             
-            for "_v" from 1 to _nbVeh do {
-                if (count MISSION_var_vehicles > 0 && _totalSpawns < _maxTotalSpawns) then {
-                    // Sélection template véhicule
-                    private _vTemplate = selectRandom MISSION_var_vehicles;
-                    _vTemplate params ["_vVar", "_vType", "_vPos", "_vDir", "_vSide", "_vLoadout"];
+            // Variables de contrôle
+            _fugitive setVariable ["isFugitive", true, true];
+            _fugitive setVariable ["isCaptured", false, true];
+            _fugitive setVariable ["isArmed", false, true];
+            _fugitive setVariable ["currentWP", 0, true];
+            _fugitive setVariable ["assignedPath", _path, true];
+            _fugitive setVariable ["assignedBoatIndex", _boatIndex, true];
+            
+            // Comportement initial (civil en fuite)
+            _fugitive setCaptive true;
+            _fugitive setBehaviour "CARELESS";
+            _fugitive setSpeedMode "FULL";
+            _fugitive forceSpeed 6;
+            
+            // Désarmer le fugitif
+            removeAllWeapons _fugitive;
+            
+            MISSION_var_task1_fugitives pushBack _fugitive;
+            
+            // Thread individuel pour chaque fugitif
+            [_fugitive, _path, _boatIndex] spawn {
+                params ["_fugitive", "_path", "_boatIndex"];
+                
+                private _wpIndex = 0;
+                
+                while {alive _fugitive && !(_fugitive getVariable ["isCaptured", false]) && MISSION_var_task1_running} do {
                     
-                    // Création véhicule
-                    private _veh = createVehicle [_vType, _spawnPos, [], 15, "NONE"];
-                    _veh setDir (getDir _spawnObj);
-                    
-                    private _grpVeh = createGroup [east, true];
-                    _grpVeh setBehaviour "CARELESS"; // "CARELESS" pour éviter que le véhicule s'arrête au premier coup de feu
-                    _grpVeh setCombatMode "RED";
-                    
-                    // Création Pilote
-                    if (count MISSION_var_enemies > 0) then {
-                        private _dTemplate = selectRandom MISSION_var_enemies;
-                        _dTemplate params ["_dVar", "_dType", "", "", "", "_dLoadout"];
-                        private _driver = _grpVeh createUnit [_dType, [0,0,0], [], 0, "NONE"];
-                        _driver moveInDriver _veh;
-                        _driver setUnitLoadout _dLoadout;
-                    };
-                    
-                    // Création Tireur/Passager
-                    if (count MISSION_var_enemies > 0) then {
-                        private _cTemplate = selectRandom MISSION_var_enemies;
-                        _cTemplate params ["_cVar", "_cType", "", "", "", "_cLoadout"];
-                        private _crew = _grpVeh createUnit [_cType, [0,0,0], [], 0, "NONE"];
-                        // Priorité : Gunner > Commander > Cargo
-                        if (_veh emptyPositions "Gunner" > 0) then { _crew moveInGunner _veh; }
-                        else { if (_veh emptyPositions "Commander" > 0) then { _crew moveInCommander _veh; }
-                        else { _crew moveInCargo _veh; };};
-                        _crew setUnitLoadout _cLoadout;
-                    };
-                    
-                    // Ordre de mouvement vers le QG
-                    _grpVeh move (getPosWorld QG_Center);
-                    
-                    // Script IA véhicule : Combattre une fois arrivé
-                    [_veh, _grpVeh] spawn {
-                        params ["_veh", "_grp"];
-                        // Attendre arrivée
-                        waitUntil { sleep 1; (!alive _veh) || (_veh distance QG_Center < 30) };
+                    // Vérifier la proximité des joueurs (reddition avant WP6)
+                    if (_wpIndex < 5 && !(_fugitive getVariable ["isCaptured", false])) then {
+                        private _nearestPlayer = objNull;
+                        private _nearestDist = 9999;
                         
-                        if (alive _veh) then {
-                            // Débarquer
-                            { unassignVehicle _x; } forEach (units _grp);
-                            units _grp allowGetIn false;
-                            _grp leaveVehicle _veh;
-                            _veh lock false;
+                        {
+                            if (alive _x && _x distance _fugitive < _nearestDist) then {
+                                _nearestDist = _x distance _fugitive;
+                                _nearestPlayer = _x;
+                            };
+                        } forEach allPlayers;
+                        
+                        // REDDITION si joueur < 15m
+                        if (_nearestDist < 15) then {
+                            _fugitive setVariable ["isCaptured", true, true];
+                            _fugitive setCaptive true;
                             
-                            // Passer en mode combat
-                            _grp setBehaviour "COMBAT";
+                            // Arrêter le mouvement
+                            doStop _fugitive;
+                            _fugitive disableAI "MOVE";
+                            _fugitive disableAI "PATH";
                             
-                            // Attaque QG
-                            { _x reveal [QG_Center, 4]; _x doMove (getPos QG_Center); } forEach (units _grp);
-                            private _wp = _grp addWaypoint [getPosWorld QG_Center, 5];
-                            _wp setWaypointType "SAD";
-                            _wp setWaypointBehaviour "COMBAT";
+                            // Animation mains levées
+                            _fugitive playMoveNow "AmovPercMstpSsurWnonDnon";
+                            
+                            // Notification
+                            hint (localize "STR_HINT_FUGITIVE_SURRENDERED");
+                            
+                            // Sortir de la boucle
+                            break;
                         };
                     };
                     
-                    _totalSpawns = _totalSpawns + 1;
+                    // Déplacement vers le waypoint actuel
+                    if (_wpIndex < count _path) then {
+                        private _wpMarker = _path select _wpIndex;
+                        private _wpObj = missionNamespace getVariable [_wpMarker, objNull];
+                        
+                        if (!isNull _wpObj) then {
+                            private _wpPos = getPos _wpObj;
+                            _fugitive doMove _wpPos;
+                            
+                            // Attendre d'arriver au waypoint
+                            waitUntil {
+                                sleep 0.5;
+                                !alive _fugitive || 
+                                (_fugitive getVariable ["isCaptured", false]) ||
+                                (_fugitive distance2D _wpPos < 3) ||
+                                !MISSION_var_task1_running
+                            };
+                            
+                            if (!alive _fugitive || _fugitive getVariable ["isCaptured", false] || !MISSION_var_task1_running) exitWith {};
+                            
+                            _fugitive setVariable ["currentWP", _wpIndex, true];
+                            
+                            // ARMEMENT au WP6 (index 5)
+                            if (_wpIndex == 5 && !(_fugitive getVariable ["isArmed", false])) then {
+                                _fugitive setVariable ["isArmed", true, true];
+                                
+                                // Donner une arme
+                                _fugitive addMagazine "16Rnd_9x21_Mag";
+                                _fugitive addMagazine "16Rnd_9x21_Mag";
+                                _fugitive addWeapon "hgun_P07_F";
+                                
+                                // Devenir OPFOR hostile
+                                _fugitive setCaptive false;
+                                
+                                // Notification globale
+                                [localize "STR_HINT_FUGITIVE_ARMED"] remoteExec ["hint", 0];
+                            };
+                            
+                            _wpIndex = _wpIndex + 1;
+                        };
+                    } else {
+                        // Tous les WP parcourus, entrer dans le bateau
+                        private _boat = MISSION_var_task1_boats select _boatIndex;
+                        
+                        if (!isNull _boat && alive _boat) then {
+                            _fugitive doMove (getPos _boat);
+                            
+                            waitUntil {
+                                sleep 0.5;
+                                !alive _fugitive || 
+                                (_fugitive getVariable ["isCaptured", false]) ||
+                                (_fugitive distance _boat < 5) ||
+                                !MISSION_var_task1_running
+                            };
+                            
+                            if (alive _fugitive && !(_fugitive getVariable ["isCaptured", false])) then {
+                                _fugitive moveInDriver _boat;
+                                
+                                // Fuir vers la direction d'échappement
+                                private _escapeDir = _boat getVariable ["escapeDirection", []];
+                                if (count _escapeDir > 0) then {
+                                    _boat doMove _escapeDir;
+                                    _boat setSpeedMode "FULL";
+                                };
+                            };
+                        };
+                        
+                        break;
+                    };
                 };
             };
         };
-    };
+    } forEach _fugitiveTemplates;
 };
 
 // ============================================================================
-// Thread de surveillance des conditions de victoire/défaite
+// SECTION 5: BOUCLE DE SURVEILLANCE (Victoire/Défaite)
 // ============================================================================
+
+MISSION_var_task1_escaped = false;
+
 [] spawn {
-    private _taskID = "task_1_hq_defense";
-    private _spawnComplete = false;
+    private _taskID = "task_1";
     
-    // Attendre que le spawn commence (au moins 1 ennemi présent)
-    waitUntil { sleep 3; count MISSION_var_task1_spawned_enemies > 0 };
+    // Attendre le spawn des fugitifs
+    waitUntil { sleep 1; count MISSION_var_task1_fugitives > 0 || !MISSION_var_task1_running };
     
-    // Attendre que le spawn soit terminé (10 spawns max) ou timeout de 60s
-    private _startTime = time;
-    waitUntil { 
-        sleep 3; 
-        _spawnComplete = (count MISSION_var_task1_spawned_enemies >= 10) || (time - _startTime > 60);
-        _spawnComplete || !alive player 
-    };
-    
-    // Boucle de vérification principale (toutes les 5 secondes)
-    while {true} do {
-        sleep 5;
+    while {MISSION_var_task1_running} do {
+        sleep 2;
         
-        // Condition d'échec : joueur mort
-        if (!alive player) exitWith {
+        // Condition d'échec : Un fugitif s'est échappé
+        if (MISSION_var_task1_escaped) exitWith {
             [_taskID, "FAILED"] call BIS_fnc_taskSetState;
+            hint (localize "STR_NOTIF_TASK1_FAILED");
+            MISSION_var_task1_running = false;
         };
         
-        // Compter les ennemis vivants (uniquement infanterie "Man", on ignore les véhicules vides)
-        private _aliveEnemies = 0;
-        {
-            if (alive _x) then {
-                if (_x isKindOf "Man") then {
-                    _aliveEnemies = _aliveEnemies + 1;
-                };
-            };
-        } forEach MISSION_var_task1_spawned_enemies;
+        // Compter les fugitifs neutralisés (morts ou capturés)
+        private _neutralized = 0;
+        private _total = count MISSION_var_task1_fugitives;
         
-        // Condition de succès : tous les ennemis sont éliminés ET la phase de spawn est finie
-        if (_aliveEnemies == 0 && _spawnComplete) exitWith {
+        {
+            if (!alive _x || (_x getVariable ["isCaptured", false])) then {
+                _neutralized = _neutralized + 1;
+            };
+        } forEach MISSION_var_task1_fugitives;
+        
+        // Condition de victoire : Tous neutralisés
+        if (_neutralized >= _total && _total > 0) exitWith {
             [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
             [] spawn MISSION_fnc_task_x_finish;
+            MISSION_var_task1_running = false;
         };
     };
 };

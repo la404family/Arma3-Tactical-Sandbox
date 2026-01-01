@@ -18,6 +18,9 @@ if (isNil "MISSION_var_civilians") then { MISSION_var_civilians = []; };
 if (isNil "MISSION_var_helicopters") then { MISSION_var_helicopters = []; };
 if (isNil "MISSION_var_explosives") then { MISSION_var_explosives = []; };
 if (isNil "MISSION_var_model_player") then { MISSION_var_model_player = []; };
+if (isNil "MISSION_var_fugitives") then { MISSION_var_fugitives = []; };
+if (isNil "MISSION_var_boats") then { MISSION_var_boats = []; };
+if (isNil "MISSION_var_escape_trigger") then { MISSION_var_escape_trigger = []; };
 
 if (_mode == "SAVE") exitWith {
     
@@ -125,6 +128,34 @@ if (_mode == "SAVE") exitWith {
     if (!isNull _modelP) then {
         MISSION_var_model_player pushBack [_modelPlayerName, typeOf _modelP, getPosWorld _modelP, getDir _modelP, side group _modelP, getUnitLoadout _modelP];
         deleteVehicle _modelP;
+    };
+
+    // ---- Sauvegarde des Fugitifs (pour Tâche 1 - Chasse à l'homme) ----
+    private _fugitiveNames = ["task_x_fugitif_1", "task_x_fugitif_2", "task_x_fugitif_3"];
+    {
+        private _unit = missionNamespace getVariable [_x, objNull];
+        if (!isNull _unit) then {
+            MISSION_var_fugitives pushBack [_x, typeOf _unit, getPosWorld _unit, getDir _unit, side group _unit, getUnitLoadout _unit];
+            deleteVehicle _unit;
+        };
+    } forEach _fugitiveNames;
+
+    // ---- Sauvegarde des Bateaux (pour Tâche 1 - Chasse à l'homme) ----
+    private _boatNames = ["task_x_boat_1", "task_x_boat_2", "task_x_boat_3", "task_x_boat_4", "task_x_boat_5", "task_x_boat_6", "task_x_boat_7"];
+    {
+        private _boat = missionNamespace getVariable [_x, objNull];
+        if (!isNull _boat) then {
+            MISSION_var_boats pushBack [_x, typeOf _boat, getPosWorld _boat, getDir _boat, civilian, []];
+            deleteVehicle _boat;
+        };
+    } forEach _boatNames;
+
+    // ---- Sauvegarde du Trigger d'Échappement (pour Tâche 1) ----
+    // Position exacte : [1877.508, 19870.643, 130.173], Rotation : 84.76
+    private _escapeTrigger = missionNamespace getVariable ["task_1_boat_direction_trigger", objNull];
+    if (!isNull _escapeTrigger) then {
+        MISSION_var_escape_trigger = [getPosWorld _escapeTrigger, getDir _escapeTrigger, triggerArea _escapeTrigger];
+        deleteVehicle _escapeTrigger;
     };
 
     // Debug (désactivé) - Affiche le nombre d'éléments sauvegardés

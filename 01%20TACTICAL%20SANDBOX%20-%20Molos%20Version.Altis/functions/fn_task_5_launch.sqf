@@ -9,7 +9,7 @@
     - TRAÎTRES: Activés si une bombe est découverte (<8m) ou désamorcée
     - Traîtres tirent si joueur à <50m
     - Victoire: 2 bombes désamorcées
-    - Défaite: 5 civils morts OU explosion
+    - Défaite: 2 civils morts OU explosion
     
     =========================================================================
 */
@@ -173,7 +173,9 @@ private _maxCivs = 55;
             // Ne compter que si c'est encore un civil (pas un traître armé)
             if (!(_unit getVariable ["traitorArmed", false])) then {
                 MISSION_var_task5_civCasualties = MISSION_var_task5_civCasualties + 1;
-                ["Tache5_CivKilled", [MISSION_var_task5_civCasualties]] call BIS_fnc_showNotification;
+                // Affichage format X/2
+                private _msg = format ["%1/2", MISSION_var_task5_civCasualties];
+                hint format [localize "STR_NOTIF_CIVIL_KILLED", _msg];
             };
         }];
         
@@ -288,10 +290,11 @@ private _selectedSpawns = [selectRandom _spawns1, selectRandom _spawns2];
 [true, "task_5", [localize "STR_TASK_5_DESC", localize "STR_TASK_5_TITLE", ""], getPos _townCenter, "CREATED", 1, true, "search", true] call BIS_fnc_taskCreate;
 
 // ==========================================================================
-// SECTION 6: TIMER UI (35 minutes = 2100 secondes)
+// SECTION 6: TIMER UI (35 à 45 minutes aléatoire)
 // ==========================================================================
 
-MISSION_var_task5_timerDuration = 2100;
+// Timer aléatoire entre 35 et 45 minutes (2100 à 2700 secondes)
+MISSION_var_task5_timerDuration = 2100 + floor(random 600);
 MISSION_var_task5_timerEndTime = time + MISSION_var_task5_timerDuration;
 publicVariable "MISSION_var_task5_timerDuration";
 publicVariable "MISSION_var_task5_timerEndTime";

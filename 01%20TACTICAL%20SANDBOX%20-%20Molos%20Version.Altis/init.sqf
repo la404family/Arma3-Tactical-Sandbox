@@ -63,7 +63,19 @@
 // Les éléments de la tache 1 : (spawn a positionner sur des routes)
 //-------------------------------------------
 
-// task_1_spawn_01 à task_1_spawn_06 sont des héliports qui servent de lieux de spawn ennemi pour la tache 1
+// task_x_fugitif_1 à task_x_fugitif_3 sont les fugitifs
+// task_1_spawn_01 à task_1_spawn_42  sont les héliports qui servent de lieux de passage pour les fugitifs
+// task_1_spawn_01 à task_1_spawn_06 est un chemin 
+// task_1_spawn_07 à task_1_spawn_12 est un chemin 
+// task_1_spawn_13 à task_1_spawn_18 est un chemin 
+// task_1_spawn_19 à task_1_spawn_24 est un chemin 
+// task_1_spawn_25 à task_1_spawn_30 est un chemin 
+// task_1_spawn_31 à task_1_spawn_36 est un chemin 
+// task_1_spawn_37 à task_1_spawn_42 est un chemin 
+// task_1_boat_place_1 à task_1_boat_place_7 sont des héliports qui déterminent la position du bateau
+// task_x_boat_1 à task_1_boat_7 sont des bateaux en mémoire.
+// task_1_boat_direction_1 à task_1_boat_direction_7 sont des directions pour les bateaux
+
 
 //-------------------------------------------
 // Les éléments de la tache 2 : (spawn a positionner autours de bâtiments)
