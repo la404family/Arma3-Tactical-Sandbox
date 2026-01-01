@@ -11,7 +11,7 @@ params [["_mode", ""]];
 if (isNil "MISSION_var_officers") then { MISSION_var_officers = []; };
 if (isNil "MISSION_var_enemies") then { MISSION_var_enemies = []; };
 if (isNil "MISSION_var_vehicles") then { MISSION_var_vehicles = []; };
-if (isNil "MISSION_var_tanks") then { MISSION_var_tanks = []; };
+if (isNil "MISSION_var_cargaisons") then { MISSION_var_cargaisons = []; };
 if (isNil "MISSION_var_planes") then { MISSION_var_planes = []; };
 if (isNil "MISSION_var_airtargets") then { MISSION_var_airtargets = []; };
 if (isNil "MISSION_var_civilians") then { MISSION_var_civilians = []; };
@@ -53,15 +53,15 @@ if (_mode == "SAVE") exitWith {
         };
     } forEach _vehicleNames;
 
-    // ---- Sauvegarde des Tanks (Tâche 3) ----
-    private _tankNames = ["task_x_tank_1"];
+    // ---- Sauvegarde des Cargaisons (Tâche 3) ----
+    private _cargaisonNames = ["task_x_cargaison_1"];
     {
-        private _tank = missionNamespace getVariable [_x, objNull];
-        if (!isNull _tank) then {
-            MISSION_var_tanks pushBack [_x, typeOf _tank, getPosWorld _tank, getDir _tank, east, []];
-            deleteVehicle _tank;
+        private _cargaison = missionNamespace getVariable [_x, objNull];
+        if (!isNull _cargaison) then {
+            MISSION_var_cargaisons pushBack [_x, typeOf _cargaison, getPosWorld _cargaison, getDir _cargaison, east, []];
+            deleteVehicle _cargaison;
         };
-    } forEach _tankNames;
+    } forEach _cargaisonNames;
 
     // ---- Sauvegarde des Avions (Support Allié Tâche 3) ----
     private _planeNames = ["task_x_avion_1"];

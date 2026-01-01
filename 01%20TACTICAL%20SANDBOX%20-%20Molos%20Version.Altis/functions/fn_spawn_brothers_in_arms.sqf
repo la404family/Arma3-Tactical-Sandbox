@@ -33,6 +33,36 @@ switch (_mode) do {
             "",
             "player inArea brothers_in_arms_request" // Visible seulement dans la zone de requête
         ];
+        
+        // ============================================================
+        // TRIGGER ANTI-COLLISION : Pousse les joueurs hors de la zone de spawn
+        // ============================================================
+        [] spawn {
+            while {true} do {
+                sleep 0.1;
+                
+                // Vérifie si le trigger et le point de sortie existent
+                if (isNil "brothers_in_arms_spawner_trigger" || isNil "brothers_in_arms_spawner_1") then {
+                    continue;
+                };
+                
+                // Vérifie si le joueur est dans le trigger
+                if (player inArea brothers_in_arms_spawner_trigger) then {
+                    // Affiche l'avertissement
+                    hint (localize "STR_ZONE_RESERVED");
+                    
+                    // Calcule la direction vers le point de sortie
+                    private _exitPos = getPosATL brothers_in_arms_spawner_1;
+                    private _playerPos = getPosATL player;
+                    private _direction = _playerPos getDir _exitPos;
+                    
+                    // Pousse le joueur dans cette direction
+                    private _pushDistance = 0.7;
+                    private _newPos = player getRelPos [_pushDistance, _direction - (getDir player)];
+                    player setPosATL [_newPos select 0, _newPos select 1, getPosATL player select 2];
+                };
+            };
+        };
     };
 
     case "OPEN_UI": {
@@ -193,11 +223,59 @@ switch (_mode) do {
                 _newUnit setDir (getDir brothers_in_arms_spawner);
             };
             
+            // ============================================================
+            // EFFET FUMÉE BLANCHE ÉPAISSE AU SPAWN
+            // ============================================================
+            private _smokePos = getPosATL _newUnit;
+            
+            // Création de l'effet de fumée blanche (SmokeShellWhite est rapide et visible)
+            private _smoke = createVehicle ["SmokeShellWhite", _smokePos, [], 0, "CAN_COLLIDE"];
+            _smoke setPosATL _smokePos;
+            
+            // Ajouter un effet de particules supplémentaire pour plus de densité
+            private _source = "#particlesource" createVehicleLocal _smokePos;
+            _source setParticleParams [
+                ["\A3\Data_F\ParticleEffects\Universal\Universal.p3d", 16, 12, 8, 1], // Matériau
+                "", "Billboard", 1, 2, [0, 0, 0], [0, 0, 1.5], 1, 1.2, 1, 0.5,
+                [1, 3, 6], [[1, 1, 1, 0.5], [1, 1, 1, 0.3], [1, 1, 1, 0]], [1],
+                0.1, 0.5, "", "", _newUnit
+            ];
+            _source setParticleRandom [1, [0.5, 0.5, 0.2], [0.5, 0.5, 0], 0, 0.5, [0, 0, 0, 0.1], 0, 0];
+            _source setDropInterval 0.02;
+            
+            // Suppression de la source de particules après 2 secondes
+            [_source] spawn {
+                params ["_src"];
+                sleep 2;
+                deleteVehicle _src;
+            };
+            
             // Notification de départ
             //systemChat format [localize "STR_UNIT_ARRIVING", _name];
             
-            // Pause critique pour laisser le temps au moteur d'initialiser l'unité avant de changer de groupe
-            sleep 0.7;
+            // Pause critique pour laisser le temps au moteur d'initialiser l'unité
+            sleep 0.5;
+            
+            // ============================================================
+            // DÉPLACEMENT VERS LE POINT DE SORTIE (anti-collision)
+            // ============================================================
+            if (!isNil "brothers_in_arms_spawner_1" && {!isNull brothers_in_arms_spawner_1}) then {
+                private _exitPos = getPosATL brothers_in_arms_spawner_1;
+                
+                // Ordonne à l'unité de se déplacer vers le point de sortie
+                _newUnit doMove _exitPos;
+                _newUnit setSpeedMode "FULL";
+                
+                // Attend que l'unité atteigne la zone de sortie (max 10 secondes)
+                private _timeout = time + 10;
+                waitUntil {
+                    sleep 0.3;
+                    (_newUnit distance2D _exitPos < 2) || (time > _timeout) || !alive _newUnit
+                };
+                
+                // Arrêter le mouvement
+                doStop _newUnit;
+            };
             
             // L'unité rejoint le groupe du joueur sans message vocal ("joinSilent")
             [_newUnit] joinSilent (group player);

@@ -1,8 +1,9 @@
 /*
     Description :
-    Lance la Tâche 3 : "Guerre totale !"
-    Enclenche un affrontement majeur avec support aérien allié contre des défenses blindées.
-    Objectif : détruire tous les chars ennemis
+    Lance la Tâche 3 : "Destruction de cargaisons"
+    Détruire des cargaisons de munitions ennemies dissimulées et protégées par des ennemis.
+    Support aérien allié pour survol de reconnaissance.
+    Objectif : détruire toutes les cargaisons ennemies
 */
 
 params [["_mode", "INIT"], ["_params", []]];
@@ -12,8 +13,8 @@ if (!isServer) exitWith {};
 switch (_mode) do {
     case "INIT": {
         
-        // Initialisation de la variable globale pour communication inter-threads (suivi des chars actifs)
-        MISSION_var_task3_activeTanks = [];
+        // Initialisation de la variable globale pour suivi des cargaisons actives
+        MISSION_var_task3_activeCargaisons = [];
 
         // 1. Création de la Tâche
         [
@@ -32,8 +33,16 @@ switch (_mode) do {
             true
         ] call BIS_fnc_taskCreate;
 
-        // 2. Support Aérien Allié
+        // 2. Support Aérien Allié (Survol de reconnaissance)
+        // DÉLAI : Le support aérien arrive entre 5 et 10 minutes après le lancement de la mission
         [] spawn {
+            // Délai aléatoire entre 5 et 10 minutes (300 à 600 secondes)
+            private _delai = 300 + floor(random 300);
+            sleep _delai;
+            
+            // Avertissement aux joueurs que le support aérien est en cours
+            hint (localize "STR_HINT_AIR_SUPPORT_INCOMING");
+            
             // Fonction auxiliaire pour récupérer un type d'avion aléatoire en mémoire
             private _fnc_getPlaneType = {
                 if (!isNil "MISSION_var_planes" && {count MISSION_var_planes > 0}) then {
@@ -97,9 +106,9 @@ switch (_mode) do {
                 _pilot setSkill ["commanding", 0.90];
                 _pilot setSkill ["general", 0.90];
                 
-                _pilot allowFleeing 0.05; // Très peu de chance de fuite
+                _pilot allowFleeing 0.05;
                 
-                _plane flyInHeight 300; // Altitude basse pour attaques au sol
+                _plane flyInHeight 300;
                 
                 // Comportement - Mode COMBAT pour engagement réel
                 _planeGrp setBehaviour "COMBAT"; 
@@ -108,30 +117,27 @@ switch (_mode) do {
                 
                 // Configuration Waypoint SAD (Search and Destroy) pour attaque agressive
                 private _targetObj = missionNamespace getVariable ["task_3_spawn_02", objNull];
-                // Cible par défaut : le deuxième point de spawn ennemi ou le premier
                 private _targetPos = if (!isNull _targetObj) then { getPos _targetObj } else { _spawnPos };
                 
                 private _wp = _planeGrp addWaypoint [_targetPos, 500];
-                _wp setWaypointType "SAD"; // Chercher et Détruire
+                _wp setWaypointType "SAD";
                 _wp setWaypointBehaviour "COMBAT";
                 _wp setWaypointCombatMode "RED"; 
                 _wp setWaypointSpeed "FULL";
                 _planeGrp setCurrentWaypoint _wp;
 
-                // Boucle de ciblage agressif (Bidirectionnel : Avion <-> Char)
+                // Boucle de ciblage sur les cargaisons et ennemis
                 [_pilot, _plane] spawn {
                     params ["_unit", "_vehicle"];
                     sleep 10;
                     
-                    // Attend qu'il y ait des chars actifs
-                    waitUntil { sleep 1; (!isNil "MISSION_var_task3_activeTanks" && {count MISSION_var_task3_activeTanks > 0}) || !(["task_3"] call BIS_fnc_taskExists) };
+                    waitUntil { sleep 1; (!isNil "MISSION_var_task3_activeCargaisons" && {count MISSION_var_task3_activeCargaisons > 0}) || !(["task_3"] call BIS_fnc_taskExists) };
                     
-                    while {alive _unit && {!isNil "MISSION_var_task3_activeTanks"} && {count MISSION_var_task3_activeTanks > 0} && !(_unit getVariable ["RTB", false])} do {
-                        private _aliveTanks = MISSION_var_task3_activeTanks select { alive _x };
-                        if (count _aliveTanks > 0) then {
-                            private _target = selectRandom _aliveTanks;
+                    while {alive _unit && {!isNil "MISSION_var_task3_activeCargaisons"} && {count MISSION_var_task3_activeCargaisons > 0} && !(_unit getVariable ["RTB", false])} do {
+                        private _aliveCargaisons = MISSION_var_task3_activeCargaisons select { alive _x };
+                        if (count _aliveCargaisons > 0) then {
+                            private _target = selectRandom _aliveCargaisons;
                             
-                            // --- LOGIQUE ATTAQUE AVION ---
                             // Révéler la cible
                             _unit reveal [_target, 4];
                             (group _unit) reveal [_target, 4];
@@ -145,24 +151,8 @@ switch (_mode) do {
                             // Engager
                             _unit doTarget _target;
                             _unit doFire _target; 
-                            
-                            // --- LOGIQUE ATTAQUE CHAR (Force réaction AA) ---
-                            {
-                                private _tank = _x;
-                                private _tankGrp = group (driver _tank);
-                                
-                                // Révéler l'avion au char
-                                _tankGrp reveal [_vehicle, 4];
-                                (gunner _tank) doTarget _vehicle;
-                                (commander _tank) doTarget _vehicle;
-                                
-                                _tankGrp setCombatMode "RED";
-                                _tankGrp setBehaviour "COMBAT";
-                                
-                            } forEach _aliveTanks;
                         };
                         
-                        // Attendre plus longtemps pour permettre les passes d'attaque sans reset l'IA
                         sleep 8; 
                     };
                 };
@@ -171,10 +161,9 @@ switch (_mode) do {
                 [_pilot, _plane, _planeGrp] spawn {
                     params ["_unit", "_vehicle", "_group"];
                     
-                    // Attente : 4 minutes OU s'il ne reste qu'un seul char (ou moins)
+                    // Attente : 4 minutes OU s'il ne reste qu'une seule cargaison (ou moins)
                     private _endTime = time + 280;
                     
-                    // On attend un peu pour être sûr que les chars ont spawn (sécurité)
                     sleep 15; 
                     
                     waitUntil {
@@ -182,34 +171,29 @@ switch (_mode) do {
                         
                         private _timeExpired = time > _endTime;
                         
-                        // Check chars vivants
-                        private _aliveTanksCount = { alive _x } count MISSION_var_task3_activeTanks;
-                        private _totalTanksRecorded = count MISSION_var_task3_activeTanks;
+                        private _aliveCargaisonsCount = { alive _x } count MISSION_var_task3_activeCargaisons;
+                        private _totalCargaisonsRecorded = count MISSION_var_task3_activeCargaisons;
                         
-                        // Condition de fin : Temps écoulé OU (Des chars ont spawn ET il en reste <= 1)
-                        _timeExpired || (_totalTanksRecorded > 0 && _aliveTanksCount <= 1)
+                        _timeExpired || (_totalCargaisonsRecorded > 0 && _aliveCargaisonsCount <= 1)
                     };
                     
                     if (alive _unit) then {
                         hint (localize "STR_HINT_AIR_SUPPORT_END");
-                        _unit setVariable ["RTB", true, true]; // Marqueur Return To Base
+                        _unit setVariable ["RTB", true, true];
                         
-                        // Efface les waypoints existants
                         while {(count (waypoints _group)) > 0} do { deleteWaypoint ((waypoints _group) select 0); };
                         
-                        // Ordre de déplacement vers un point distant
                         _group setBehaviour "CARELESS";
                         _group setCombatMode "BLUE"; 
                         _group setSpeedMode "FULL";
                         
-                        private _wp = _group addWaypoint [[0,0,1000], 0]; // Point "loin" en [0,0] altitude 1000
+                        private _wp = _group addWaypoint [[0,0,1000], 0];
                         _wp setWaypointType "MOVE";
                         _group setCurrentWaypoint _wp;
                         
-                        // Attend le départ puis supprime
                         sleep 80;
                         if (alive _vehicle) then { deleteVehicle _vehicle; };
-                        if (alive _unit) then { deleteVehicle _unit; }; // supprime le pilote
+                        if (alive _unit) then { deleteVehicle _unit; };
                     };
                 };
 
@@ -220,7 +204,7 @@ switch (_mode) do {
 
         // 3. Logique de Spawn des Ennemis
         private _allSpawns = [];
-        // Recherche des marqueurs "task_3_spawn_02" à "task_3_spawn_12"
+        // Recherche des marqueurs "task_3_spawn_02" à "task_3_spawn_18"
         for "_i" from 2 to 18 do {
             private _markerName = format ["task_3_spawn_%1", if (_i < 10) then {"0" + str _i} else {str _i}];
             private _spawnObj = missionNamespace getVariable [_markerName, objNull];
@@ -234,20 +218,20 @@ switch (_mode) do {
 
         _allSpawns = _allSpawns call BIS_fnc_arrayShuffle;
         
-        // Distribution des spawns (Chars vs Infanterie)
-        private _tankSpawns = [];
+        // Distribution des spawns (Cargaisons vs Infanterie)
+        private _cargaisonSpawns = [];
         private _infantrySpawns = [];
         
-        // Les 4 premiers spawns aléatoires pour les chars, le reste pour l'infanterie
+        // Les 4 premiers spawns aléatoires pour les cargaisons, le reste pour l'infanterie
         if (count _allSpawns >= 4) then {
-            _tankSpawns = _allSpawns select [0, 4];
+            _cargaisonSpawns = _allSpawns select [0, 4];
             _infantrySpawns = _allSpawns select [4, 999];
         } else {
-            _tankSpawns = _allSpawns;
+            _cargaisonSpawns = _allSpawns;
         };
 
         // Vérification Variables
-        if (isNil "MISSION_var_tanks") then { MISSION_var_tanks = []; };
+        if (isNil "MISSION_var_cargaisons") then { MISSION_var_cargaisons = []; };
         if (isNil "MISSION_var_enemies") then { MISSION_var_enemies = []; };
         if (isNil "MISSION_var_officers") then { MISSION_var_officers = []; };
 
@@ -258,8 +242,9 @@ switch (_mode) do {
             _entry select 1 
         };
 
-        private _tankType = [MISSION_var_tanks] call _fnc_getRandomType;
-        if (_tankType == "") then { _tankType = "O_MBT_02_cannon_F"; }; // Tank par défaut
+        // Type de cargaison depuis la mémoire
+        private _cargaisonType = [MISSION_var_cargaisons] call _fnc_getRandomType;
+        if (_cargaisonType == "") then { _cargaisonType = "O_Truck_03_ammo_F"; }; // Camion de munitions par défaut
  
         private _infType = [MISSION_var_enemies] call _fnc_getRandomType;
         if (_infType == "") then { _infType = "O_Soldier_F"; }; 
@@ -267,117 +252,77 @@ switch (_mode) do {
         private _offType = [MISSION_var_officers] call _fnc_getRandomType;
         if (_offType == "") then { _offType = "O_officer_F"; }; 
 
-        // -- Spawn des Chars (Utilisation Variable Globale) --
-        // Type de cible aérienne depuis la mémoire (pour que les avions visent mieux)
+        // Type de cible aérienne depuis la mémoire
         private _airTargetType = "";
         if (!isNil "MISSION_var_airtargets" && {count MISSION_var_airtargets > 0}) then {
             _airTargetType = (MISSION_var_airtargets select 0) select 1;
         };
-        if (_airTargetType == "") then { _airTargetType = "TargetP_Inf_F"; }; // Repli sur cible visible si pas de mémoire
+        if (_airTargetType == "") then { _airTargetType = "TargetP_Inf_F"; };
         
+        // -- Spawn des Cargaisons (VIDES et VERROUILLEES) --
         {
             private _spawnObj = _x;
             private _pos = getPos _spawnObj;
             private _dir = getDir _spawnObj;
             
-            private _tank = createVehicle [_tankType, _pos, [], 0, "NONE"];
-            _tank setDir _dir;
-            _tank setPos _pos;
+            // Création du véhicule de cargaison
+            private _cargaison = createVehicle [_cargaisonType, _pos, [], 0, "NONE"];
+            _cargaison setDir _dir;
+            _cargaison setPos _pos;
             
-            // Assure la création de l'équipage complet
-            createVehicleCrew _tank; 
-            
-            // debug
-            // systemChat format ["DEBUG: Tank Created (%1) at %2. Crew Count: %3", typeOf _tank, _pos, count crew _tank];
-            
-            // Applique un loadout aléatoire ennemi à l'équipage
-            if (!isNil "MISSION_var_enemies" && {count MISSION_var_enemies > 0}) then {
-                private _randomEnemyData = selectRandom MISSION_var_enemies;
-                private _loadout = _randomEnemyData select 5; // Index 5 est le loadout
-                
-                {
-                    _x setUnitLoadout _loadout;
-                } forEach (crew _tank);
-            };
-            
-            private _group = group (driver _tank);
-            _group enableAttack true;
-            _group setCombatMode "RED";
-            _group setBehaviour "COMBAT";
-            
-            _tank setFuel 0; // Immobilise le tank (pour le rendre tourelle statique défense) mais garde l'IA active
+            // IMPORTANT : Pas d'équipage - Véhicule vide
+            // Le véhicule est verrouillé
+            _cargaison lock 2; // 2 = Verrouillé pour tous
+            _cargaison setFuel 0; // Immobilise le véhicule
             
             // Création Marqueur Carte
-            private _markerName = format ["m_tank_%1", _pos]; 
+            private _markerName = format ["m_cargaison_%1", _pos]; 
             createMarker [_markerName, _pos];
-            _markerName setMarkerType "o_armor";
+            _markerName setMarkerType "o_support";
             _markerName setMarkerColor "ColorRed";
-            _markerName setMarkerText (localize "STR_MARKER_TANK");
-            _tank setVariable ["assignedMarker", _markerName];
+            _markerName setMarkerText (localize "STR_MARKER_CARGAISON");
+            _cargaison setVariable ["assignedMarker", _markerName];
             
-            // Attache une cible aérienne invisible au tank (aide à la visée IA avion)
+            // Attache une cible aérienne invisible (aide à la visée IA avion)
             private _target = createVehicle [_airTargetType, _pos, [], 0, "NONE"];
-            _target attachTo [_tank, [0, 0, 2]]; // Attache 2m au-dessus
+            _target attachTo [_cargaison, [0, 0, 2]];
             _target setVectorUp [0, 0, 1];
             
-            MISSION_var_task3_activeTanks pushBack _tank;
+            MISSION_var_task3_activeCargaisons pushBack _cargaison;
             
-        } forEach _tankSpawns;
-
-        // -- Spawn des Patrouilles d'Infanterie --
-        private _activeGroups = [];
-        
-        {
-            private _spawnObj = _x;
-            private _pos = getPos _spawnObj;
-            
-            private _group = createGroup east;
-            _group createUnit [_offType, _pos, [], 0, "NONE"]; // 1 Officier
-            for "_k" from 1 to 5 do {
-                _group createUnit [_infType, _pos, [], 5, "NONE"]; // 5 Soldats
+            // Spawn de gardes autour de la cargaison (8 soldats par cargaison)
+            private _guardGrp = createGroup [east, true];
+            for "_g" from 1 to 8 do {
+                private _guard = _guardGrp createUnit [_infType, _pos, [], 8, "NONE"];
+                if (!isNil "MISSION_var_enemies" && {count MISSION_var_enemies > 0}) then {
+                    _guard setUnitLoadout ((selectRandom MISSION_var_enemies) select 5);
+                };
             };
-            _activeGroups pushBack _group;
+            _guardGrp setBehaviour "AWARE";
+            _guardGrp setCombatMode "RED";
             
-        } forEach _infantrySpawns;
-        
-        // 4. Logique de Patrouille
-        [_activeGroups, _allSpawns] spawn {
-            params ["_groups", "_spawnObjects"];
-            while { ["task_3"] call BIS_fnc_taskExists && { !(["task_3"] call BIS_fnc_taskCompleted) } } do {
-                {
-                    private _grp = _x;
-                    if (!isNull _grp && { {alive _x} count (units _grp) > 0 }) then {
-                         // Choisit un point de spawn au hasard comme prochain waypoint
-                        private _targetObj = selectRandom _spawnObjects;
-                        private _wp = _grp addWaypoint [getPos _targetObj, 0];
-                        _wp setWaypointType "MOVE";
-                        _wp setWaypointSpeed "FULL";
-                        _wp setWaypointBehaviour "AWARE";
-                        _grp setCurrentWaypoint _wp;
-                    };
-                } forEach _groups;
-                sleep 40; // Mise à jour des ordres toutes les 40s
-            };
-        };
+        } forEach _cargaisonSpawns;
 
-        // 5. Moniteur de condition de victoire (Utilise Variable Globale)
+        // Les gardes des cargaisons sont les seuls ennemis (8 x 4 = 32 ennemis)
+
+        // 5. Moniteur de condition de victoire
         [] spawn {
             sleep 5;
             
             waitUntil {
                 sleep 2;
                 
-                // Nettoyage des marqueurs pour les chars détruits
+                // Nettoyage des marqueurs pour les cargaisons détruites
                 {
                     if (!alive _x) then {
                         private _m = _x getVariable ["assignedMarker", ""];
                         if (_m != "") then { deleteMarker _m; };
                     };
-                } forEach MISSION_var_task3_activeTanks;
+                } forEach MISSION_var_task3_activeCargaisons;
 
-                // Compte les tanks vivants
-                private _aliveTanks = MISSION_var_task3_activeTanks select { alive _x };
-                count _aliveTanks == 0 // Condition succès : 0 tank vivant
+                // Compte les cargaisons encore en état
+                private _aliveCargaisons = MISSION_var_task3_activeCargaisons select { alive _x };
+                count _aliveCargaisons == 0 // Condition succès : 0 cargaison restante
             };
             
             ["task_3", "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -385,7 +330,7 @@ switch (_mode) do {
             hint format ["%1 - %2", localize "STR_TASK_3_TITLE", localize "STR_TASK_COMPLETED"];
             
             // Nettoyage global
-            MISSION_var_task3_activeTanks = nil;
+            MISSION_var_task3_activeCargaisons = nil;
         };
     };
 };

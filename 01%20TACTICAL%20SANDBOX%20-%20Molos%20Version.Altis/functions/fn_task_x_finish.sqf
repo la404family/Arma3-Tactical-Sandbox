@@ -22,27 +22,11 @@
 // Exécution uniquement sur les machines avec interface (joueurs)
 if (hasInterface) then {
     [] spawn {
-        // Nécessaire pour manipuler les éléments d'interface utilisateur
-        disableSerialization;
-        
-        // ==============================================================================================
-        // INITIALISATION
-        // ==============================================================================================
-        
-        // Bloquer les contrôles du joueur pendant la séquence
-        disableUserInput true;
-        
-        // Afficher les bandes noires cinématiques
-        showCinemaBorder true;
-        
-        // Rendre le joueur invulnérable pendant l'outro
-        player allowDamage false;
-        
         // ==============================================================================================
         // MUSIQUE D'OUTRO
         // ==============================================================================================
         playMusic "00outro";
-        sleep 5;
+        sleep 10;
         
         // ==============================================================================================
         // MESSAGE 1 : MISSION ACCOMPLIE (10 secondes)
@@ -55,18 +39,18 @@ if (hasInterface) then {
                 localize "STR_FINISH_MISSION_SUCCESS",
                 localize "STR_FINISH_CONGRATULATIONS"
             ],
-            "PLAIN", 1, true, true
+            "PLAIN", 3, true, true // PLAIN = fade simple, 1 = fade rapide, true = afficher le texte, true = afficher le texte
         ];
-        titleFadeOut 1;  // Prépare le fade out
+        titleFadeOut 3;  // Prépare le fade out
         
-        sleep 2;
+        sleep 4;
         titleText ["", "PLAIN", 1];  // Estompe le texte
-        sleep 7;
+        sleep 4;
         
         // ==============================================================================================
-        // PAUSE (10 secondes)
+        // PAUSE (2 secondes)
         // ==============================================================================================
-        sleep 7;
+        sleep 4;
         
         // ==============================================================================================
         // MESSAGE 2 : NOUVELLES MISSIONS (5 secondes)
@@ -76,12 +60,12 @@ if (hasInterface) then {
                 "<t size='1.6' color='#ffffff' font='PuristaLight'>%1</t>",
                 localize "STR_FINISH_NEW_MISSIONS"
             ],
-            "PLAIN", 1, true, true
+            "PLAIN", 3, true, true
         ];
         
         sleep 4;
         titleText ["", "PLAIN", 1];
-        sleep 5;
+        sleep 4;
         
         // ==============================================================================================
         // MESSAGE 3 : À BIENTÔT SUR... (5 secondes)
@@ -91,27 +75,27 @@ if (hasInterface) then {
                 "<t size='1.6' color='#bbbbbb' font='PuristaLight'>%1</t>",
                 localize "STR_FINISH_SEE_YOU"
             ],
-            "PLAIN", 1, true, true
+            "PLAIN", 3, true, true
         ];
         
         sleep 4;
         titleText ["", "PLAIN", 1];
-        sleep 5;
+        sleep 4;
         
         // ==============================================================================================
-        // MESSAGE 4 : TITRE DU JEU (10 secondes)
+        // MESSAGE 4 : TITRE DU JEU (2 secondes)
         // ==============================================================================================
         titleText [
             format [
                 "<t size='3.5' color='#ffffff' font='PuristaBold' shadow='2'>%1</t>",
                 localize "STR_INTRO_TITLE"
             ],
-            "PLAIN", 1, true, true
+            "PLAIN", 3, true, true
         ];
         
-        sleep 7;
+        sleep 4;
         titleText ["", "PLAIN", 2];  // Fade out plus long
-        sleep 2;
+        sleep 4;
         
         // ==============================================================================================
         // FADE NOIR ET FIN
@@ -119,7 +103,7 @@ if (hasInterface) then {
         
         // Fondu vers le noir
         cutText ["", "BLACK FADED", 2];
-        sleep 2;
+        sleep 4;
         
         // Restaurer les contrôles avant la fin
         disableUserInput false;

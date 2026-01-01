@@ -74,45 +74,15 @@ class Refour_Missions_Dialog
             style = ST_CENTER;
         };
 
-        // Right panel - Checkbox label
-        class SelectLabel: RscText
-        {
-            idc = -1;
-            text = "$STR_MISSIONS_SELECT";
-            x = 0.42 * safezoneW + safezoneX;
-            y = 0.22 * safezoneH + safezoneY;
-            w = 0.20 * safezoneW;
-            h = 0.03 * safezoneH;
-        };
-
-        // Right panel - Select Button
-        class TaskCheckbox: RscButton
-        {
-            idc = 2201;
-            text = "$STR_BTN_SELECT";
-            x = 0.62 * safezoneW + safezoneX;
-            y = 0.22 * safezoneH + safezoneY;
-            w = 0.10 * safezoneW;
-            h = 0.03 * safezoneH;
-            // Couleurs - Gris foncé par défaut (devient vert via script quand sélectionné)
-            colorText[] = {1,1,1,1};              // Texte blanc
-            colorBackground[] = {0.3,0.3,0.3,1};  // Fond gris foncé
-            colorBackgroundActive[] = {0.25,0.25,0.25,1}; // Fond quand cliqué
-            colorFocused[] = {0.3,0.3,0.3,1};     // Fond quand focus
-            colorBackgroundDisabled[] = {0.3,0.3,0.3,1};
-            colorDisabled[] = {0.5,0.5,0.5,1};
-            action = "['TOGGLE'] call MISSION_fnc_spawn_missions;";
-        };
-
-        // Right panel - Description
+        // Right panel - Description (position ajustée car plus de bouton sélectionner)
         class TaskDescription: RscText
         {
             idc = 2203;
             text = "";
             x = 0.42 * safezoneW + safezoneX;
-            y = 0.27 * safezoneH + safezoneY;
+            y = 0.22 * safezoneH + safezoneY;
             w = 0.46 * safezoneW;
-            h = 0.50 * safezoneH;
+            h = 0.55 * safezoneH;
             style = ST_MULTI;
             lineSpacing = 1;
         };

@@ -508,6 +508,19 @@
             <Chinese>取消選擇</Chinese>
             <Chinesesimp>取消选择</Chinesesimp>
         </Key>
+        <Key ID="STR_ZONE_RESERVED">
+            <English>RESERVED ZONE</English>
+            <French>ZONE RÉSERVÉE</French>
+            <German>RESERVIERTER BEREICH</German>
+            <Spanish>ZONA RESERVADA</Spanish>
+            <Italian>ZONA RISERVATA</Italian>
+            <Russian>ЗАРЕЗЕРВИРОВАННАЯ ЗОНА</Russian>
+            <Polish>STREFA ZAREZERWOWANA</Polish>
+            <Czech>REZERVOVANÁ ZÓNA</Czech>
+            <Turkish>REZERVE ALAN</Turkish>
+            <Chinese>預留區域</Chinese>
+            <Chinesesimp>预留区域</Chinesesimp>
+        </Key>
         <Key ID="STR_MISSIONS_MENU_TITLE">
             <English>Mission Command Center</English>
             <French>Centre de Commandement des Missions</French>
@@ -572,6 +585,19 @@
             <Turkish>ÇIK</Turkish>
             <Chinese>退出</Chinese>
             <Chinesesimp>退出</Chinesesimp>
+        </Key>
+        <Key ID="STR_MISSION_ALREADY_ACTIVE">
+            <English>A mission is already in progress. Complete it first!</English>
+            <French>Une mission est déjà en cours. Terminez-la d&apos;abord !</French>
+            <German>Eine Mission ist bereits im Gange. Beenden Sie sie zuerst!</German>
+            <Spanish>Ya hay una misión en curso. ¡Complétala primero!</Spanish>
+            <Italian>Una missione è già in corso. Completala prima!</Italian>
+            <Russian>Миссия уже выполняется. Сначала завершите её!</Russian>
+            <Polish>Misja jest już w toku. Najpierw ją ukończ!</Polish>
+            <Czech>Mise již probíhá. Nejprve ji dokončete!</Czech>
+            <Turkish>Bir görev zaten devam ediyor. Önce onu tamamlayın!</Turkish>
+            <Chinese>任務已在進行中。請先完成它！</Chinese>
+            <Chinesesimp>任务已在进行中。请先完成它！</Chinesesimp>
         </Key>
         <Key ID="STR_ACTION_MISSIONS">
             <English>Access Mission Command</English>
@@ -664,31 +690,44 @@
             <Chinese>目標</Chinese>
             <Chinesesimp>目标</Chinesesimp>
         </Key>
+        <Key ID="STR_MARKER_CARGAISON">
+            <English>Cargo</English>
+            <French>Cargaison</French>
+            <German>Fracht</German>
+            <Spanish>Cargamento</Spanish>
+            <Italian>Carico</Italian>
+            <Russian>Груз</Russian>
+            <Polish>Ładunek</Polish>
+            <Czech>Náklad</Czech>
+            <Turkish>Kargo</Turkish>
+            <Chinese>貨物</Chinese>
+            <Chinesesimp>货物</Chinesesimp>
+        </Key>
         <Key ID="STR_TASK_3_TITLE">
-            <English>Total War!</English>
-            <French>Guerre totale !</French>
-            <German>Totaler Krieg!</German>
-            <Spanish>¡Guerra total!</Spanish>
-            <Italian>Guerra totale!</Italian>
-            <Russian>Тотальная война!</Russian>
-            <Polish>Wojna totalna!</Polish>
-            <Czech>Totální válka!</Czech>
-            <Turkish>Topyekün Savaş!</Turkish>
-            <Chinese>全面戰爭！</Chinese>
-            <Chinesesimp>全面战争！</Chinesesimp>
+            <English>Cargo Destruction</English>
+            <French>Destruction de cargaisons</French>
+            <German>Frachtvernichtung</German>
+            <Spanish>Destrucción de cargamentos</Spanish>
+            <Italian>Distruzione dei carichi</Italian>
+            <Russian>Уничтожение грузов</Russian>
+            <Polish>Zniszczenie ładunków</Polish>
+            <Czech>Zničení nákladu</Czech>
+            <Turkish>Kargo İmhası</Turkish>
+            <Chinese>貨物銷毀</Chinese>
+            <Chinesesimp>货物销毁</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_3_DESC">
-            <English>Warning: Advanced conflict, total war. Allied air support deployed. Enemy presence heavily reinforced: heavy armor, patrols, and rapid response units. High risk mission. Objective: Neutralize enemy tanks. (Enemy forces: ~50 Infantry, 4 Tanks)</English>
-            <French>Attention : conflit avancé, guerre totale. Appui aérien déployé sur zone. Présence ennemie fortement renforcée : blindés lourds, Patrouilles et unités d&apos;intervention rapide. Mission à haut risque. Objectif : neutraliser les tanks ennemis (Forces ennemies : ~50 Infanterie, 4 Tanks)</French>
-            <German>Warnung: Fortgeschrittener Konflikt, totaler Krieg. Alliierte Luftunterstützung eingesetzt. Feindliche Präsenz stark verstärkt: schwere Panzerung, Patrouillen und schnelle Eingreiftruppen. Hochrisikomission. Ziel: Feindliche Panzer neutralisieren. (Feindliche Kräfte: ~50 Infanterie, 4 Panzer)</German>
-            <Spanish>Advertencia: Conflicto avanzado, guerra total. Apoyo aéreo aliado desplegado. Presencia enemiga fuertemente reforzada: blindados pesados, patrullas y unidades de respuesta rápida. Misión de alto riesgo. Objetivo: Neutralizar tanques enemigos. (Fuerzas enemigas: ~50 Infantería, 4 Tanques)</Spanish>
-            <Italian>Attenzione: Conflitto avanzato, guerra totale. Supporto aereo alleato schierato. Presenza nemica fortemente rinforzata: armature pesanti, pattuglie e unità di intervento rapido. Missione ad alto rischio. Obiettivo: Neutralizzare i carri armati nemici. (Forze nemiche: ~50 Fanteria, 4 Carri armati)</Italian>
-            <Russian>Внимание: Продвинутый конфликт, тотальная война. Развернута союзная авиаподдержка. Присутствие врага сильно усилено: тяжелая бронетехника, патрули и группы быстрого реагирования. Миссия высокого риска. Цель: Нейтрализовать вражеские танки. (Вражеские силы: ~50 Пехота, 4 Танка)</Russian>
-            <Polish>Uwaga: Zaawansowany konflikt, wojna totalna. Rozmieszczono sojusznicze wsparcie lotnicze. Obecność wroga silnie wzmocniona: ciężki pancerz, patrole i jednostki szybkiego reagowania. Misja wysokiego ryzyka. Cel: Zneutralizuj czołgi wroga. (Siły wroga: ~50 Piechota, 4 Czołgi)</Polish>
-            <Czech>Varování: Pokročilý konflikt, totální válka. Nasazena spojenecká letecká podpora. Nepřátelská přítomnost silně posílena: těžké obrněné vozy, hlídky a jednotky rychlé reakce. Mise s vysokým rizikem. Cíl: Neutralizovat nepřátelské tanky. (Nepřátelské síly: ~50 Pěchota, 4 Tanky)</Czech>
-            <Turkish>Uyarı: Gelişmiş çatışma, topyekün savaş. Müttefik hava desteği konuşlandırıldı. Düşman varlığı büyük ölçüde güçlendirildi: ağır zırhlılar, devriyeler ve hızlı müdahale birimleri. Yüksek riskli görev. Hedef: Düşman tanklarını etkisiz hale getir. (Düşman güçleri: ~50 Piyade, 4 Tank)</Turkish>
-            <Chinese>警告：高級衝突，全面戰爭。盟軍空中支援已部署。敵軍存在大幅增強：重型裝甲，巡邏隊和快速反應部隊。高風險任務。目標：消滅敵軍坦克。（敵軍：~50 步兵，4 坦克）</Chinese>
-            <Chinesesimp>警告：高级冲突，全面战争。盟军空中支援已部署。敌军存在大幅增强：重型装甲，巡逻队和快速反应部队。高风险任务。目标：消灭敌军坦克。（敌军：~50 步兵，4 坦克）</Chinesesimp>
+            <English>MISSION: Destroy enemy ammunition convoys hidden and guarded by hostile forces. Locations are marked on the map. IMPORTANT: Bring equipment to destroy vehicles! Allied air support will perform reconnaissance overflights, but infantry must confirm destruction. (Enemy forces: 4 Cargo Vehicles, ~32 Infantry)</English>
+            <French>MISSION : Détruire des cargaisons de munitions ennemies dissimulées et protégées par des forces hostiles. Les emplacements sont indiqués sur la carte. IMPORTANT : Prévoyez de quoi détruire les véhicules ! Un survol aérien allié sera effectué, mais l&apos;infanterie est chargée de confirmer la destruction. (Forces ennemies : 4 Cargaisons, ~32 Infanterie)</French>
+            <German>MISSION: Feindliche Munitionstransporte zerstören, die versteckt und von feindlichen Kräften bewacht werden. Standorte sind auf der Karte markiert. WICHTIG: Bringen Sie Ausrüstung zur Fahrzeugzerstörung mit! Alliierte Luftunterstützung führt Aufklärungsflüge durch, aber Infanterie muss die Zerstörung bestätigen. (Feindliche Kräfte: 4 Frachtfahrzeuge, ~32 Infanterie)</German>
+            <Spanish>MISIÓN: Destruir convoyes de municiones enemigos ocultos y protegidos por fuerzas hostiles. Las ubicaciones están marcadas en el mapa. IMPORTANTE: ¡Traiga equipo para destruir vehículos! El apoyo aéreo aliado realizará vuelos de reconocimiento, pero la infantería debe confirmar la destrucción. (Fuerzas enemigas: 4 Vehículos de carga, ~32 Infantería)</Spanish>
+            <Italian>MISSIONE: Distruggere i convogli di munizioni nemiche nascoste e sorvegliate da forze ostili. Le posizioni sono segnate sulla mappa. IMPORTANTE: Porta equipaggiamento per distruggere i veicoli! Il supporto aereo alleato effettuerà ricognizioni, ma la fanteria deve confermare la distruzione. (Forze nemiche: 4 Veicoli cargo, ~32 Fanteria)</Italian>
+            <Russian>МИССИЯ: Уничтожить скрытые вражеские грузы с боеприпасами, охраняемые противником. Расположение отмечено на карте. ВАЖНО: Возьмите средства для уничтожения техники! Союзная авиация проведет разведывательный облет, но пехота должна подтвердить уничтожение. (Вражеские силы: 4 грузовых транспорта, ~32 пехоты)</Russian>
+            <Polish>MISJA: Zniszcz wrogie konwoje z amunicją ukryte i chronione przez siły wroga. Lokalizacje zaznaczone na mapie. WAŻNE: Zabierz sprzęt do niszczenia pojazdów! Sojusznicze lotnictwo przeprowadzi lot zwiadowczy, ale piechota musi potwierdzić zniszczenie. (Siły wroga: 4 pojazdy z ładunkiem, ~32 piechoty)</Polish>
+            <Czech>MISE: Zničit nepřátelské konvoje s municí ukryté a chráněné nepřátelskými silami. Lokace jsou vyznačeny na mapě. DŮLEŽITÉ: Vezměte si vybavení na ničení vozidel! Spojenecká letecká podpora provede průzkumný přelet, ale pěchota musí potvrdit zničení. (Nepřátelské síly: 4 nákladní vozidla, ~32 pěchoty)</Czech>
+            <Turkish>GÖREV: Düşman güçleri tarafından gizlenen ve korunan mühimmat konvoylarını imha edin. Konumlar haritada işaretli. ÖNEMLİ: Araçları yok etmek için ekipman getirin! Müttefik hava desteği keşif uçuşları yapacak, ancak piyade imhayı onaylamalı. (Düşman güçleri: 4 Kargo Aracı, ~32 Piyade)</Turkish>
+            <Chinese>任務：摧毀被敵軍隱藏和保護的彈藥車隊。位置已在地圖上標記。重要：攜帶摧毀車輛的裝備！盟軍空中支援將進行偵察飛行，但步兵必須確認銷毀。（敵軍：4輛貨車，約32名步兵）</Chinese>
+            <Chinesesimp>任务：摧毁被敌军隐藏和保护的弹药车队。位置已在地图上标记。重要：携带摧毁车辆的装备！盟军空中支援将进行侦察飞行，但步兵必须确认销毁。（敌军：4辆货车，约32名步兵）</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_X_TITLE">
             <English>XXX</English>
@@ -767,6 +806,19 @@
             <Turkish>Tank</Turkish>
             <Chinese>坦克</Chinese>
             <Chinesesimp>坦克</Chinesesimp>
+        </Key>
+        <Key ID="STR_HINT_AIR_SUPPORT_INCOMING">
+            <English>ATTENTION! Air support incoming.</English>
+            <French>ATTENTION ! Support aérien en cours.</French>
+            <German>ACHTUNG! Luftunterstützung im Anflug.</German>
+            <Spanish>¡ATENCIÓN! Apoyo aéreo en camino.</Spanish>
+            <Italian>ATTENZIONE! Supporto aereo in arrivo.</Italian>
+            <Russian>ВНИМАНИЕ! Авиаподдержка на подходе.</Russian>
+            <Polish>UWAGA! Wsparcie lotnicze nadchodzi.</Polish>
+            <Czech>POZOR! Letecká podpora přichází.</Czech>
+            <Turkish>DİKKAT! Hava desteği geliyor.</Turkish>
+            <Chinese>注意！空中支援即將到來。</Chinese>
+            <Chinesesimp>注意！空中支援即将到来。</Chinesesimp>
         </Key>
         <Key ID="STR_HINT_AIR_SUPPORT_END">
             <English>End of Air Support</English>

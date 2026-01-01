@@ -40,3 +40,11 @@ corriger la cinématique d'introduction !
 améliorer la base QG allié ! (simulation etc...)
 supprimer (desmorçage de bombe)
 revoir les objectif de mission !
+fonction si le QG est detruit ! 
+Tache 1 à refaire, 
+Modifier les équipements des ennemis !
+
+idée : 
+
+Les opérations de recherche et sauvetage au combat sont particulièrement appréciées pour leur tension dramatique. Un pilote ou des membres d'équipe sont abattus en territoire hostile, et l'équipe doit les localiser et les extraire rapidement avant que l'ennemi ne les capture. Ces missions combinent navigation sous pression, combat dans des zones imprévisibles, premiers secours sous le feu, et coordination complexe avec des hélicoptères d'extraction qui doivent trouver des zones d'atterrissage improvisées.
+
