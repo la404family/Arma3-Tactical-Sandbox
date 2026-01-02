@@ -42,6 +42,7 @@ class CfgFunctions
             class spawn_missions {};
             class spawn_arsenal {};
             class task_x_finish {};
+            class task_x_failure {};
         };
     };
 };

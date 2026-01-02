@@ -68,7 +68,7 @@ private _selectedPaths = _availablePaths select [0, 2];
     // ========================================================================
     // ATTENTE DE 5 MINUTES
     // ========================================================================
-    sleep 3; // 5 minutes
+    sleep 300; // 5 minutes
     
     if (!MISSION_var_task1_running) exitWith {};
     
@@ -527,6 +527,7 @@ private _selectedPaths = _availablePaths select [0, 2];
                 } forEach MISSION_var_task1_fugitives;
                 
                 hint (localize "STR_HINT_FUGITIVE_ESCAPED");
+                [] spawn MISSION_fnc_task_x_failure;
             };
         };
     };

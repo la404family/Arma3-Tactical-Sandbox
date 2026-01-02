@@ -66,6 +66,19 @@
             <Chinese>任務完成。</Chinese>
             <Chinesesimp>任务完成。</Chinesesimp>
         </Key>
+        <Key ID="STR_FINISH_MISSION_FAILURE">
+            <English>MISSION FAILED.</English>
+            <French>ÉCHEC DE LA MISSION.</French>
+            <German>MISSION GESCHEITERT.</German>
+            <Spanish>MISIÓN FALLIDA.</Spanish>
+            <Italian>MISSIONE FALLITA.</Italian>
+            <Russian>МИССИЯ ПРОВАЛЕНА.</Russian>
+            <Polish>MISJA NIEUDANA.</Polish>
+            <Czech>MISE SELHALA.</Czech>
+            <Turkish>GÖREV BAŞARISIZ.</Turkish>
+            <Chinese>任務失敗。</Chinese>
+            <Chinesesimp>任务失败。</Chinesesimp>
+        </Key>
         <Key ID="STR_FINISH_CONGRATULATIONS">
             <English>Congratulations for your efficiency.</English>
             <French>Félicitations pour votre efficacité.</French>

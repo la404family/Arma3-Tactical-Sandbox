@@ -445,6 +445,7 @@ private _guardsSpawnRate = 0;
         deleteVehicle MISSION_var_task4_heli;
     } else {
          ["task_4", "FAILED"] call BIS_fnc_taskSetState;
+         [] spawn MISSION_fnc_task_x_failure;
     };
     
     for "_i" from 0 to 2 do {
@@ -471,6 +472,7 @@ private _guardsSpawnRate = 0;
             // Check de sécurité pour éviter le spam FAILED si SUCCEEDED en même temps
             if !(["task_4"] call BIS_fnc_taskCompleted) then {
                 ["task_4", "FAILED"] call BIS_fnc_taskSetState;
+                [] spawn MISSION_fnc_task_x_failure;
             };
             true
         };

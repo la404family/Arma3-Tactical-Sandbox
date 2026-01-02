@@ -1,21 +1,21 @@
 /*
     ====================================================================================================
-    FONCTION : MISSION_fnc_task_x_finish
+    FONCTION : MISSION_fnc_task_x_failure
     ====================================================================================================
     Description : 
-        Séquence de fin de mission (succès).
-        Affiche une séquence cinématique avec musique et messages de félicitations,
-        puis termine la mission sur un succès.
+        Séquence de fin de mission (échec).
+        Affiche une séquence cinématique avec musique et messages d'échec,
+        puis termine la mission sur un échec.
     
     Séquence :
         1. Musique "00outro"
-        2. "MISSION ACCOMPLIE." + sous-titre (10 sec)
+        2. "MISSION_FAILURE" (couleur #ffbb00ff) + 10 sec
         3. Pause (10 sec)
         4. "De nouvelles missions vous seront confiées prochainement...." (5 sec)
         5. "À bientôt sur..." (5 sec)
         6. Titre du jeu STR_INTRO_TITLE (10 sec)
         7. Fade noir (2 sec)
-        8. Fin de mission (succès)
+        8. Fin de mission (échec "LOSER")
     ====================================================================================================
 */
 
@@ -29,22 +29,19 @@ if (hasInterface) then {
         sleep 10;
         
         // ==============================================================================================
-        // MESSAGE 1 : MISSION ACCOMPLIE 
+        // MESSAGE 1 : MISSION ÉCHOUÉE (10 secondes)
         // ==============================================================================================
-        // Utilisation de titleText avec PLAIN pour un simple fade (pas de défilement)
         titleText [
             format [
-                "<t size='3.0' color='#00ff00' font='PuristaBold' shadow='2'>%1</t><br/><br/>" +
-                "<t size='1.3' color='#cccccc' font='PuristaLight'>%2</t>",
-                localize "STR_FINISH_MISSION_SUCCESS",
-                localize "STR_FINISH_CONGRATULATIONS"
+                "<t size='3.0' color='#ffbb00ff' font='PuristaBold' shadow='2'>%1</t><br/><br/>",
+                localize "STR_FINISH_MISSION_FAILURE"
             ],
-            "PLAIN", 3, true, true // PLAIN = fade simple, 1 = fade rapide, true = afficher le texte, true = afficher le texte
+            "PLAIN", 3, true, true
         ];
-        titleFadeOut 3;  // Prépare le fade out
+        titleFadeOut 3;
         
         sleep 4;
-        titleText ["", "PLAIN", 1];  // Estompe le texte
+        titleText ["", "PLAIN", 1];
         sleep 4;
         
         // ==============================================================================================
@@ -53,7 +50,7 @@ if (hasInterface) then {
         sleep 4;
         
         // ==============================================================================================
-        // MESSAGE 2 : NOUVELLES MISSIONS 
+        // MESSAGE 2 : NOUVELLES MISSIONS
         // ==============================================================================================
         titleText [
             format [
@@ -68,7 +65,7 @@ if (hasInterface) then {
         sleep 4;
         
         // ==============================================================================================
-        // MESSAGE 3 : À BIENTÔT SUR... 
+        // MESSAGE 3 : À BIENTÔT SUR...
         // ==============================================================================================
         titleText [
             format [
@@ -94,25 +91,23 @@ if (hasInterface) then {
         ];
         
         sleep 4;
-        titleText ["", "PLAIN", 2];  // Fade out plus long
+        titleText ["", "PLAIN", 2];
         sleep 4;
         
         // ==============================================================================================
         // FADE NOIR ET FIN
         // ==============================================================================================
         
-        // Fondu vers le noir
         cutText ["", "BLACK FADED", 2];
         sleep 4;
         
-        // Restaurer les contrôles avant la fin
         disableUserInput false;
         showCinemaBorder false;
         
         // ==============================================================================================
-        // TERMINER LA MISSION SUR UN SUCCÈS
+        // TERMINER LA MISSION SUR UN ÉCHEC
         // ==============================================================================================
-        // "END1" est l'identifiant de fin, true = succès (débriefing positif)
-        ["END1", true] call BIS_fnc_endMission;
+        // "LOSER" = Debriefing d'échec
+        ["LOSER", false] call BIS_fnc_endMission;
     };
 };

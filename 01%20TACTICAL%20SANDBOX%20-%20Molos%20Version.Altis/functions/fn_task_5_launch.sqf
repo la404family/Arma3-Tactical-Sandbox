@@ -497,6 +497,7 @@ MISSION_var_task5_traitorGroup = createGroup [east, true];
             ["task_5", "FAILED"] call BIS_fnc_taskSetState;
             ["Tache5_Fail", [localize "STR_NOTIF_FAIL_CIVILIANS"]] call BIS_fnc_showNotification;
             MISSION_var_task5_running = false;
+            [] spawn MISSION_fnc_task_x_failure;
         };
         
         // Défaite: Explosion
@@ -504,6 +505,7 @@ MISSION_var_task5_traitorGroup = createGroup [east, true];
             ["task_5", "FAILED"] call BIS_fnc_taskSetState;
             ["Tache5_Fail", [localize "STR_NOTIF_FAIL_BOMB"]] call BIS_fnc_showNotification;
             MISSION_var_task5_running = false;
+            [] spawn MISSION_fnc_task_x_failure;
         };
         
         // Victoire: 2 bombes désamorcées
