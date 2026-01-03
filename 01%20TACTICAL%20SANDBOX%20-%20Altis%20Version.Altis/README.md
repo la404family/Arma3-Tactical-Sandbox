@@ -40,8 +40,9 @@ supprimer (desmorçage de bombe)
 fonction si le QG est detruit ! 
 Modifier les équipements des ennemis !
 TESTER LA MORT DU FUGITIF !
+un menu pour choisir ses ennemis ! fn_spawn_ennemis.sqf
 
 TASK 6 
 
-un hélicoptère 
+un hélicoptère allié + pilot a secourir 
 

@@ -311,7 +311,7 @@ private _selectedPaths = _availablePaths select [0, 2];
                                 _fugitive switchMove _animSurrenderKneel;
                                 
                                 private _actID = _fugitive addAction [
-                                    "<t color='#FF0000' size='1.2'>Neutraliser la cible</t>",
+                                    format ["<t color='#ffffffff' size='1.2'>%1</t>", localize "STR_ACTION_NEUTRALIZE"],
                                     { params ["_target", "_caller", "_id"]; _target setVariable ["request_capture", true, true]; _target removeAction _id; },
                                     nil, 100, true, true, "", "_this distance _target < 3", 3
                                 ];

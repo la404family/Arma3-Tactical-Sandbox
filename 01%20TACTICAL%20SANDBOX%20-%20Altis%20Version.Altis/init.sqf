@@ -14,16 +14,15 @@
 // vehicles_request est un trigger (lorsqu'on y entre on peut choisir le véhicule)
 // vehicles_spawner est un héliport invisible (lieu d'apparition du véhicule)
 // arsenal_request est un trigger (lorsqu'on y entre on peut choisir l'arsenal)
-
 // missions_request est un trigger (lorsqu'on y entre on peut choisir la mission et ses paramètres)
 // weather_and_time_request est un trigger (lorsqu'on y entre on peut choisir l'heure et le temps)
+// enemies_request est un trigger (lorsqu'on y entre on peut choisir les ennemis)
 
 
 
 //-------------------------------------------
 // Les fonctions de préparation de mission :
 //-------------------------------------------
-
 // fonction qui traduit les noms des markers
 [] call MISSION_fnc_lang_marker_name;
 // fonction qui spawn un membre de l'équipe
@@ -36,6 +35,8 @@
 ["INIT"] call MISSION_fnc_spawn_arsenal;
 // fonction qui spawn les taches séléctionnées
 ["INIT"] call MISSION_fnc_spawn_missions;
+// fonction qui spawn le menu des ennemis
+["INIT"] call MISSION_fnc_spawn_ennemies;
 
 //-------------------------------------------
 // Les fonctions helper globales (pour le multijoueur) :
@@ -174,7 +175,7 @@ MISSION_fnc_addSubmitAction = {
 // mise en memoire et suppression des unités ennemies
 ["SAVE"] call MISSION_fnc_task_x_memory;
 // application de la tache 1 (attaque du QG allié) - Lancé via le menu missions
-[] call MISSION_fnc_task_1_launch;
+// [] call MISSION_fnc_task_1_launch;
 // application de la tache 2 (assassinat et récupération) - Lancé via le menu missions
 // [] call MISSION_fnc_task_2_launch;
 // application de la tache 3 (guerre totale) - Lancé via le menu missions
@@ -185,11 +186,13 @@ MISSION_fnc_addSubmitAction = {
 // [] call MISSION_fnc_task_5_launch;
 
 
+
+
+
+
+
+
 //-------------------------------------------
 // Les fonctions de tache : (A remettre à la fin du développement)
 //-------------------------------------------
-[] spawn MISSION_fnc_task_0_intro;
-
-
-
-
+// [] spawn MISSION_fnc_task_0_intro;

@@ -3,6 +3,7 @@
 #include "dialogs\vehicle_menu.hpp"
 #include "dialogs\weather_time_menu.hpp"
 #include "dialogs\missions_menu.hpp"
+#include "dialogs\enemies_menu.hpp"
 
 class CfgMusic
 {
@@ -43,6 +44,7 @@ class CfgFunctions
             class spawn_arsenal {};
             class task_x_finish {};
             class task_x_failure {};
+            class spawn_ennemies {};
         };
     };
 };

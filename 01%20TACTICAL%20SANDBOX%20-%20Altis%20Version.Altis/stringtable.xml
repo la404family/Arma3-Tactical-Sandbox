@@ -1157,6 +1157,19 @@
                 <Chinese>制服嫌疑人</Chinese>
                 <Chinesesimp>制服嫌疑人</Chinesesimp>
             </Key>
+            <Key ID="STR_ACTION_NEUTRALIZE">
+                <English>Neutralize target</English>
+                <French>Neutraliser la cible</French>
+                <German>Ziel neutralisieren</German>
+                <Spanish>Neutralizar objetivo</Spanish>
+                <Italian>Neutralizza bersaglio</Italian>
+                <Russian>Нейтрализовать цель</Russian>
+                <Polish>Zneutralizuj cel</Polish>
+                <Czech>Zneškodnit cíl</Czech>
+                <Turkish>Hedefi etkisiz hale getir</Turkish>
+                <Chinese>制伏目標</Chinese>
+                <Chinesesimp>制伏目标</Chinesesimp>
+            </Key>
             <Key ID="STR_NOTIF_TASK5_START_TITLE">
                 <English>TASK 5 ACTIVATED</English>
                 <French>TÂCHE 5 ACTIVÉE</French>
@@ -1301,5 +1314,174 @@
                 <Chinesesimp>战术沙盒：从总部全权管理您的行动。单人或合作（1-10 名玩家）。游戏循环：装备：选择武器、载具（地面/空中）并招募 AI 盟友。设置：根据您的策略调整时间和天气。目标：启动动态和可叠加的任务（暗杀、破坏...）。行动：部署、战斗并返回总部。兼容必备模组：RHS, CUP, TMT, R3F, BWMod, FFAA, VME PLA, NIArms...</Chinesesimp>
             </Key>
         </Key>
+        <Key ID="STR_ENEMIES_MENU_TITLE">
+            <English>Enemy Selection</English>
+            <French>Sélection des Ennemis</French>
+            <German>Feindauswahl</German>
+            <Spanish>Selección de Enemigos</Spanish>
+            <Italian>Selezione Nemici</Italian>
+            <Russian>Выбор врагов</Russian>
+            <Polish>Wybór wrogów</Polish>
+            <Czech>Výběr nepřátel</Czech>
+            <Turkish>Düşman Seçimi</Turkish>
+            <Chinese>敵人選擇</Chinese>
+            <Chinesesimp>敌人选择</Chinesesimp>
+        </Key>
+        <Key ID="STR_SELECT_OFFICERS">
+            <English>Select 3 Officers</English>
+            <French>Sélectionnez 3 Officiers</French>
+            <German>Wählen Sie 3 Offiziere</German>
+            <Spanish>Selecciona 3 Oficiales</Spanish>
+            <Italian>Seleziona 3 Ufficiali</Italian>
+            <Russian>Выберите 3 офицеров</Russian>
+            <Polish>Wybierz 3 oficerów</Polish>
+            <Czech>Vyberte 3 důstojníky</Czech>
+            <Turkish>3 Subay Seçin</Turkish>
+            <Chinese>選擇 3 名軍官</Chinese>
+            <Chinesesimp>选择 3 名军官</Chinesesimp>
+        </Key>
+        <Key ID="STR_SELECT_SOLDIERS">
+            <English>Select 12 Soldiers</English>
+            <French>Sélectionnez 12 Soldats</French>
+            <German>Wählen Sie 12 Soldaten</German>
+            <Spanish>Selecciona 12 Soldados</Spanish>
+            <Italian>Seleziona 12 Soldati</Italian>
+            <Russian>Выберите 12 солдат</Russian>
+            <Polish>Wybierz 12 żołnierzy</Polish>
+            <Czech>Vyberte 12 vojáků</Czech>
+            <Turkish>12 Asker Seçin</Turkish>
+            <Chinese>選擇 12 名士兵</Chinese>
+            <Chinesesimp>选择 12 名士兵</Chinesesimp>
+        </Key>
+        <Key ID="STR_AVAILABLE_UNITS">
+            <English>Available Units</English>
+            <French>Unités Disponibles</French>
+            <German>Verfügbare Einheiten</German>
+            <Spanish>Unidades Disponibles</Spanish>
+            <Italian>Unità Disponibili</Italian>
+            <Russian>Доступные юниты</Russian>
+            <Polish>Dostępne jednostki</Polish>
+            <Czech>Dostupné jednotky</Czech>
+            <Turkish>Mevcut Birimler</Turkish>
+            <Chinese>可用單位</Chinese>
+            <Chinesesimp>可用单位</Chinesesimp>
+        </Key>
+        <Key ID="STR_BTN_ADD_OFFICER">
+            <English>+ Officer</English>
+            <French>+ Officier</French>
+            <German>+ Offizier</German>
+            <Spanish>+ Oficial</Spanish>
+            <Italian>+ Ufficiale</Italian>
+            <Russian>+ Офицер</Russian>
+            <Polish>+ Oficer</Polish>
+            <Czech>+ Důstojník</Czech>
+            <Turkish>+ Subay</Turkish>
+            <Chinese>+ 軍官</Chinese>
+            <Chinesesimp>+ 军官</Chinesesimp>
+        </Key>
+        <Key ID="STR_BTN_ADD_SOLDIER">
+            <English>+ Soldier</English>
+            <French>+ Soldat</French>
+            <German>+ Soldat</German>
+            <Spanish>+ Soldado</Spanish>
+            <Italian>+ Soldato</Italian>
+            <Russian>+ Солдат</Russian>
+            <Polish>+ Żołnierz</Polish>
+            <Czech>+ Voják</Czech>
+            <Turkish>+ Asker</Turkish>
+            <Chinese>+ 士兵</Chinese>
+            <Chinesesimp>+ 士兵</Chinesesimp>
+        </Key>
+        <Key ID="STR_BTN_VALIDATE">
+            <English>Validate</English>
+            <French>Valider</French>
+            <German>Bestätigen</German>
+            <Spanish>Validar</Spanish>
+            <Italian>Convalida</Italian>
+            <Russian>Подтвердить</Russian>
+            <Polish>Zatwierdź</Polish>
+            <Czech>Potvrdit</Czech>
+            <Turkish>Onayla</Turkish>
+            <Chinese>確認</Chinese>
+            <Chinesesimp>确认</Chinesesimp>
+        </Key>
+        <Key ID="STR_ACTION_ENEMIES">
+            <English>Choose enemies</English>
+            <French>Choisir les ennemis</French>
+            <German>Feinde auswählen</German>
+            <Spanish>Elegir enemigos</Spanish>
+            <Italian>Scegli nemici</Italian>
+            <Russian>Выбрать врагов</Russian>
+            <Polish>Wybierz wrogów</Polish>
+            <Czech>Vybrat nepřátele</Czech>
+            <Turkish>Düşmanları seç</Turkish>
+            <Chinese>選擇敵人</Chinese>
+            <Chinesesimp>选择敌人</Chinesesimp>
+        </Key>
+        <Key ID="STR_ERR_MAX_OFFICERS">
+            <English>Maximum 3 officers!</English>
+            <French>Maximum 3 officiers !</French>
+            <German>Maximal 3 Offiziere!</German>
+            <Spanish>¡Máximo 3 oficiales!</Spanish>
+            <Italian>Massimo 3 ufficiali!</Italian>
+            <Russian>Максимум 3 офицера!</Russian>
+            <Polish>Maksymalnie 3 oficerów!</Polish>
+            <Czech>Maximálně 3 důstojníci!</Czech>
+            <Turkish>Maksimum 3 subay!</Turkish>
+            <Chinese>最多 3 名軍官！</Chinese>
+            <Chinesesimp>最多 3 名军官！</Chinesesimp>
+        </Key>
+        <Key ID="STR_ERR_MAX_SOLDIERS">
+            <English>Maximum 12 soldiers!</English>
+            <French>Maximum 12 soldats !</French>
+            <German>Maximal 12 Soldaten!</German>
+            <Spanish>¡Máximo 12 soldados!</Spanish>
+            <Italian>Massimo 12 soldati!</Italian>
+            <Russian>Максимум 12 солдат!</Russian>
+            <Polish>Maksymalnie 12 żołnierzy!</Polish>
+            <Czech>Maximálně 12 vojáků!</Czech>
+            <Turkish>Maksimum 12 asker!</Turkish>
+            <Chinese>最多 12 名士兵！</Chinese>
+            <Chinesesimp>最多 12 名士兵！</Chinesesimp>
+        </Key>
+        <Key ID="STR_ERR_SELECTION_INCOMPLETE">
+            <English>Selection incomplete! You need 3 officers and 12 soldiers.</English>
+            <French>Sélection incomplète ! Vous devez choisir 3 officiers et 12 soldats.</French>
+            <German>Auswahl unvollständig! Sie brauchen 3 Offiziere und 12 Soldaten.</German>
+            <Spanish>¡Selección incompleta! Necesitas 3 oficiales y 12 soldados.</Spanish>
+            <Italian>Selezione incompleta! Servono 3 ufficiali e 12 soldati.</Italian>
+            <Russian>Неполный выбор! Нужно 3 офицера и 12 солдат.</Russian>
+            <Polish>Niekompletny wybór! Potrzebujesz 3 oficerów i 12 żołnierzy.</Polish>
+            <Czech>Neúplný výběr! Potřebujete 3 důstojníky a 12 vojáků.</Czech>
+            <Turkish>Seçim eksik! 3 subay ve 12 asker gerekli.</Turkish>
+            <Chinese>選擇不完整！需要 3 名軍官和 12 名士兵。</Chinese>
+            <Chinesesimp>选择不完整！需要 3 名军官和 12 名士兵。</Chinesesimp>
+        </Key>
+        <Key ID="STR_ENEMIES_UPDATED">
+            <English>Enemies updated: %1 officers, %2 soldiers</English>
+            <French>Ennemis mis à jour : %1 officiers, %2 soldats</French>
+            <German>Feinde aktualisiert: %1 Offiziere, %2 Soldaten</German>
+            <Spanish>Enemigos actualizados: %1 oficiales, %2 soldados</Spanish>
+            <Italian>Nemici aggiornati: %1 ufficiali, %2 soldati</Italian>
+            <Russian>Враги обновлены: %1 офицеров, %2 солдат</Russian>
+            <Polish>Wrogowie zaktualizowani: %1 oficerów, %2 żołnierzy</Polish>
+            <Czech>Nepřátelé aktualizováni: %1 důstojníků, %2 vojáků</Czech>
+            <Turkish>Düşmanlar güncellendi: %1 subay, %2 asker</Turkish>
+            <Chinese>敵人已更新：%1 名軍官，%2 名士兵</Chinese>
+            <Chinesesimp>敌人已更新：%1 名军官，%2 名士兵</Chinesesimp>
+        </Key>
+        <Key ID="STR_ENEMIES_RESET">
+            <English>Selection cleared</English>
+            <French>Sélection effacée</French>
+            <German>Auswahl gelöscht</German>
+            <Spanish>Selección borrada</Spanish>
+            <Italian>Selezione cancellata</Italian>
+            <Russian>Выбор сброшен</Russian>
+            <Polish>Wybór wyczyszczony</Polish>
+            <Czech>Výběr vymazán</Czech>
+            <Turkish>Seçim temizlendi</Turkish>
+            <Chinese>選擇已清除</Chinese>
+            <Chinesesimp>选择已清除</Chinesesimp>
+        </Key>&lt;/Key&gt;
     </Package>
 </Project>
