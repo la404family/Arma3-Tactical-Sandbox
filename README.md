@@ -1,6 +1,20 @@
 # 🎮 ARMA 3 MISSION - TACTICAL SANDBOX (SP/COOP)
 
-![SQF Wallpaper](SQFWallpaper.jpg)
+![Arma 3](https://img.shields.io/badge/Arma%203-000000?style=for-the-badge&logo=steam&logoColor=white)
+![SQF](https://img.shields.io/badge/SQF-Script-blue?style=for-the-badge)
+![SP/COOP](https://img.shields.io/badge/SP%2FCOOP-Multiplayer-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+![SQF Wallpaper](Slide14.jpg)
+
+---
+
+## ⚠️ 
+
+
+ Permadeath - Mort permanente - Permanenter Tod - Muerte permanente - Morte permanente - Перманентная смерть - Permanentna śmierć - Trvalá smrt - Kalıcı ölüm - 永久死亡 - 永久死亡 
+
+---
 
 ## 🌍 Supported Languages / Langues Supportées
 
