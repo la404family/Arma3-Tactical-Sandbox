@@ -5,6 +5,16 @@
 #include "dialogs\missions_menu.hpp"
 #include "dialogs\enemies_menu.hpp"
 
+// Informations principales
+author = "la404family";
+onLoadName = "Tactical Sandbox"; // Titre court pendant le chargement
+onLoadMission = $STR_GAME_DESCRIPTION; // Texte sous l'image de chargement
+loadScreen = "Slide1.jpg"; // Votre image
+
+// Informations pour le menu de sélection de mission (Vue d'ensemble)
+overviewText = $STR_GAME_DESCRIPTION; // Le texte descriptif
+overviewPicture = "Slide1.jpg"; // L'image vignette
+
 class CfgMusic
 {
     tracks[] = {00intro, 00outro};

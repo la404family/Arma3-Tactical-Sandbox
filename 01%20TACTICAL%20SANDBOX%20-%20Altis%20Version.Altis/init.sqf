@@ -200,4 +200,4 @@ MISSION_fnc_addSubmitAction = {
 //-------------------------------------------
 // Les fonctions de tache : (A remettre à la fin du développement)
 //-------------------------------------------
-// [] spawn MISSION_fnc_task_0_intro;
+[] spawn MISSION_fnc_task_0_intro;
