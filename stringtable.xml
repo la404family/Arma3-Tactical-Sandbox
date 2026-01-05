@@ -14,6 +14,19 @@
             <Chinese>武器</Chinese>
             <Chinesesimp>武器</Chinesesimp>
         </Key>
+        <Key ID="STR_SURVIVOR">
+            <English>Survivor</English>
+            <French>Survivant</French>
+            <German>Überlebender</German>
+            <Spanish>Superviviente</Spanish>
+            <Italian>Sopravvissuto</Italian>
+            <Russian>Выживший</Russian>
+            <Polish>Ocalały</Polish>
+            <Czech>Přeživší</Czech>
+            <Turkish>Hayatta Kalan</Turkish>
+            <Chinese>倖存者</Chinese>
+            <Chinesesimp>幸存者</Chinesesimp>
+        </Key>
         <Key ID="STR_INTRO_PRESENTS">
             <Original>presents</Original>
             <French>présente</French>
@@ -716,6 +729,19 @@
             <Chinese>任務已在進行中。請先完成它！</Chinese>
             <Chinesesimp>任务已在进行中。请先完成它！</Chinesesimp>
         </Key>
+        <Key ID="STR_ONLY_GROUP_LEADER">
+            <English>This option is reserved for the group leader.</English>
+            <French>Cette option est réservée au chef de groupe.</French>
+            <German>Diese Option ist dem Gruppenführer vorbehalten.</German>
+            <Spanish>Esta opción está reservada para el líder del grupo.</Spanish>
+            <Italian>Questa opzione è riservata al capo gruppo.</Italian>
+            <Russian>Эта опция зарезервирована для лидера группы.</Russian>
+            <Polish>Ta opcja jest zarezerwowana dla dowódcy grupy.</Polish>
+            <Czech>Tato možnost je vyhrazena pro velitele skupiny.</Czech>
+            <Turkish>Bu seçenek grup lideri için ayrılmıştır.</Turkish>
+            <Chinese>此選項僅保留給群組隊長。</Chinese>
+            <Chinesesimp>此选项仅保留给群组队长。</Chinesesimp>
+        </Key>
         <Key ID="STR_ACTION_MISSIONS">
             <English>Access Mission Command</English>
             <French>Accéder au Commandement des Missions</French>
@@ -793,6 +819,72 @@
             <Turkish>Belge</Turkish>
             <Chinese>文檔</Chinese>
             <Chinesesimp>文档</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_6_TITLE">
+            <English>Allied Rescue</English>
+            <French>Sauvetage des alliés</French>
+            <German>Verbündeter Rettung</German>
+            <Spanish>Rescate aliado</Spanish>
+            <Italian>Salvataggio alleato</Italian>
+            <Russian>Спасение союзников</Russian>
+            <Polish>Ratunek sojuszników</Polish>
+            <Czech>Záchrana spojenců</Czech>
+            <Turkish>Müttefik kurtarma</Turkish>
+            <Chinese>盟軍救援</Chinese>
+            <Chinesesimp>盟军救援</Chinesesimp>
+        </Key>
+        <Key ID="STR_TASK_6_DESC">
+            <English>CRITICAL RESCUE: An allied helicopter carrying vital intelligence has crashed. Survivors are critically injured and time is running out. Enemy patrols are approaching. Your mission: 1) Locate the crash site 2) Secure the area 3) Stabilize at least one survivor and keep them alive for 2 minutes to secure the intel. Mission fails if all survivors die. (Threats: Enemy Patrols 5 -10)</English>
+            <French>SAUVETAGE CRITIQUE : Un hélicoptère allié transportant des renseignements vitaux s&apos;est écrasé. Les survivants sont gravement blessés et le temps presse. Des patrouilles ennemies approchent. Votre mission : 1) Localiser le site du crash 2) Sécuriser la zone 3) Stabiliser au moins un survivant et le garder en vie pendant 2 minutes pour sécuriser les renseignements. La mission échoue si tous les survivants meurent. (Menaces : Patrouilles ennemies 5 - 10)</French>
+            <German>KRITISCHE RETTUNG: Ein alliierter Hubschrauber mit wichtigen Geheimdienstinformationen ist abgestürzt. Überlebende sind schwer verletzt und die Zeit läuft ab. Feindliche Patrouillen nähern sich. Ihre Mission: 1) Lokalisieren Sie die Absturzstelle 2) Sichern Sie das Gebiet 3) Stabilisieren Sie mindestens einen Überlebenden und halten Sie ihn 2 Minuten lang am Leben, um die Informationen zu sichern. Die Mission scheitert, wenn alle Überlebenden sterben. (Bedrohungen: Feindliche Patrouillen 5 - 10)</German>
+            <Spanish>RESCATE CRÍTICO: Un helicóptero aliado con inteligencia vital se ha estrellado. Los supervivientes están gravemente heridos y el tiempo se acaba. Patrullas enemigas se acercan. Tu misión: 1) Localizar el lugar del accidente 2) Asegurar la zona 3) Estabilizar al menos a un superviviente y mantenerlo con vida durante 2 minutos para asegurar la inteligencia. La misión falla si todos los supervivientes mueren. (Amenazas: Patrullas enemigas 5 - 10)</Spanish>
+            <Italian>SALVATAGGIO CRITICO: Un elicottero alleato che trasportava informazioni vitali si è schiantato. I sopravvissuti sono gravemente feriti e il tempo sta scadendo. Le pattuglie nemiche si stanno avvicinando. La tua missione: 1) Individua il luogo dell&apos;incidente 2) Metti in sicurezza l&apos;area 3) Stabilizza almeno un sopravvissuto e tienilo in vita per 2 minuti per proteggere le informazioni. La missione fallisce se tutti i sopravvissuti muoiono. (Minacce: Pattuglie nemiche 5 - 10)</Italian>
+            <Russian>КРИТИЧЕСКОЕ СПАСЕНИЕ: Союзный вертолет с важными разведданными потерпел крушение. Выжившие тяжело ранены, время на исходе. Приближаются вражеские патрули. Ваша миссия: 1) Найти место крушения 2) Зачистить территорию 3) Стабилизировать хотя бы одного выжившего и сохранить ему жизнь в течение 2 минут для получения данных. Миссия провалена, если все выжившие погибнут. (Угрозы: Вражеские патрули 5 - 10)</Russian>
+            <Polish>RATUNEK KRYTYCZNY: Sojuszniczy śmigłowiec przewożący ważne informacje wywiadowcze rozbił się. Ocaleni są ciężko ranni, a czas ucieka. Zbliżają się wrogie patrole. Twoja misja: 1) Zlokalizuj miejsce katastrofy 2) Zabezpiecz teren 3) Ustabilizuj co najmniej jednego ocalałego i utrzymaj go przy życiu przez 2 minuty, aby zabezpieczyć informacje. Misja kończy się niepowodzeniem, jeśli wszyscy ocaleni zginą. (Zagrożenia: Wrogie patrole 5 - 10)</Polish>
+            <Czech>KRITICKÁ ZÁCHRANA: Spojenecký vrtulník s důležitými informacemi havaroval. Přeživší jsou těžce zraněni a čas běží. Blíží se nepřátelské hlídky. Vaše mise: 1) Najděte místo havárie 2) Zajistěte oblast 3) Stabilizujte alespoň jednoho přeživšího a udržte ho naživu 2 minuty pro zajištění informací. Mise selže, pokud všichni přeživší zemřou. (Hrozby: Nepřátelské hlídky 5 - 10)</Czech>
+            <Turkish>KRİTİK KURTARMA: Önemli istihbarat taşıyan müttefik bir helikopter düştü. Hayatta kalanlar ağır yaralı ve zaman daralıyor. Düşman devriyeleri yaklaşıyor. Göreviniz: 1) Kaza alanını bulun 2) Bölgeyi güvenli hale getirin 3) En az bir hayatta kalanı stabilize edin ve istihbaratı güvence altına almak için 2 dakika hayatta tutun. Tüm hayatta kalanlar ölürse görev başarısız olur. (Tehditler: Düşman Devriyeleri 5 - 10)</Turkish>
+            <Chinese>關鍵救援：一架載有重要情報的盟軍直升機墜毀。倖存者身受重傷，時間緊迫。敵軍巡邏隊正在逼近。你的任務：1) 定位墜機地點 2) 保護該區域 3) 穩定至少一名倖存者並讓他存活2分鐘以獲取情報。如果所有倖存者死亡，任務失敗。（威脅：敵軍巡邏隊 5 - 10）</Chinese>
+            <Chinesesimp>关键救援：一架载有重要情报的盟军直升机坠毁。幸存者身受重伤，时间紧迫。敌军巡叶队正在逼近。你的任务：1) 定位坠机地点 2) 保护该区域 3) 稳定至少一名幸存者并让他存活2分钟以获取情报。如果所有幸存者死亡，任务失败。（威胁：敌军巡逻队 5 - 10）</Chinesesimp>
+        </Key>
+        <Key ID="STR_ACTION_REVIVE">
+            <Original>Porter Assistance</Original>
+            <French>Porter Assistance</French>
+            <English>Revive Ally</English>
+            <Italian>Rianima Alleato</Italian>
+            <Spanish>Reanimar Aliado</Spanish>
+            <German>Verbündeten Wiederbeleben</German>
+        </Key>
+        <Key ID="STR_NOTIF_SURVIVOR_SAVED">
+            <Original>Un survivant a été stabilisé !</Original>
+            <French>Un survivant a été stabilisé !</French>
+            <English>A survivor has been stabilized!</English>
+            <Italian>Un sopravvissuto è stato stabilizzato!</Italian>
+            <Spanish>¡Un superviviente ha sido estabilizado!</Spanish>
+            <German>Ein Überlebender wurde stabilisiert!</German>
+        </Key>
+        <Key ID="STR_NOTIF_TOO_LATE">
+            <Original>Trop tard...</Original>
+            <French>Trop tard...</French>
+            <English>Too late...</English>
+        </Key>
+        <Key ID="STR_ERR_NO_SPAWN_FOUND">
+            <Original>ERREUR CRITIQUE Tâche 6 : Aucun objet spawn trouvé (task_1_spawn_XX) !</Original>
+            <French>ERREUR CRITIQUE Tâche 6 : Aucun objet spawn trouvé (task_1_spawn_XX) !</French>
+            <English>CRITICAL ERROR Task 6: No spawn object found (task_1_spawn_XX)!</English>
+        </Key>
+        <Key ID="STR_MARKER_SURVIVOR">
+            <Original>Survivor</Original>
+            <French>Survivant</French>
+            <English>Survivor</English>
+            <German>Überlebende</German>
+            <Spanish>Superviviente</Spanish>
+            <Italian>Sopravvissuto</Italian>
+            <Russian>Выживший</Russian>
+            <Polish>Ocalały</Polish>
+            <Czech>Přeživší</Czech>
+            <Turkish>Hayatta kalan</Turkish>
+            <Chinese>倖存者</Chinese>
+            <Chinesesimp>幸存者</Chinesesimp>
         </Key>
         <Key ID="STR_MARKER_TARGET">
             <English>Target</English>
@@ -977,17 +1069,17 @@
             <Chinesesimp>一名平民被敌军俘虏，被关押在 3 个可能地点之一。你的任务：1) 搜索地图上的 3 个区域以找到人质 2) 通过消灭守卫来确保该区域的安全 3) 释放人质并将其护送到撤离点。撤离直升机将自动派遣。（敌军：3 个巡逻区，共约 24 名守卫）</Chinesesimp>
         </Key>
         <Key ID="STR_TASK_5_TITLE">
-            <English>Molos Defusal</English>
-            <French>Désamorçage à Molos</French>
-            <German>Entschärfung in Molos</German>
-            <Spanish>Desactivación en Molos</Spanish>
-            <Italian>Disinnesco a Molos</Italian>
-            <Russian>Обезвреживание в Молосе</Russian>
-            <Polish>Rozbrojenie w Molos</Polish>
-            <Czech>Zneškodnění v Molosu</Czech>
-            <Turkish>Molos İmhası</Turkish>
-            <Chinese>莫洛斯拆彈</Chinese>
-            <Chinesesimp>莫洛斯拆弹</Chinesesimp>
+            <English>Bomb Disarmament</English>
+            <French>Désamorçage d&apos;explosifs</French>
+            <German>Bombenentfernung</German>
+            <Spanish>Bomb desarmamiento</Spanish>
+            <Italian>Bomb disarmanimento</Italian>
+            <Russian>Обезвреживание бомб</Russian>
+            <Polish>Bomb disarmanimento</Polish>
+            <Czech>Bomb disarmanimento</Czech>
+            <Turkish>Bomb disarmanimento</Turkish>
+            <Chinese>炸弹拆弹</Chinese>
+            <Chinesesimp>炸弹拆弹</Chinesesimp>
         </Key>
         <Key ID="STR_ACTION_FREE_HOSTAGE">
             <English>Free the hostage</English>

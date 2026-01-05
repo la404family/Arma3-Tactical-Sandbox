@@ -174,6 +174,19 @@ MISSION_fnc_addSubmitAction = {
 // task_5_spawn_10 permet de situer la ville de présence civile.
 
 //-------------------------------------------
+// Les éléments de la tache 6 : utilise les spawn de la tache 1
+//-------------------------------------------
+
+// task_1_spawn_02 à task_1_spawn_04 
+// task_1_spawn_06 à task_1_spawn_10 
+// task_1_spawn_12 à task_1_spawn_16 
+// task_1_spawn_18 à task_1_spawn_22 
+// task_1_spawn_24 à task_1_spawn_28 
+// task_1_spawn_30 à task_1_spawn_34 
+// task_1_spawn_36 à task_1_spawn_40  
+// task_1_spawn_42 à task_1_spawn_46 
+
+//-------------------------------------------
 // Les fonctions de tache :
 //-------------------------------------------
 
@@ -190,14 +203,7 @@ MISSION_fnc_addSubmitAction = {
 // application de la tache 5 (bombe) - Lancé via le menu missions
 // [] call MISSION_fnc_task_5_launch;
 
-
-
-
-
-
-
-
 //-------------------------------------------
 // Les fonctions de tache : (A remettre à la fin du développement)
 //-------------------------------------------
-[] spawn MISSION_fnc_task_0_intro;
+// [] spawn MISSION_fnc_task_0_intro;

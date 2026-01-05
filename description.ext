@@ -15,6 +15,47 @@ loadScreen = "Slide1.jpg"; // Votre image
 overviewText = $STR_GAME_DESCRIPTION; // Le texte descriptif
 overviewPicture = "Slide1.jpg"; // L'image vignette
 
+class CfgRevive
+{
+    // -----------------------------------------------------------------
+    // ACTIVATION
+    // -----------------------------------------------------------------
+    // 0 = Désactivé
+    // 1 = Activé pour tout le monde (Joueurs + IA) -> C'est ce qu'il vous faut
+    match = 1;
+
+    // -----------------------------------------------------------------
+    // TEMPS DE SURVIE (BLEEDOUT)
+    // -----------------------------------------------------------------
+    // C'est le temps (en secondes) que l'IA va attendre au sol avant de mourir.
+    // Une fois que votre script a déclenché l'accident, ce chrono démarre.
+    // Mettez une valeur assez longue pour laisser le temps aux joueurs d'arriver.
+    // Exemple : 600 secondes = 10 minutes de survie une fois blessé.
+    duration = 600;
+
+    // -----------------------------------------------------------------
+    // QUI PEUT SOIGNER ?
+    // -----------------------------------------------------------------
+    // 0 = Tout le monde peut réanimer
+    // 1 = Seulement les médecins (trait Medic)
+    medicSpeedMultiplier = 2; // Les médecins vont 2x plus vite
+    
+    // -----------------------------------------------------------------
+    // OBJET REQUIS
+    // -----------------------------------------------------------------
+    // 0 = Rien (mains nues)
+    // 1 = Medikit (Grosse trousse)
+    // 2 = Medikit OU Trousse de secours (FAK)
+    requiredItems = 2;
+
+    // -----------------------------------------------------------------
+    // ÉTAT APRÈS RÉANIMATION
+    // -----------------------------------------------------------------
+    // 0 = On se relève en pleine forme (0 dégâts)
+    // 1 = On se relève blessé (nécessite encore des soins)
+    requiredTrait = 0; 
+};
+
 class CfgMusic
 {
     tracks[] = {00intro, 00outro};
@@ -50,6 +91,7 @@ class CfgFunctions
             class task_3_launch {};
             class task_4_launch {};
             class task_5_launch {};
+            class task_6_launch {};
             class spawn_missions {};
             class spawn_arsenal {};
             class task_x_finish {};

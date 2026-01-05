@@ -68,7 +68,10 @@ if (_mode == "OPEN") exitWith {
         if (_i == 5) then {
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_5_TITLE"];
         };
-        if (_i > 5) then {
+        if (_i == 6) then {
+            _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_6_TITLE"];
+        };
+        if (_i > 6) then {
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_X_TITLE"];
         };
         
@@ -114,7 +117,11 @@ if (_mode == "SELECT") exitWith {
         _titleCtrl ctrlSetText (localize "STR_TASK_5_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_5_DESC");
     };
-    if (_taskNum > 5) then {
+    if (_taskNum == 6) then {
+        _titleCtrl ctrlSetText (localize "STR_TASK_6_TITLE");
+        _descCtrl ctrlSetText (localize "STR_TASK_6_DESC");
+    };
+    if (_taskNum > 6) then {
         _titleCtrl ctrlSetText (localize "STR_TASK_X_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_X_DESC");
     };
@@ -124,6 +131,10 @@ if (_mode == "SELECT") exitWith {
 // LAUNCH - Lancement de la mission sélectionnée (UNE SEULE)
 // ============================================================================
 if (_mode == "LAUNCH") exitWith {
+    // Vérifie si le joueur est le leader du groupe
+    if (player != leader group player) exitWith {
+        hint (localize "STR_ONLY_GROUP_LEADER");
+    };
     private _taskNum = MISSION_var_current_task_index;
     
     closeDialog 0; // Ferme l'interface
@@ -163,7 +174,12 @@ if (_mode == "LAUNCH") exitWith {
             // Tâche 5 - Présence Civile & Désamorçage
             [] spawn MISSION_fnc_task_5_launch;
         };
-        // Tâches 6-20 : à implémenter plus tard
+        case 6: {
+            // Tâche 6 - Sauvetage des alliés
+            // Utilisation de execVM pour forcer le rechargement du fichier à chaque lancement (Debug)
+            [] execVM "functions\fn_task_6_launch.sqf";
+        };
+        // Tâches 7-20 : à implémenter plus tard
         default {};
     };
 };

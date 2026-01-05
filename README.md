@@ -5,6 +5,8 @@
 ![SP/COOP](https://img.shields.io/badge/SP%2FCOOP-Multiplayer-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
+[📜 Changelog](./CHANGELOG.md)
+
 ![MISSION](./Slide14.JPG)
 
 ---
