@@ -99,6 +99,7 @@ class CfgFunctions
             class spawn_ennemies {};
             class ajust_AI_skills {};
             class task_briefing {};
+            class ajust_change_team_leader {};
         };
     };
 };

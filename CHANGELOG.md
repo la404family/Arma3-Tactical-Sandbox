@@ -8,11 +8,17 @@ This document tracks the evolution of the **Tactical Sandbox** mod.
 
 ---
 
+## 🚀 v1.3
+
+- Increase of the hostage civilian’s courage to prevent him from stopping.
+- ajustement of the team leader when a player changes 
+- task 7 drone alternance 
+- task 8 
+
 ## 🚀 v1.2
 
-- Ajout des langues suivantes : Portuguese, Japanese, Korean
-- Ajout des briefings pour toutes les missions
-
+- Added the following languages: Portuguese, Japanese, Korean
+- Added briefings for all missions
 
 ## 🚀 v1.1 
 
@@ -40,3 +46,6 @@ This document tracks the evolution of the **Tactical Sandbox** mod.
 - **Universal Compatibility**: The system automatically detects and integrates content from installed **Mods** and **DLCs**.
 - **Permadeath System**: Strict survival management.
 - **Localization**: Full translation in 12 languages (English, French, German, Spanish, Italian, Russian, Polish, Czech, Turkish, Simplified/Traditional Chinese, Portuguese).
+
+
+

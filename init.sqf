@@ -185,6 +185,7 @@ MISSION_fnc_addSubmitAction = {
 // Les éléments de la tache 6 : utilise les spawn de la tache 1
 //-------------------------------------------
 
+// tache 6 récupère des éléments de la tache 1
 // task_1_spawn_02 à task_1_spawn_04 
 // task_1_spawn_06 à task_1_spawn_10 
 // task_1_spawn_12 à task_1_spawn_16 
@@ -193,6 +194,10 @@ MISSION_fnc_addSubmitAction = {
 // task_1_spawn_30 à task_1_spawn_34 
 // task_1_spawn_36 à task_1_spawn_40  
 // task_1_spawn_42 à task_1_spawn_46 
+
+//-------------------------------------------
+// Les éléments de la tache 7 : spwawn a positionner dans une zone montagneuse
+//-------------------------------------------
 
 //-------------------------------------------
 // Les fonctions de tache :

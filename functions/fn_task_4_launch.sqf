@@ -133,12 +133,18 @@ _hostage allowFleeing 0; // Pas de fuite
             { [_captive, _x] remoteExec ["enableAI", 0]; } forEach ["ANIM", "MOVE", "AUTOTARGET", "TARGET"];
             
             // --- Logique Suivre le joueur le plus proche ---
-            _captive setBehaviour "SAFE";
-            _captive setUnitPos "AUTO";
+            _captive setBehaviour "CARELESS";
+            _captive setUnitPos "UP";
+            _captive setSkill ["courage", 1];
             
             // Boucle de suivi
             while { ["task_4"] call BIS_fnc_taskExists && alive _captive && !(_captive getVariable ["inHeli", false]) } do {
                 
+                // Renforcer le comportement pour éviter qu'il ne s'arrête
+                _captive setUnitPos "UP";
+                _captive setBehaviour "CARELESS";
+                _captive setSkill ["courage", 1];
+
                 // Trouver le joueur le plus proche
                 private _nearestPlayer = objNull;
                 private _minDist = 99999;

@@ -18,11 +18,11 @@
 
 ---
 
-## 🌍 Supported Languages / Langues Supportées
+## 🌍 Supported Languages
 
 - 🇬🇧 English
 - 🇫🇷 Français
-- 🇬🇪 Deutsch
+- 🇩🇪 Deutsch
 - 🇪🇸 Spanish
 - 🇮🇹 Italiano
 - 🇷🇺 Русский
@@ -31,9 +31,9 @@
 - 🇹🇷 Türkçe
 - 🇨🇳 中文
 - 🇨🇳 简体中文*
-- 🇵🇹 Português
-- 🇯🇵 Japonais
-- 🇰🇷 Coréen
+- 日本語
+- 한국어
+- Português
 
 ---
 
