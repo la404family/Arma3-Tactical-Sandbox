@@ -8,11 +8,12 @@ Ce document suit l'évolution du mod **Tactical Sandbox**.
 
 ---
 
-## 🚀 v1.2.6
+## 🚀 v1.3
 
 - Ajustement du timing de la tâche 1
 - Ajout de point de recherche tâche 4
-- Ajout de la tâche 7
+- Ajout de la tâche 7 (destruction de radar ennemis)
+- modification de l'introduction 
 
 ## 🚀 v1.2.5
 

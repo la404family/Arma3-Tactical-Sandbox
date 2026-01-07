@@ -20,12 +20,12 @@ The system automatically adapts to your installed Mods and DLCs. New units appea
 Prepare for your mission in a fully interactive HQ featuring specialized zones:
 
 [list]
-[*] [b]🔫 Virtual Arsenal:[/b] Choose your uniforms, patches, weapons, and gear without restriction.
-[*] [b]⛅ Weather & Time Room:[/b] Take full control over the time of day and all weather conditions (Fog, Rain, Storms, Clear Skies).
-[*] [b]🗺️ Mission Selector:[/b] Choose from multiple dynamic mission types suited to your mood.
-[*] [b]🪖 Recruitment Center:[/b] Build and customize your AI squad ([i]"Brothers in Arms"[/i]). Add or remove soldiers at any time.
-[*] [b]🎯 Enemy Selector:[/b] Customize opposing forces. [i]Note: Default vanilla units are included, but you are free to use [b]ANY[/b] OPFOR or Independent faction.[/i]
-[*] [b]🚙 Garage:[/b] Select your transport. Choose from a wide variety of ground vehicles and helicopters.
+[*] [b]🔫 1. Virtual Arsenal:[/b] Choose your uniforms, patches, weapons, and gear without restriction.
+[*] [b]⛅ 2. Weather & Time Room:[/b] Take full control over the time of day and all weather conditions (Fog, Rain, Storms, Clear Skies).
+[*] [b]🗺️ 3. Mission Selector:[/b] Choose from multiple dynamic mission types suited to your mood.
+[*] [b]🪖 4. Recruitment Center:[/b] Build and customize your AI squad ([i]"Brothers in Arms"[/i]). Add or remove soldiers at any time.
+[*] [b]🎯 5. Enemy Selector:[/b] Customize opposing forces. [i]Note: Default vanilla units are included, but you are free to use [b]ANY[/b] OPFOR or Independent faction.[/i]
+[*] [b]🚙 6. Garage:[/b] Select your transport. Choose from a wide variety of ground vehicles and helicopters.
 [/list]
 
 [hr]
