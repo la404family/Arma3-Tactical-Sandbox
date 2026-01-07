@@ -724,9 +724,13 @@ if (isServer) then {
             
             _unitIndex = _unitIndex + 1;
         } forEach _unitsToDisembark;
-        
+        // verouiller les portes
+     _heli lock true;  // Ou _heli setVehicleLock "LOCKED";
+     _heli setVehicleLock "LOCKED";
         sleep 5;  // Pause pour permettre au joueur de s'orienter
         _heli animateSource ["door_rear_source", 0];
+        _heli animateDoor ["door_rear_source", 0];
+        _heli animate ["door_rear_source", 0];
         // ----------------------------------------------------------------------------------------------
         // DEPART DE L'HELICOPTERE
         // ----------------------------------------------------------------------------------------------
@@ -741,7 +745,7 @@ if (isServer) then {
         // ----------------------------------------------------------------------------------------------
         // NETTOYAGE FINAL
         // ----------------------------------------------------------------------------------------------
-        sleep 60;  // Attendre que l'hélico soit hors de vue
+        sleep 70;  // Attendre que l'hélico soit hors de vue
         
         // Supprimer l'équipage et l'hélicoptère pour libérer les ressources
         { deleteVehicle _x } forEach _crew;
