@@ -58,6 +58,7 @@ private _selectedMarker = str _selectedObj; // Pour le debug
 ] call BIS_fnc_taskCreate;
 
 ["task_6"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[6] call MISSION_fnc_task_x_tableau;
 
 // 2. Spawn de l'hélicoptère
 private _heliClass = "B_Heli_Transport_03_F"; // Default Huron

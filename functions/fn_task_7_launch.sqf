@@ -123,6 +123,7 @@ for "_i" from 1 to _nbEnemies do {
 ] call BIS_fnc_taskCreate;
 
 ["task_7"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[7] call MISSION_fnc_task_x_tableau;
 
 // ============================================================================
 // 6. BOUCLE DE SURVEILLANCE

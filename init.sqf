@@ -45,7 +45,6 @@ if (hasInterface) then {
 // fonction qui spawn les taches séléctionnées
 ["INIT"] call MISSION_fnc_spawn_missions;
 // fonction qui spawn le menu des ennemis
-// fonction qui spawn le menu des ennemis
 ["INIT"] call MISSION_fnc_spawn_ennemies;
 
 // Lancement automatique de l'ajustement des skills I.A.
@@ -104,8 +103,11 @@ MISSION_fnc_addSubmitAction = {
 // Les éléments du QG allié :
 //-------------------------------------------
 
-// officier_task_giver est un officier qui donne la tache (et doit rester en vie)
 // batiment_officer est le batiment où se trouve officier_task_giver
+// tableau_des_taches est le tableau qui affiche la tache en cours.
+// chaise_0 à chaise_13 sont des chaises installées dans la salle de briefing
+// briefing_request est un trigger (lorsqu'on y entre on peut organiser une réunion)
+
 
 //-------------------------------------------
 // Les éléments des communs aux taches :
@@ -227,6 +229,8 @@ MISSION_fnc_addSubmitAction = {
 // Les fonctions de tache : (A remettre à la fin du développement)
 //-------------------------------------------
 [] spawn MISSION_fnc_task_0_intro;
+// fonction fn_task_x_tableau
+[] call MISSION_fnc_task_x_tableau;
 
 // toutes les 5 secondes on vérifie si le joueur est en vie et leader : [] call MISSION_fnc_ajust_change_team_leader;
 [] spawn {

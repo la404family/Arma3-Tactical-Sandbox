@@ -46,6 +46,7 @@ private _taskPos = if (!isNull _firstSpawn) then { getPos _firstSpawn } else { [
 
 hint (localize "STR_NOTIF_TASK1_START");
 ["task_1"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[1] call MISSION_fnc_task_x_tableau;
 
 // ============================================================================
 // SECTION 3: SÉLECTION ALÉATOIRE DES FUGITIFS ET CHEMINS

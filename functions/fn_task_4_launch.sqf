@@ -70,6 +70,7 @@ private _hostageZone = selectRandom _searchZones;
 ] call BIS_fnc_taskCreate;
 
 ["task_4"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[4] call MISSION_fnc_task_x_tableau;
 
 // 3. Spawn de l'Otage (Unique)
 if (isNil "MISSION_var_civilians") then { MISSION_var_civilians = []; };

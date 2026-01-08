@@ -172,6 +172,7 @@ private _taskID = "task_2_assassination";
 ] call BIS_fnc_taskCreate;
 
 ["task_2"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[2] call MISSION_fnc_task_x_tableau;
 
 // 6. Surveillance des conditions - Récupération du document
 [_taskID, _docType] spawn {

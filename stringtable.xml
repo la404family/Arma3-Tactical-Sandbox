@@ -3788,5 +3788,37 @@
             <Portuguese>O alvo é a grande estrutura de cúpula geodésica branca.</Portuguese>
             <Korean>목표는 거대한 흰색 지오데식 돔 구조물입니다.</Korean>
         </Key>
+        <Key ID="STR_TABLEAU_EN_ATTENTE">
+            <English>STANDBY</English>
+            <French>EN ATTENTE</French>
+            <German>BEREITSCHAFT</German>
+            <Spanish>EN ESPERA</Spanish>
+            <Italian>IN ATTESA</Italian>
+            <Russian>ОЖИДАНИЕ</Russian>
+            <Polish>GOTOWOŚĆ</Polish>
+            <Czech>POHOTOVOST</Czech>
+            <Turkish>BEKLEMEDE</Turkish>
+            <Chinese>待命</Chinese>
+            <Chinesesimp>待命</Chinesesimp>
+            <Japanese>待機中</Japanese>
+            <Portuguese>EM ESPERA</Portuguese>
+            <Korean>대기</Korean>
+        </Key>
+        <Key ID="STR_TABLEAU_BRIEFING">
+            <English>BRIEFING</English>
+            <French>BRIEFING</French>
+            <German>BRIEFING</German>
+            <Spanish>BRIEFING</Spanish>
+            <Italian>BRIEFING</Italian>
+            <Russian>БРИФИНГ</Russian>
+            <Polish>ODPRAWA</Polish>
+            <Czech>BRIEFING</Czech>
+            <Turkish>BRİFİNG</Turkish>
+            <Chinese>簡報</Chinese>
+            <Chinesesimp>简报</Chinesesimp>
+            <Japanese>ブリーフィング</Japanese>
+            <Portuguese>BRIEFING</Portuguese>
+            <Korean>브리핑</Korean>
+        </Key>
     </Package>
 </Project>

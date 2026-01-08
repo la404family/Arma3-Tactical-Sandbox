@@ -34,6 +34,7 @@ switch (_mode) do {
         ] call BIS_fnc_taskCreate;
 
         ["task_3"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+        [3] call MISSION_fnc_task_x_tableau;
 
         // 2. Support Aérien Allié (Survol de reconnaissance)
         // DÉLAI : Le support aérien arrive entre 5 et 10 minutes après le lancement de la mission

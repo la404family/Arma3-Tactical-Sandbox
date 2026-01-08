@@ -101,6 +101,7 @@ class CfgFunctions
             class ajust_AI_skills {};
             class task_briefing {};
             class ajust_change_team_leader {};
+            class task_x_tableau {};
         };
     };
 };

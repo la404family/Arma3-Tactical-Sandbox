@@ -290,6 +290,7 @@ private _selectedSpawns = [selectRandom _spawns1, selectRandom _spawns2];
 [true, "task_5", [localize "STR_TASK_5_DESC", localize "STR_TASK_5_TITLE", ""], getPos _townCenter, "CREATED", 1, true, "search", true] call BIS_fnc_taskCreate;
 
 ["task_5"] remoteExec ["MISSION_fnc_task_briefing", 0, true];
+[5] call MISSION_fnc_task_x_tableau;
 
 // ==========================================================================
 // SECTION 6: TIMER UI (35 à 45 minutes aléatoire)
