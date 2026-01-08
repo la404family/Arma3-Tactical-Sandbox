@@ -727,7 +727,7 @@ if (isServer) then {
         // verouiller les portes
      _heli lock true;  // Ou _heli setVehicleLock "LOCKED";
      _heli setVehicleLock "LOCKED";
-        sleep 3;  // Pause pour permettre au joueur de s'orienter
+        sleep 2;  // Pause pour permettre au joueur de s'orienter
         _heli animateSource ["door_rear_source", 0];
         _heli animateDoor ["door_rear_source", 0];
         _heli animate ["door_rear_source", 0];

@@ -8,14 +8,12 @@ Ce document suit l'évolution du mod **Tactical Sandbox**.
 
 ---
 
-## 🚀 v1.4
+## 🚀 v1.3.5
 
-- Ajout de la tâche 8 (???)
-- Ajout de la tâche 9 (???)
-- Le soldat allié doit avoir égelement la meme voix que le joueur
-- Espace de réunion dans la maison
-- Gestion des groupes.
-- Les unités creer doivent etre jouables
+- modification du comportement des ennemis tache 7
+- Le soldat allié I.A à la meme voix que le joueur (langue de la voix identique)
+- Espace de briefing dans la maison
+- Les unités creer sont jouables (switch possible en cas de mort)
 
 ## 🚀 v1.3
 

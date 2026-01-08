@@ -3820,5 +3820,101 @@
             <Portuguese>BRIEFING</Portuguese>
             <Korean>브리핑</Korean>
         </Key>
+        <Key ID="STR_ACTION_ORGANIZE_BRIEFING">
+            <English>Organize a briefing</English>
+            <French>Organiser un briefing</French>
+            <German>Briefing organisieren</German>
+            <Spanish>Organizar un informe</Spanish>
+            <Italian>Organizza un briefing</Italian>
+            <Russian>Организовать брифинг</Russian>
+            <Polish>Zorganizuj odprawę</Polish>
+            <Czech>Uspořádat brífink</Czech>
+            <Turkish>Brifing düzenle</Turkish>
+            <Chinese>組織簡報</Chinese>
+            <Chinesesimp>组织简报</Chinesesimp>
+            <Japanese>ブリーフィングを主催</Japanese>
+            <Portuguese>Organizar um briefing</Portuguese>
+            <Korean>브리핑 조직</Korean>
+        </Key>
+        <Key ID="STR_ACTION_END_BRIEFING">
+            <English>End the briefing</English>
+            <French>Mettre fin au briefing</French>
+            <German>Briefing beenden</German>
+            <Spanish>Terminar el informe</Spanish>
+            <Italian>Termina il briefing</Italian>
+            <Russian>Закончить брифинг</Russian>
+            <Polish>Zakończ odprawę</Polish>
+            <Czech>Ukončit brífink</Czech>
+            <Turkish>Brifingi sonlandır</Turkish>
+            <Chinese>結束簡報</Chinese>
+            <Chinesesimp>结束简报</Chinesesimp>
+            <Japanese>ブリーフィングを終了</Japanese>
+            <Portuguese>Terminar o briefing</Portuguese>
+            <Korean>브리핑 종료</Korean>
+        </Key>
+        <Key ID="STR_ONLY_GROUP_LEADER">
+            <English>Only the group leader can organize a briefing.</English>
+            <French>Seul le chef de groupe peut organiser un briefing.</French>
+            <German>Nur der Gruppenleiter kann ein Briefing organisieren.</German>
+            <Spanish>Solo el líder del grupo puede organizar un informe.</Spanish>
+            <Italian>Solo il capogruppo può organizzare un briefing.</Italian>
+            <Russian>Только лидер группы может организовать брифинг.</Russian>
+            <Polish>Tylko dowódca grupy może zorganizować odprawę.</Polish>
+            <Czech>Brífink může uspořádat pouze velitel skupiny.</Czech>
+            <Turkish>Sadece grup lideri brifing düzenleyebilir.</Turkish>
+            <Chinese>只有組長可以組織簡報。</Chinese>
+            <Chinesesimp>只有组长可以组织简报。</Chinesesimp>
+            <Japanese>グループリーダーのみがブリーフィングを主催できます。</Japanese>
+            <Portuguese>Apenas o líder do grupo pode organizar um briefing.</Portuguese>
+            <Korean>그룹 리더만 브리핑을 조직할 수 있습니다.</Korean>
+        </Key>
+        <Key ID="STR_BRIEFING_NO_AI">
+            <English>No AI in your group to attend the briefing.</English>
+            <French>Aucune IA dans votre groupe pour assister au briefing.</French>
+            <German>Keine KI in Ihrer Gruppe, um am Briefing teilzunehmen.</German>
+            <Spanish>No hay IA en tu grupo para asistir al informe.</Spanish>
+            <Italian>Nessuna IA nel tuo gruppo per assistere al briefing.</Italian>
+            <Russian>В вашей группе нет ИИ для участия в брифинге.</Russian>
+            <Polish>Brak AI w twojej grupie, aby wziąć udział w odprawie.</Polish>
+            <Czech>Ve vaší skupině není žádná AI, která by se mohla zúčastnit brífinku.</Czech>
+            <Turkish>Grubunuzda brifinge katılacak yapay zeka yok.</Turkish>
+            <Chinese>您的小組中沒有AI參加簡報。</Chinese>
+            <Chinesesimp>您的小组中没有AI参加简报。</Chinesesimp>
+            <Japanese>ブリーフィングに参加するAIがグループにいません。</Japanese>
+            <Portuguese>Nenhuma IA no seu grupo para assistir ao briefing.</Portuguese>
+            <Korean>브리핑에 참석할 AI가 그룹에 없습니다.</Korean>
+        </Key>
+        <Key ID="STR_ACTION_SIT">
+            <English>Sit Down</English>
+            <French>S&apos;asseoir</French>
+            <German>Hinsetzen</German>
+            <Spanish>Sentarse</Spanish>
+            <Italian>Siediti</Italian>
+            <Russian>Сесть</Russian>
+            <Polish>Usiądź</Polish>
+            <Czech>Sednout</Czech>
+            <Turkish>Otur</Turkish>
+            <Chinese>坐下</Chinese>
+            <Chinesesimp>坐下</Chinesesimp>
+            <Japanese>座る</Japanese>
+            <Portuguese>Sentar-se</Portuguese>
+            <Korean>앉기</Korean>
+        </Key>
+        <Key ID="STR_ACTION_STAND">
+            <English>Stand Up</English>
+            <French>Se lever</French>
+            <German>Aufstehen</German>
+            <Spanish>Levantarse</Spanish>
+            <Italian>Alzati</Italian>
+            <Russian>Встать</Russian>
+            <Polish>Wstań</Polish>
+            <Czech>Vstát</Czech>
+            <Turkish>Ayağa kalk</Turkish>
+            <Chinese>站起來</Chinese>
+            <Chinesesimp>站起来</Chinesesimp>
+            <Japanese>立つ</Japanese>
+            <Portuguese>Levantar-se</Portuguese>
+            <Korean>일어서기</Korean>
+        </Key>
     </Package>
 </Project>

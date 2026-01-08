@@ -231,6 +231,8 @@ MISSION_fnc_addSubmitAction = {
 [] spawn MISSION_fnc_task_0_intro;
 // fonction fn_task_x_tableau
 [] call MISSION_fnc_task_x_tableau;
+// fonction fn_task_x_briefing
+[] spawn MISSION_fnc_task_x_briefing;
 
 // toutes les 5 secondes on vérifie si le joueur est en vie et leader : [] call MISSION_fnc_ajust_change_team_leader;
 [] spawn {

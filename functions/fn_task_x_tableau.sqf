@@ -33,7 +33,7 @@ private _texteAffiche = if (_taskNumber == 0) then {
 // ============================================================================
 
 // Debug pour le joueur
-systemChat format ["[Tableau] Mise à jour: %1", _texteAffiche];
+//systemChat format ["[Tableau] Mise à jour: %1", _texteAffiche];
 
 private _texture = format [
     "#(rgb,2048,1024,3)text(1,1,""PuristaBold"",0.10,""#1A1A1A"",""#FFFFFF"",""%1"")",

@@ -342,6 +342,18 @@ switch (_mode) do {
                     };
                     
                     // Pause pour initialisation
+                    sleep 0.5;
+                    
+                    // ============================================================
+                    // CONFIGURATION : VOIX ET JOUABILITÉ
+                    // ============================================================
+                    // 1. Même voix que le joueur (Langue et Timbre)
+                    _newUnit setSpeaker (speaker player);
+                    
+                    // 2. Rendre l'unité jouable (Switchable)
+                    addSwitchableUnit _newUnit;
+                    
+                    // ============================================================
                     
                     // ============================================================
                     // DÉPLACEMENT VERS LE POINT DE SORTIE

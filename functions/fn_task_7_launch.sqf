@@ -105,7 +105,35 @@ for "_i" from 1 to _nbEnemies do {
 // ============================================================================
 
 // Patrouille autour de leur point de spawn (_spawnPos)
-[_grp, _spawnPos, 40] call BIS_fnc_taskPatrol;
+// Custom Patrol: Changement de position toutes les 40 à 60s autour du radar (20-45m)
+[_grp, _radarPos] spawn {
+    params ["_grp", "_centerPos"];
+    
+    // On boucle tant que la mission est active et qu'il reste des ennemis
+    while {MISSION_var_task7_running && {({alive _x} count units _grp) > 0}} do {
+        
+        {
+            if (alive _x) then {
+                // Position aléatoire entre 20 et 45m du radar
+                private _dist = 20 + random 25; 
+                private _ang = random 360;
+                private _movePos = _centerPos getPos [_dist, _ang];
+                
+                // Ordre de mouvement
+                _x doMove _movePos;
+                
+                // Optionnel : Réglage vitesse/comportement si pas en combat
+                if (behaviour _x != "COMBAT") then {
+                    _x setSpeedMode "LIMITED";
+                    _x setBehaviour "SAFE";
+                };
+            };
+        } forEach (units _grp);
+        
+        // Attente aléatoire entre 40 et 60 secondes
+        sleep (40 + random 20);
+    };
+};
 
 // ============================================================================
 // 5. CRÉATION DE LA TÂCHE
