@@ -60,9 +60,3 @@ Prepare for your mission in a fully interactive HQ featuring specialized zones:
 
 This project is Open Source.
 Feel free to follow my work or check the code!
-
-## ❤️ PLEASE !!
-
-**Follow me on GitHub:** [La404Family Profile](https://github.com/la404family)
-
-**Drop a Star on the project:** [Tactical Sandbox Repository](https://github.com/la404family/Arma3-Tactical-Sandbox)

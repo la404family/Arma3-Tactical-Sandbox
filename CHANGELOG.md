@@ -12,7 +12,6 @@ Ce document suit l'évolution du mod **Tactical Sandbox**.
 
 - gestion de la voix de l'équipe (si le chef de groupe change de voix toutes les unités changent de voix)
 - Ajout du bouton d'action de groupe (Soignez-vous)
-- 
 
 ## 🚀 v1.3.7
 

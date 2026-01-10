@@ -275,11 +275,16 @@ switch (_mode) do {
                 // ============================================================
                 // EFFET FUMÉE BLANCHE - APPARAIT 0.4s AVANT LE SOLDAT
                 // ============================================================
+                
+                // Position légèrement surélevée pour éviter que la fumée ne soit sous terre
+                private _smokePos = +_spawnPos;
+                _smokePos set [2, (_spawnPos select 2) + 0.5];
+
                 // Grenade fumigène blanche
-                private _smoke = "SmokeShellWhite" createVehicle _spawnPos;
+                private _smoke = "SmokeShellWhite" createVehicle _smokePos;
                 
                 // Effet de particules supplémentaire pour plus de densité
-                private _source = "#particlesource" createVehicle _spawnPos;
+                private _source = "#particlesource" createVehicle _smokePos;
                 _source setParticleParams [
                     ["\A3\Data_F\ParticleEffects\Universal\Universal.p3d", 16, 12, 8, 1],
                     "", "Billboard", 1, 3, [0, 0, 0.5], [0, 0, 2], 1, 1.5, 1, 0.3,
