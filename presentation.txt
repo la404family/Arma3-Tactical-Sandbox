@@ -1,64 +1,103 @@
 [h1]Tactical Sandbox — A Fully Customizable Mission Launcher[/h1]
-[quote]Tactical Sandbox is a mission launcher designed to be tailored exactly the way you want.
-Experience the ultimate freedom in mission planning and execution.[/quote]
 
-[hr]
+[quote]
+Tactical Sandbox is a mission launcher designed to be tailored exactly the way you want.
+Experience the ultimate freedom in mission planning and execution.
+[/quote]
 
 [h2]⭐️ KEY FEATURES[/h2]
+
 [b]Universal Compatibility[/b]
 The system automatically adapts to your installed Mods and DLCs.
-New units appear seamlessly, and friendly forces will wear the uniforms from your loaded mods.
-Allies appearing in missions (via helicopter or others) will wear the server players' outfits (it's better for immersion!).
 
 [b]Dynamic Gameplay[/b]
 [list]
-[*] [b]Detailed Briefings:[/b] All missions include specific task instructions.
-[*] [b]Infinite Replayability:[/b] Every objective takes place in a different location with over [b]50+ possible areas per mission[/b].
-[*] [b]⚠️ Permadeath System:[/b] Survival truly matters. If you fall, the consequences are real.
+[*][b]Detailed Briefings:[/b] All missions include specific task instructions.
+[*][b]Infinite Replayability:[/b] Every objective takes place in a different location with over [b]50+ possible areas per mission[/b].
+[*][b]⚠️ Permadeath System:[/b] Survival truly matters. If you fall, the consequences are real.
+Revive/medical overhaul mods don’t fully adapt, but you can switch to a nearby AI teammate.
 [/list]
-
-[hr]
 
 [h2]🏢 THE HEADQUARTERS[/h2]
 Prepare for your mission in a fully interactive HQ featuring specialized zones:
-
 [list]
-[*] [b]🔫 Virtual Arsenal:[/b] Choose your uniforms, patches, weapons, and gear without restriction.
-[*] [b]⛅ Weather & Time Room:[/b] Take full control over the time of day and all weather conditions (Fog, Rain, Storms, Clear Skies).
-[*] [b]🗺️ Mission Selector:[/b] Choose from multiple dynamic mission types suited to your mood.
-[*] [b]🪖 Recruitment Center:[/b] Build and customize your AI squad ([i]"Brothers in Arms"[/i]). Add or remove soldiers at any time.
-[*] [b]🎯 Enemy Selector:[/b] Customize opposing forces. [i]Note: Default vanilla units are included, but you are free to use [b]ANY[/b] OPFOR or Independent faction.[/i]
-You must modify the enemies before launching a mission (the selected enemies will be the mission's enemies).
-[*] [b]🚙 Garage:[/b] Select your transport.
-Choose from a wide variety of ground vehicles and helicopters.
+[*][b]1. Virtual Arsenal:[/b] Choose uniforms, patches, weapons, and gear freely.
+[*][b]2. Weather & Time Room:[/b] Control time of day and weather (Fog, Rain, Storms, Clear Skies).
+[*][b]3. Mission Selector:[/b] Pick dynamic mission types suited to your mood.
+[*][b]4. Recruitment Center:[/b] Build/customize your AI squad ("Brothers in Arms"). Add/remove soldiers anytime.
+Friendly troops use uniforms from your loaded mods. Allies arriving in missions use player outfits.
+[*][b]5. Enemy Selector:[/b] Choose opposing factions. Vanilla included, but ANY OPFOR/IND faction works.
+IMPORTANT: Configure enemies before launching (your selection defines mission enemies).
+[*][b]6. Garage:[/b] Select and deploy vehicles and helicopters.
 [/list]
 
-[hr]
-
-[h2]🌍 SUPPORTED LANGUAGES[/h2]
+[h2]🌍 TRANSLATED LANGUAGES[/h2]
 [list]
-[*] 🇬🇧 English
-[*] 🇫🇷 Français
-[*] 🇩🇪 Deutsch
-[*] 🇪🇸 Spanish
-[*] 🇮🇹 Italiano
-[*] 🇷🇺 Русский
-[*] 🇵🇱 Polski
-[*] 🇨🇿 Česky
-[*] 🇹🇷 Türkçe
-[*] 🇨🇳 中文 (Simplified & Traditional)
-[*] 🇯🇵 日本語
-[*] 🇰🇷 한국어
-[*] 🇵🇹 Português
+[*]English
+[*]Français
+[*]Deutsch
+[*]Español
+[*]Italiano
+[*]Русский
+[*]Polski
+[*]Česky
+[*]Türkçe
+[*]中文
+[*]日本語
+[*]한국어
+[*]Português
 [/list]
-
-[hr]
 
 [h2]💻 SOURCE CODE & DEVELOPMENT[/h2]
 This project is Open Source.
-Feel free to follow my work or check the code!
+Follow on GitHub: https://github.com/la404family
+Star the repo: https://github.com/la404family/Arma3-Tactical-Sandbox
 
-[h2]❤️ PLEASE !!
-[/h2]
-[b]Follow me on GitHub:[/b] [url=https://github.com/la404family]La404Family Profile[/url]
-[b]Drop a Star on the project:[/b] [url=https://github.com/la404family/Arma3-Tactical-Sandbox]Tactical Sandbox Repository[/url]
+[h1]🎯 Mission Overview — Tactical Sandbox[/h1]
+
+[hr]
+
+[h2]Task 1 — Manhunt[/h2]
+Track down fugitives escaping by sea.
+Neutralize all before they reach boats.
+[b]Failure if one escapes.[/b]
+
+[hr]
+
+[h2]Task 2 — Assassination[/h2]
+Find and eliminate three officers — only one carries intel.
+Recover documents from the correct body.
+
+[hr]
+
+[h2]Task 3 — Cargo Destruction[/h2]
+Destroy enemy ammo caches guarded by infantry.
+Air support helps with target spotting.
+
+[hr]
+
+[h2]Task 4 — Hostage Extraction[/h2]
+Rescue a hostage held at one of three locations.
+[b]Failure if hostage dies.[/b]
+
+[hr]
+
+[h2]Task 5 — Civilian Zone & Bomb Defusal[/h2]
+Two bombs are active in a populated area.
+Avoid civilian casualties and disarm both.
+
+[hr]
+
+[h2]Task 6 — Allied Rescue[/h2]
+Secure a downed helicopter and defend survivors.
+[b]At least one survivor must live.[/b]
+
+[hr]
+
+[h2]Task 7 — Radar Destruction[/h2]
+Locate and destroy a mobile radar guarded by infantry.
+
+[hr]
+
+[b]👉 Share your ideas for future updates![/b]
+Feedback welcome!

@@ -21,7 +21,7 @@ if (!hasInterface) exitWith {};
                     {
                         params ["_target", "_caller", "_actionId", "_arguments"];
                         {
-                            if (alive _x && !isPlayer _x && damage _x > 0) then {
+                            if (alive _x && !isPlayer _x && damage _x >= 0.05 && (("FirstAidKit" in (items _x)) || ("Medikit" in (items _x)))) then {
                                 _x action ["HealSoldierSelf", _x];
                             };
                         } forEach (units group _caller);
