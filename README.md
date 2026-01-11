@@ -120,7 +120,7 @@ Heavy infantry presence — strike hard and fast.
 
 This project has been well-received by the Arma 3 community! Here is a snapshot of the current performance on the Steam Workshop:
 
-- **👥 Unique Visitors:** 986 players have checked out the mission page.
-- **✅ Subscribers:** 200 players have subscribed and installed the mission.
-- **⭐ Favorites:** 38 players have added it to their favorites list.
-- **👍 Positive Ratings:** 82% Positive ratings (9 positive out of 11 total).
+- **👥 Unique Visitors:** +1000 players have checked out the mission page.
+- **✅ Subscribers:** +200 players have subscribed and installed the mission.
+- **⭐ Favorites:** +40 players have added it to their favorites list.
+- **👍 Positive Ratings:** +82% Positive ratings (9 positive out of 11 total).
