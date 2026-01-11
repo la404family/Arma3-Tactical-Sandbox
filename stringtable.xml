@@ -3948,5 +3948,185 @@
             <Portuguese>Levantar-se</Portuguese>
             <Korean>일어서기</Korean>
         </Key>&lt;/Key&gt;
+        <Key ID="STR_TASK_8_TITLE">
+            <English>Battle of Kavala</English>
+            <French>La bataille de KAVALA</French>
+        </Key>
+        <Key ID="STR_TASK_8_DESC">
+            <English>Kavala is under attack, teams on site need help. Approach KAVALA and assist the allies. The objective is to execute an officer leading the rebellion. Avoid the tanks or neutralize them, beware of the many enemies present.</English>
+            <French>Kavala est attaquée, des équipes sur place ont besoin d&apos;aide. Rapprochez-vous de KAVALA et venez en aide aux alliés. L&apos;objectif est d&apos;exécuter un officier qui mène la rébellion. Évitez les tanks ou neutralisez-les, attention aux nombreux ennemis présents.</French>
+            <German>Kavala wird angegriffen, Teams vor Ort brauchen Hilfe. Nähern Sie sich KAVALA und unterstützen Sie die Verbündeten. Das Ziel ist es, einen Offizier hinzurichten, der die Rebellion anführt. Weichen Sie den Panzern aus oder neutralisieren Sie sie, achten Sie auf die vielen anwesenden Feinde.</German>
+            <Spanish>Kavala está bajo ataque, los equipos en el lugar necesitan ayuda. Acérquense a KAVALA y ayuden a los aliados. El objetivo es ejecutar a un oficial que lidera la rebelión. Eviten los tanques o neutralícenlos, cuidado con los numerosos enemigos presentes.</Spanish>
+            <Italian>Kavala è sotto attacco, le squadre sul posto hanno bisogno di aiuto. Avvicinatevi a KAVALA e assistete gli alleati. L&apos;obiettivo è giustiziare un ufficiale che guida la ribellione. Evitate i carri armati o neutralizzateli, attenzione ai numerosi nemici presenti.</Italian>
+            <Russian>Кавала атакована, группам на месте нужна помощь. Приблизьтесь к КАВАЛЕ и помогите союзникам. Цель - казнить офицера, возглавляющего восстание. Избегайте танков или нейтрализуйте их, остерегайтесь многочисленных врагов.</Russian>
+            <Polish>Kavala jest atakowana, zespoły na miejscu potrzebują pomocy. Zbliżcie się do KAVALI i pomóżcie sojusznikom. Celem jest egzekucja oficera dowodzącego rebelią. Unikajcie czołgów lub je zneutralizujcie, uważajcie na licznych wrogów.</Polish>
+            <Czech>Kavala je pod útokem, týmy na místě potřebují pomoc. Přibližte se ke KAVALE a pomozte spojencům. Cílem je popravit důstojníka vedoucího povstání. Vyhněte se tankům nebo je zneškodněte, pozor na četné nepřátele.</Czech>
+            <Turkish>Kavala saldırı altında, olay yerindeki ekiplerin yardıma ihtiyacı var. KAVALA&apos;ya yaklaşın ve müttefiklere yardım edin. Amaç, isyanı yöneten bir subayı infaz etmektir. Tanklardan kaçının veya onları etkisiz hale getirin, çok sayıda düşmana dikkat edin.</Turkish>
+            <Chinese>卡瓦拉正受到攻擊，現場團隊需要支援。接近卡瓦拉並協助盟軍。目標是處決領導叛亂的軍官。避開坦克或將其摧毀，小心大量敵人。</Chinese>
+            <Chinesesimp>卡瓦拉正受到攻击，现场团队需要支援。接近卡瓦拉并协助盟军。目标是处决领导叛乱的军官。避开坦克 or 将其摧毁，小心大量敌人。</Chinesesimp>
+            <Japanese>カヴァラが攻撃を受けており、現場のチームが助けを必要としています。カヴァラに接近し、同盟国を支援してください。目標は、反乱を率いる将校を処刑することです。戦車を避けるか無力化し、多数の敵に注意してください。</Japanese>
+            <Portuguese>Kavala está sob ataque, equipes no local precisam de ajuda. Aproximem-se de KAVALA e ajudem os aliados. O objetivo é executar um oficial que lidera a rebelião. Evitem os tanques ou neutralizem-nos, cuidado com os numerosos inimigos presentes.</Portuguese>
+            <Korean>카발라가 공격받고 있으며, 현장 팀이 도움이 필요합니다. 카발라에 접근하여 연합군을 지원하십시오. 목표는 반란을 주도하는 장교를 처형하는 것입니다. 탱크를 피하거나 무력화하고, 다수의 적을 주의하십시오.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_OP_TITLE">
+            <English>OPERATION: BATTLE OF KAVALA</English>
+            <French>OPÉRATION : BATAILLE DE KAVALA</French>
+            <German>OPERATION: SCHLACHT VON KAVALA</German>
+            <Spanish>OPERACIÓN: BATALLA DE KAVALA</Spanish>
+            <Italian>OPERAZIONE: BATTAGLIA DI KAVALA</Italian>
+            <Russian>ОПЕРАЦИЯ: БИТВА ЗА КАВАЛУ</Russian>
+            <Polish>OPERACJA: BITWA O KAVALĘ</Polish>
+            <Czech>OPERACE: BITVA O KAVALU</Czech>
+            <Turkish>OPERASYON: KAVALA SAVAŞI</Turkish>
+            <Chinese>行动：卡瓦拉之战</Chinese>
+            <Chinesesimp>行动：卡瓦拉之战</Chinesesimp>
+            <Japanese>作戦：カヴァラの戦い</Japanese>
+            <Portuguese>OPERAÇÃO: BATALHA DE KAVALA</Portuguese>
+            <Korean>작전: 카발라 전투</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_SITUATION">
+            <English>Kavala has fallen. A major insurgent force has fortified the city, supported by T-140K Angara tanks. Intel suggests the tanks are currently out of fuel but remain lethal static defenses.</English>
+            <French>Kavala est tombée. Une force insurgée majeure a fortifié la ville, appuyée par des chars T-140K Angara. Les renseignements indiquent que les chars sont à court de carburant mais restent des défenses statiques mortelles.</French>
+            <German>Kavala ist gefallen. Eine große Aufständischenstreitmacht hat die Stadt befestigt, unterstützt von T-140K Angara Panzern. Geheimdienstberichte deuten darauf hin, dass die Panzer derzeit keinen Treibstoff haben, aber tödliche statische Verteidigungen bleiben.</German>
+            <Spanish>Kavala ha caído. Una gran fuerza insurgente ha fortificado la ciudad, apoyada por tanques T-140K Angara. La inteligencia sugiere que los tanques están actualmente sin combustible pero siguen siendo defensas estáticas letales.</Spanish>
+            <Italian>Kavala è caduta. Una grande forza insurrezionale ha fortificato la città, supportata da carri armati T-140K Angara. L&apos;intelligence suggerisce che i carri armati siano attualmente senza carburante ma rimangano difese statiche letali.</Italian>
+            <Russian>Кавала пала. Крупные силы повстанцев укрепили город при поддержке танков Т-140К «Ангара». Разведка предполагает, что у танков закончилось топливо, но они остаются смертоносной стационарной обороной.</Russian>
+            <Polish>Kavala upadła. Znaczne siły powstańcze ufortyfikowały miasto, wspierane przez czołgi T-140K Angara. Wywiad sugeruje, że czołgi nie mają obecnie paliwa, ale pozostają zabójczą obroną statyczną.</Polish>
+            <Czech>Kavala padla. Město opevnila velká povstalecká síla podporovaná tanky T-140K Angara. Zpravodajské informace naznačují, že tanky jsou momentálně bez paliva, ale zůstávají smrtící statickou obranou.</Czech>
+            <Turkish>Kavala düştü. Büyük bir isyancı güç, T-140K Angara tankları tarafından desteklenen şehri güçlendirdi. İstihbarat, tankların şu anda yakıtsız olduğunu ancak ölümcül statik savunmalar olarak kaldığını gösteriyor.</Turkish>
+            <Chinese>卡瓦拉陷落。一支主要的叛乱部队在 T-140K 安加拉坦克的支援下加强了城市的防御。情报显示坦克目前没有燃料，但仍是致命的静态防御。</Chinese>
+            <Chinesesimp>卡瓦拉陷落。一支主要的叛乱部队在 T-140K 安加拉坦克的支援下加强了城市的防御。情报显示坦克目前没有燃料，但仍是致命的静态防御。</Chinesesimp>
+            <Japanese>カヴァラが陥落しました。大規模な反乱軍がT-140Kアンガラ戦車の支援を受けて都市を要塞化しました。情報は、戦車が現在燃料切れであることを示唆していますが、依然として致命的な固定防御として機能しています。</Japanese>
+            <Portuguese>Kavala caiu. Uma grande força insurgente fortificou a cidade, apoiada por tanques T-140K Angara. A inteligência sugere que os tanques estão atualmente sem combustível, mas permanecem defesas estáticas letais.</Portuguese>
+            <Korean>카발라가 함락되었습니다. T-140K 앙가라 탱크의 지원을 받는 대규모 반란군이 도시를 요새화했습니다. 정보에 따르면 탱크는 현재 연료가 없지만 여전히 치명적인 고정 방어 시설로 남아 있습니다.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_THREAT_TEXT">
+            <English>Heavy Armor (T-140K), Large Infantry Force (45+ pax), Elite Officer Bodyguards.</English>
+            <French>Blindés Lourds (T-140K), Force d&apos;Infanterie (45+ hommes), Gardes du corps d&apos;élite.</French>
+            <German>Schwere Panzerung (T-140K), Große Infanterietruppe (45+ Pax), Elite-Offiziers-Leibwächter.</German>
+            <Spanish>Blindaje Pesado (T-140K), Gran Fuerza de Infantería (45+ pax), Guardaespaldas de Élite del Oficial.</Spanish>
+            <Italian>Armatura Pesante (T-140K), Grande Forza di Fanteria (45+ pax), Guardie del Corpo d&apos;Élite dell&apos;Ufficiale.</Italian>
+            <Russian>Тяжелая бронетехника (Т-140К), крупные силы пехоты (45+ чел.), элитные телохранители офицера.</Russian>
+            <Polish>Ciężki pancerz (T-140K), duże siły piechoty (45+ osób), elitarna straż przyboczna oficera.</Polish>
+            <Czech>Těžké obrnění (T-140K), velká síla pěchoty (45+ osob), elitní tělesná stráž důstojníka.</Czech>
+            <Turkish>Ağır Zırh (T-140K), Büyük Piyade Gücü (45+ kişi), Seçkin Subay Korumaları.</Turkish>
+            <Chinese>重型装甲 (T-140K)，大量步兵部队 (45+ 人)，精锐军官保镖。</Chinese>
+            <Chinesesimp>重型装甲 (T-140K)，大量步兵部队 (45+ 人)，精锐军官保镖。</Chinesesimp>
+            <Japanese>重装甲 (T-140K)、大規模な歩行部隊 (45名以上)、エリート将校のボディーガード。</Japanese>
+            <Portuguese>Blindagem Pesada (T-140K), Grande Força de Infantaria (45+ pax), Guarda-costas de Elite do Oficial.</Portuguese>
+            <Korean>중장갑 (T-140K), 대규모 보병 부대 (45명 이상), 정예 장교 경호원.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_MISSION">
+            <English>Infiltrate Kavala, link up with allied counter-attack forces, and execute the Insurgent Commander.</English>
+            <French>Infiltrez Kavala, faites la jonction avec la contre-attaque alliée, et exécutez le Commandant Insurgé.</French>
+            <German>Infiltrieren Sie Kavala, schließen Sie sich den alliierten Gegenangriffskräften an und richten Sie den Aufständischen-Kommandanten hin.</German>
+            <Spanish>Infiltren Kavala, enlacen con las fuerzas de contraataque aliadas y ejecuten al Comandante Insurgente.</Spanish>
+            <Italian>Infiltratevi a Kavala, collegatevi con le forze di contrattacco alleate ed giustiziate il Comandante Insorto.</Italian>
+            <Russian>Проникнуть в Кавалу, соединиться с союзными силами контратаки и казнить командира повстанцев.</Russian>
+            <Polish>Zinfiltrujcie Kavalę, połączcie się z sojuszniczymi siłami kontrataku i wykonajcie egzekucję na dowódcy rebeliantów.</Polish>
+            <Czech>Infiltrujte Kavalu, spojte se se spojeneckými protiútočnými silami a popravte velitele povstalců.</Czech>
+            <Turkish>Kavala&apos;ya sızın, müttefik karşı saldırı güçleriyle bağlantı kurun ve İsyancı Komutanı infaz edin.</Turkish>
+            <Chinese>潜入卡瓦拉，与盟军反击部队会合，并处决叛乱指挥官。</Chinese>
+            <Chinesesimp>潜入卡瓦拉，与盟军反击部队会合，并处决叛乱指挥官。</Chinesesimp>
+            <Japanese>カヴァラに潜入し、同盟軍の反撃部隊と合流し、反乱軍司令官を処刑してください。</Japanese>
+            <Portuguese>Infiltrem-se em Kavala, unam-se às forças de contra-ataque aliadas e executem o Comandante Insurgente.</Portuguese>
+            <Korean>카발라에 잠입하여 연합 반격 부대와 합류하고 반란군 지휘관을 처형하십시오.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_EXE_A_TITLE">
+            <English>1. ASSAULT</English>
+            <French>1. ASSAUT</French>
+            <German>1. ANGRIFF</German>
+            <Spanish>1. ASALTO</Spanish>
+            <Italian>1. ASSALTO</Italian>
+            <Russian>1. ШТУРМ</Russian>
+            <Polish>1. SZTURM</Polish>
+            <Czech>1. ÚTOK</Czech>
+            <Turkish>1. SALDIRI</Turkish>
+            <Chinese>1. 突击</Chinese>
+            <Chinesesimp>1. 突击</Chinesesimp>
+            <Japanese>1. 襲撃</Japanese>
+            <Portuguese>1. ASSALTO</Portuguese>
+            <Korean>1. 공격</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_EXE_A_TEXT">
+            <English>Approach from the hills. Coordinates with local allied units. Prioritize Anti-Tank actions.</English>
+            <French>Approchez depuis les collines. Coordonnez-vous avec les unités alliées locales. Priorité aux actions Anti-Char.</French>
+            <German>Nähern Sie sich von den Hügeln. Koordinieren Sie sich mit lokalen alliierten Einheiten. Priorisieren Sie Panzerabwehraktionen.</German>
+            <Spanish>Acérquense desde las colinas. Coordine con las unidades aliadas locales. Priorice las acciones antitanque.</Spanish>
+            <Italian>Avvicinatevi dalle colline. Coordinatevi con le unità alleate locali. Priorità alle azioni anticarro.</Italian>
+            <Russian>Подходите с холмов. Координируйте действия с местными союзными подразделениями. Приоритет - противотанковые действия.</Russian>
+            <Polish>Podejdźcie ze wzgórz. Koordynujcie z lokalnymi jednostkami sojuszniczymi. Priorytetem są działania przeciwpancerne.</Polish>
+            <Czech>Přibližte se z kopců. Koordinujte s místními spojeneckými jednotkami. Upřednostněte protitankové akce.</Czech>
+            <Turkish>Tepelerden yaklaşın. Yerel müttefik birliklerle koordine olun. Tanksavar eylemlerine öncelik verin.</Turkish>
+            <Chinese>从山丘接近。与当地盟军单位协调。优先采取反坦克行动。</Chinese>
+            <Chinesesimp>从山丘接近。与当地盟军单位协调。优先采取反坦克行动。</Chinesesimp>
+            <Japanese>丘から接近してください。地元の同盟部隊と調整してください。対戦車行動を優先してください。</Japanese>
+            <Portuguese>Aproximem-se das colinas. Coordenem com as unidades aliadas locais. Priorizem ações antitanque.</Portuguese>
+            <Korean>언덕에서 접근하십시오. 지역 연합 부대와 협력하십시오. 대전차 작전을 우선시하십시오.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_EXE_B_TITLE">
+            <English>2. HVT ELIMINATION</English>
+            <French>2. ÉLIMINATION HVT</French>
+            <German>2. HVT-ELIMINIERUNG</German>
+            <Spanish>2. ELIMINACIÓN DE OAV</Spanish>
+            <Italian>2. ELIMINAZIONE HVT</Italian>
+            <Russian>2. УСТРАНЕНИЕ ОСОБО ВАЖНОЙ ЦЕЛИ</Russian>
+            <Polish>2. ELIMINACJA HVT</Polish>
+            <Czech>2. ELIMINACE HVT</Czech>
+            <Turkish>2. YDHE ELİMİNASYONU</Turkish>
+            <Chinese>2. 高价值目标消除</Chinese>
+            <Chinesesimp>2. 高价值目标消除</Chinesesimp>
+            <Japanese>2. 重要目標の排除</Japanese>
+            <Portuguese>2. ELIMINAÇÃO DE HVT</Portuguese>
+            <Korean>2. 핵심 목표 제거</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_EXE_B_TEXT">
+            <English>Air Support (2x Jets) is on station to engage enemy armor. Use this window of opportunity to locate and kill the officer.</English>
+            <French>Un soutien aérien (2x Chasseurs) est sur zone pour engager les blindés. Profitez de cette ouverture pour localiser et tuer l&apos;officier.</French>
+            <German>Luftunterstützung (2x Jets) ist vor Ort, um feindliche Panzer anzugreifen. Nutzen Sie dieses Zeitfenster, um den Offizier zu lokalisieren und zu töten.</German>
+            <Spanish>El apoyo aéreo (2x Jets) está en la estación para atacar a los blindados enemigos. Usen esta ventana de oportunidad para localizar y matar al oficial.</Spanish>
+            <Italian>Il supporto aereo (2x Jet) è in posizione per ingaggiare i mezzi corazzati nemici. Usate questa finestra di opportunità per localizzare e uccidere l&apos;ufficiale.</Italian>
+            <Russian>Воздушная поддержка (2 истребителя) находится на позиции для атаки вражеской бронетехники. Используйте это окно возможностей, чтобы найти и убить офицера.</Russian>
+            <Polish>Wsparcie lotnicze (2x odrzutowce) jest na miejscu, aby zaatakować wrogi pancerz. Wykorzystajcie to okno możliwości, aby zlokalizować i zabić oficera.</Polish>
+            <Czech>Letecká podpora (2x stíhačky) je připravena zapojit nepřátelské obrnění. Využijte této příležitosti k nalezení a zabití důstojníka.</Czech>
+            <Turkish>Hava Desteği (2x Jet), düşman zırhlılarına saldırmak için istasyonda. Subayı bulmak ve öldürmek için bu fırsat penceresini kullanın.</Turkish>
+            <Chinese>空中支援 (2x 喷气机) 已就位，准备攻击敌方装甲。利用这个机会找到并杀死军官。</Chinese>
+            <Chinesesimp>空中支援 (2x 喷气机) 已就位，准备攻击敌方装甲。利用这个机会找到并杀死军官。</Chinesesimp>
+            <Japanese>航空支援（ジェット機2機）が敵の装甲と交戦するために待機しています。この好機を利用して将校を見つけ出し、殺害してください。</Japanese>
+            <Portuguese>O Apoio Aéreo (2x Jatos) está a postos para enfrentar a blindagem inimiga. Usem esta janela de oportunidade para localizar e matar o oficial.</Portuguese>
+            <Korean>공중 지원(제트기 2대)이 적의 장갑차와 교전하기 위해 대기 중입니다. 이 기회를 이용하여 장교를 찾아 사살하십시오.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_SIG_CAS_TEXT">
+            <English>Air Support will automatically target enemy armor.</English>
+            <French>Le soutien aérien ciblera automatiquement les blindés ennemis.</French>
+            <German>Die Luftunterstützung wird automatisch feindliche Panzer anvisieren.</German>
+            <Spanish>El apoyo aéreo apuntará automáticamente a los blindados enemigos.</Spanish>
+            <Italian>Il supporto aereo mirerà automaticamente ai mezzi corazzati nemici.</Italian>
+            <Russian>Воздушная поддержка будет автоматически нацеливаться на вражескую бронетехнику.</Russian>
+            <Polish>Wsparcie lotnicze automatycznie namierzy wrogi pancerz.</Polish>
+            <Czech>Letecká podpora automaticky zaměří nepřátelské obrnění.</Czech>
+            <Turkish>Hava Desteği otomatik olarak düşman zırhlılarını hedef alacaktır.</Turkish>
+            <Chinese>空中支援将自动瞄准敌方装甲。</Chinese>
+            <Chinesesimp>空中支援将自动瞄准敌方装甲。</Chinesesimp>
+            <Japanese>航空支援は自動的に敵の装甲を標的にします。</Japanese>
+            <Portuguese>O Apoio Aéreo visará automaticamente a blindagem inimiga.</Portuguese>
+            <Korean>공중 지원이 자동으로 적의 장갑차를 목표로 삼습니다.</Korean>
+        </Key>
+        <Key ID="STR_BRIEF_T8_SIG_HVT_TEXT">
+            <English>Officer Death confirms mission success.</English>
+            <French>La mort de l&apos;officier confirme le succès de la mission.</French>
+            <German>Der Tod des Offiziers bestätigt den Missionserfolg.</German>
+            <Spanish>La muerte del oficial confirma el éxito de la misión.</Spanish>
+            <Italian>La morte dell&apos;ufficiale conferma il successo della missione.</Italian>
+            <Russian>Смерть офицера подтверждает успех миссии.</Russian>
+            <Polish>Śmierć oficera potwierdza sukces misji.</Polish>
+            <Czech>Smrt důstojníka potvrzuje úspěch mise.</Czech>
+            <Turkish>Subayın ölümü görevin başarısını teyit eder.</Turkish>
+            <Chinese>军官死亡确认任务成功。</Chinese>
+            <Chinesesimp>军官死亡确认任务成功。</Chinesesimp>
+            <Japanese>将校の死は任務の成功を確認します。</Japanese>
+            <Portuguese>A morte do oficial confirma o sucesso da missão.</Portuguese>
+            <Korean>장교의 사망은 임무 성공을 확인합니다.</Korean>
+        </Key>
     </Package>
 </Project>

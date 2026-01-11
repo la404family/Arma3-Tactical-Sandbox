@@ -343,5 +343,46 @@ if (!hasInterface) exitWith {};
             ]
         ]];
     };
+    case "task_8": {
+        player createDiaryRecord ["Diary", [
+            localize "STR_TASK_8_TITLE", 
+            format ["
+<font size='20' color='#FF0000'>%1</font><br/><br/>
+
+<font color='#eba134'>%2</font><br/>
+%3<br/>
+<font color='#FF0000'>%4</font> %5<br/><br/>
+
+<font color='#eba134'>%6</font><br/>
+%7<br/><br/>
+
+<font color='#eba134'>%8</font><br/>
+<font color='#999999'>%9</font><br/>
+%10<br/><br/>
+
+<font color='#999999'>%11</font><br/>
+%12<br/><br/>
+
+<font color='#eba134'>%13</font><br/>
+- <font color='#00FF00'>%14</font> %15<br/>
+- <font color='#FF0000'>%16</font> %17<br/>
+            ",
+            localize "STR_BRIEF_T8_OP_TITLE",
+            localize "STR_BRIEF_HEADER_SITUATION",
+            localize "STR_BRIEF_T8_SITUATION",
+            localize "STR_BRIEF_HEADER_THREAT", localize "STR_BRIEF_T8_THREAT_TEXT",
+            localize "STR_BRIEF_HEADER_MISSION",
+            localize "STR_BRIEF_T8_MISSION",
+            localize "STR_BRIEF_HEADER_EXECUTION",
+            localize "STR_BRIEF_T8_EXE_A_TITLE",
+            localize "STR_BRIEF_T8_EXE_A_TEXT",
+            localize "STR_BRIEF_T8_EXE_B_TITLE",
+            localize "STR_BRIEF_T8_EXE_B_TEXT",
+            localize "STR_BRIEF_HEADER_SIGNAL",
+            localize "STR_BRIEF_SIG_CAS", localize "STR_BRIEF_T8_SIG_CAS_TEXT",
+            localize "STR_BRIEF_SIG_HVT", localize "STR_BRIEF_T8_SIG_HVT_TEXT"
+            ]
+        ]];
+    };
 };
 };

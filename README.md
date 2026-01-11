@@ -55,8 +55,8 @@ Feel free to follow my work or check the code!
 
 ## ❤️ PLEASE !!
 
-**Follow me on GitHub:** 
-**Drop a Star on the project:**
+**Follow me on GitHub** 
+**Drop a Star on the project**
 
 # 🎯 Mission Overview — Tactical Sandbox
 

@@ -8,6 +8,11 @@ Ce document suit l'évolution du mod **Tactical Sandbox**.
 
 ---
 
+## 🚀 v1.3.9
+
+- tache 8 (la bataille de KAVALA) 
+- 
+
 ## 🚀 v1.3.8
 
 - gestion de la voix de l'équipe (si le chef de groupe change de voix toutes les unités changent de voix)

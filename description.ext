@@ -105,6 +105,7 @@ class CfgFunctions
             class task_x_briefing {};
             class task_x_badge {};
             class task_x_revival {};
+            class task_8_launch {};
         };
     };
 };

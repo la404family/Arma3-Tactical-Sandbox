@@ -128,7 +128,8 @@ MISSION_fnc_addSubmitAction = {
 // task_x_explosif_00 est une charge explosive
 // task_x_explosif_01 est une caisse d'explosif
 // task_x_explosif_02 et task_x_explosif_03 sont des éclairages portatifs pour héliport (simule le signal visuel de la bombe)
-
+// task_x_tank_2 est le tank ennemi type T-140K Angara
+task_x_tank_2 = "O_T_MBT_04_command_F";
 //-------------------------------------------
 // Les éléments de la tache 1 : (spawn a positionner sur des routes)
 //-------------------------------------------
@@ -208,6 +209,20 @@ MISSION_fnc_addSubmitAction = {
 
 // task_7_spawn_1 à task_7_spawn_7 sont des héliports qui servent de lieux de spawn pour les ennemis de la tache 7
 // task_7_spawn_8 à task_7_spawn_14 sont des héliports qui servent de lieux de spawn pour les radar à détruire
+
+//-------------------------------------------
+// Les éléments de la tache 8 : spwawn a positionner dans une zone montagneuse
+//-------------------------------------------
+
+// task_8_spawn_1 est le lieux de spawn pour l'équipe allié 1 de la tache 8 (héliport invisible)
+// task_8_spawn_2 est le lieux de spawn pour l'équipe allié 2 de la tache 8 (héliport invisible)
+// task_8_spawn_3 est le lieux de spawn pour l'équipe allié 3 de la tache 8 (héliport invisible)
+// task_8_spawn_4 est le lieux de spawn pour les ennemis de la tache 8 (héliport invisible)
+// task_8_spawn_5 à task_8_spawn_10 sont les lieux de spawn pour les tanks ennemis (héliport invisible)
+// task_3_spawn_01 fait apparaitre un avion allié : A149 Gryphon (EMP_A149_Gryphon)
+// task_8_spawn_11 est le lieux de spawn pour l'officier ennemi (héliport invisible)
+// task_8_spawn_12 et task_8_spawn_13 sont les lieux de spawn pour les unités ennemies (protection de l'officier)
+// task_8_spawn_14  à task_8_spawn_43 sont les lieux de passages des équipes alliés et ennemies des spawn 1 à 4
 
 //-------------------------------------------
 // Les fonctions de tache :

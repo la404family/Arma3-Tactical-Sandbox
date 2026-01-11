@@ -74,7 +74,10 @@ if (_mode == "OPEN") exitWith {
         if (_i == 7) then {
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_7_TITLE"];
         };
-        if (_i > 7) then {
+        if (_i == 8) then {
+            _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_8_TITLE"];
+        };
+        if (_i > 8) then {
             _taskName = format ["Tâche %1 - %2", _i, localize "STR_TASK_X_TITLE"];
         };
         
@@ -128,7 +131,11 @@ if (_mode == "SELECT") exitWith {
         _titleCtrl ctrlSetText (localize "STR_TASK_7_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_7_DESC");
     };
-    if (_taskNum > 7) then {
+    if (_taskNum == 8) then {
+        _titleCtrl ctrlSetText (localize "STR_TASK_8_TITLE");
+        _descCtrl ctrlSetText (localize "STR_TASK_8_DESC");
+    };
+    if (_taskNum > 8) then {
         _titleCtrl ctrlSetText (localize "STR_TASK_X_TITLE");
         _descCtrl ctrlSetText (localize "STR_TASK_X_DESC");
     };
@@ -190,7 +197,11 @@ if (_mode == "LAUNCH") exitWith {
             // Tâche 7 - Destruction de Radar
             [] spawn MISSION_fnc_task_7_launch;
         };
-        // Tâches 8-20 : à implémenter plus tard
+        case 8: {
+            // Tâche 8 - La bataille de KAVALA
+            [] spawn MISSION_fnc_task_8_launch;
+        };
+        // Tâches 9-20 : à implémenter plus tard
         default {};
     };
 };
